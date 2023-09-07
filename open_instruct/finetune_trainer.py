@@ -30,6 +30,7 @@ from transformers import (
     OPTForCausalLM
 )
 from transformers.trainer_utils import get_last_checkpoint
+from peft import get_peft_model, LoraConfig, TaskType
 from safe_save_trainer import SafeSaveTrainer
 from open_instruct.finetune import encode_with_prompt_completion_format, encode_with_messages_format
 
@@ -50,6 +51,12 @@ class ModelArguments:
                 "The model checkpoint for weights initialization. Don't set if you want to train a model from scratch."
             )
         },
+    )
+    use_lora: Optional[bool] = field(
+        default=True, metadata={"help": "Whether to use LoRA or not"}
+    )
+    lora_rank: Optional[int] = field(
+        default=256, metadata={"help": "If using LoRA, what rank to use"}
     )
     config_name: Optional[str] = field(
         default=None, metadata={"help": "Pretrained config name or path if not the same as model_name"}
@@ -280,6 +287,14 @@ def main():
     embedding_size = model.get_input_embeddings().weight.shape[0]
     if len(tokenizer) > embedding_size:
         model.resize_token_embeddings(len(tokenizer))
+
+    if model_args.use_lora:
+        task_type = TaskType.CAUSAL_LM
+        peft_config = LoraConfig(
+            task_type=task_type, inference_mode=False, r=model_args.lora_rank, lora_alpha=256, lora_dropout=0.05 # TODO: update hparams
+        )
+        model = get_peft_model(model, peft_config)
+        model.print_trainable_parameters()
 
     # Preprocessing the datasets.
     if "prompt" in raw_datasets["train"].column_names and "completion" in raw_datasets["train"].column_names:
