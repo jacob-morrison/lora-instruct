@@ -7,6 +7,7 @@ import math
 import os
 import random
 import datasets
+from datasets import load_dataset,Features,Value
 import torch
 from functools import partial
 from accelerate import Accelerator
@@ -370,6 +371,7 @@ def main():
         dataset_args = {}
         if args.train_file is not None:
             data_files["train"] = args.train_file
+        context_feat = Features({'text': Value(dtype='string', id=None)})
         raw_datasets = load_dataset(
             "json",
             data_files=data_files,
