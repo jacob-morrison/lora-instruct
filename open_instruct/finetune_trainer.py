@@ -58,6 +58,12 @@ class ModelArguments:
     lora_rank: Optional[int] = field(
         default=256, metadata={"help": "If using LoRA, what rank to use"}
     )
+    lora_alpha: Optional[int] = field(
+        default=256, metadata={"help": "If using LoRA, what rank to use"}
+    )
+    lora_dropout: Optional[int] = field(
+        default=0.1, metadata={"help": "If using LoRA, what rank to use"}
+    )
     config_name: Optional[str] = field(
         default=None, metadata={"help": "Pretrained config name or path if not the same as model_name"}
     )
@@ -291,7 +297,7 @@ def main():
     if model_args.use_lora:
         task_type = TaskType.CAUSAL_LM
         peft_config = LoraConfig(
-            task_type=task_type, inference_mode=False, r=model_args.lora_rank, lora_alpha=256, lora_dropout=0.05 # TODO: update hparams
+            task_type=task_type, inference_mode=False, r=model_args.lora_rank, lora_alpha=model_args.lora_alpha, lora_dropout=model_args.lora_dropout # TODO: update hparams
         )
         model = get_peft_model(model, peft_config)
         model.print_trainable_parameters()
