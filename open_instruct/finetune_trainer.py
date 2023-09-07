@@ -61,7 +61,7 @@ class ModelArguments:
     lora_alpha: Optional[int] = field(
         default=256, metadata={"help": "If using LoRA, what rank to use"}
     )
-    lora_dropout: Optional[int] = field(
+    lora_dropout: Optional[float] = field(
         default=0.1, metadata={"help": "If using LoRA, what rank to use"}
     )
     config_name: Optional[str] = field(
