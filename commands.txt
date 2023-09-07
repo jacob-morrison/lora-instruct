@@ -1,5 +1,5 @@
 accelerate launch --mixed_precision bf16 --num_machines 1 --num_processes 4 \
-    open_instruct/finetune.py --model_name_or_path /net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/7B \
+    open_instruct/finetune_trainer.py --model_name_or_path /net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/7B \
     --use_flash_attn --use_lora --lora_rank 256 --lora_alpha 256 --lora_dropout 0.05 \
     --tokenizer_name /net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/7B --use_slow_tokenizer \
     --train_file /net/nfs.cirrascale/allennlp/hamishi/open-instruct/tulu_data/tulu_v1_mix.jsonl \
