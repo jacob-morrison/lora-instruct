@@ -10,8 +10,12 @@ deepspeed open_instruct/finetune_trainer.py \
     --model_name_or_path /net/nfs.cirrascale/allennlp/yizhongw/hf_llama_models/${MODEL_SIZE} \
     --tokenizer_name /net/nfs.cirrascale/allennlp/yizhongw/hf_llama_models/${MODEL_SIZE} \
     --use_fast_tokenizer False \
-    --train_file data/processed/alpaca_data_original_template.jsonl \
+    --train_file /net/nfs.cirrascale/allennlp/hamishi/open-instruct/tulu_data/tulu_v1_mix.jsonl \
     --max_seq_length 512 \
+    --use_lora \
+    --lora_rank 256 \
+    --lora_alpha 256 \
+    --lora_dropout 0.05 \
     --do_train \
     --per_device_train_batch_size $BATCH_SIZE_PER_GPU \
     --gradient_accumulation_steps $GRADIENT_ACC_STEPS \

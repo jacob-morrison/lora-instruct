@@ -7,6 +7,7 @@ import math
 import os
 import random
 import datasets
+from datasets import load_dataset,Features,Value
 import torch
 from functools import partial
 from accelerate import Accelerator
@@ -495,7 +496,6 @@ def main():
     if args.use_lora:
         if args.use_qlora:
             model = prepare_model_for_kbit_training(model, use_gradient_checkpointing=args.gradient_checkpointing)
-
         logger.info("Initializing LORA model...")
         peft_config = LoraConfig(
             task_type=TaskType.CAUSAL_LM, 
@@ -559,11 +559,11 @@ def main():
     no_decay = ["bias", "layer_norm.weight"]
     optimizer_grouped_parameters = [
         {
-            "params": [p for n, p in model.named_parameters() if not any(nd in n for nd in no_decay)],
+            "params": [p for n, p in model.named_parameters() if not any(nd in n for nd in no_decay) and p.requires_grad],
             "weight_decay": args.weight_decay,
         },
         {
-            "params": [p for n, p in model.named_parameters() if any(nd in n for nd in no_decay)],
+            "params": [p for n, p in model.named_parameters() if any(nd in n for nd in no_decay) and p.requires_grad],
             "weight_decay": 0.0,
         },
     ]
