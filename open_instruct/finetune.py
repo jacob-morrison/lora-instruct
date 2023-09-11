@@ -30,7 +30,7 @@ from transformers import (
     GPTNeoXTokenizerFast,
     GPT2Tokenizer,
     OPTForCausalLM,
-    # BitsAndBytesConfig,
+    BitsAndBytesConfig,
 )
 from peft import LoraConfig, TaskType, get_peft_model, prepare_model_for_kbit_training
 
@@ -217,7 +217,22 @@ def parse_args():
         help=(
             "Use qLoRA training - main thing is initialising model in quantised form. Not compatible with deepspeed."
         ),
-        default=False,
+    )
+    parser.add_argument(
+        '--clip_grad_norm',
+        type=float,
+        default=-1,
+        help='Clip gradient norm. Not compatible with deepspeed (use deepspeed config instead).',
+    )
+    parser.add_argument(
+        '--use_8bit_optimizer',
+        action='store_true',
+        help='Use 8bit optimizer from bitsandbytes. Not compatible with deepspeed (use deepspeed config instead).',
+    )
+    parser.add_argument(
+        '--llama2',
+        action='store_true',
+        help='Use llama2 model instead of llama. Used to determine what monkey patch fn to use.',
     )
     args = parser.parse_args()
 
@@ -315,13 +330,34 @@ def encode_with_messages_format(example, tokenizer, max_seq_length):
         'labels': labels.flatten(),
         'attention_mask': attention_mask.flatten(),
     }
+
+
+def save_with_accelerate(accelerator, model, tokenizer, output_dir, args):
+    unwrapped_model = accelerator.unwrap_model(model)
+    # When doing multi-gpu training, we need to use accelerator.get_state_dict(model) to get the state_dict.
+    # Otherwise, sometimes the model will be saved with only part of the parameters.
+    # Also, accelerator needs to use the wrapped model to get the state_dict.
+    state_dict = accelerator.get_state_dict(model)
+    if args.use_lora:
+        # When using lora, the unwrapped model is a PeftModel, which doesn't support the is_main_process 
+        # and has its own save_pretrained function for only saving lora modules.
+        # We have to manually specify the is_main_process outside the save_pretrained function.
+        if accelerator.is_main_process:
+            unwrapped_model.save_pretrained(output_dir, state_dict=state_dict)
+    else:
+        unwrapped_model.save_pretrained(
+            output_dir, is_main_process=accelerator.is_main_process, save_function=accelerator.save, state_dict=state_dict
+        )
         
 
 def main():
     args = parse_args()
 
     # A hacky way to make llama work with flash attention
-    if args.use_flash_attn:
+    if args.use_flash_attn and args.llama2:
+        from llama2_flash_attn_monkey_patch import replace_llama_attn_with_flash_attn
+        replace_llama_attn_with_flash_attn()
+    elif args.use_flash_attn:
         from llama_flash_attn_monkey_patch import replace_llama_attn_with_flash_attn
         replace_llama_attn_with_flash_attn()
 
@@ -335,7 +371,6 @@ def main():
         accelerator_log_kwargs["project_dir"] = args.output_dir
 
     accelerator = Accelerator(gradient_accumulation_steps=args.gradient_accumulation_steps, **accelerator_log_kwargs)
-
     # Make one log on every process with the configuration for debugging.
     logging.basicConfig(
         format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",
@@ -371,7 +406,10 @@ def main():
         dataset_args = {}
         if args.train_file is not None:
             data_files["train"] = args.train_file
-        context_feat = Features({'text': Value(dtype='string', id=None)})
+            print('Train file is not none: ' + str(args.train_file))
+        else:
+            print('Train file was none!!')
+            print(args)
         raw_datasets = load_dataset(
             "json",
             data_files=data_files,
@@ -406,23 +444,25 @@ def main():
                 bnb_4bit_quant_type="nf4",
                 bnb_4bit_compute_dtype=torch.bfloat16,
             )
-            device_index = Accelerator().process_index
+            device_index = accelerator.process_index
             device_map = {"": device_index} # force data-parallel training.
             model = AutoModelForCausalLM.from_pretrained(
                 args.model_name_or_path,
                 from_tf=bool(".ckpt" in args.model_name_or_path),
                 config=config,
+                load_in_4bit=True,
                 quantization_config=bnb_config,
                 device_map=device_map,
-                load_in_4bit=True,
                 torch_dtype=torch.bfloat16,
             )
         else:
+            device_index = accelerator.process_index
+            device_map = {"": device_index} # force data-parallel training.
             model = AutoModelForCausalLM.from_pretrained(
                 args.model_name_or_path,
                 from_tf=bool(".ckpt" in args.model_name_or_path),
                 config=config,
-                low_cpu_mem_usage=args.low_cpu_mem_usage
+                device_map=device_map,
             )
     else:
         logger.info("Training new model from scratch")
@@ -456,9 +496,6 @@ def main():
     if args.use_lora:
         if args.use_qlora:
             model = prepare_model_for_kbit_training(model, use_gradient_checkpointing=args.gradient_checkpointing)
-            if args.use_qlora:
-                from llama_flash_attn_monkey_patch import upcast_layer_for_flash_attention
-                model = upcast_layer_for_flash_attention(model, torch.bfloat16)
         logger.info("Initializing LORA model...")
         peft_config = LoraConfig(
             task_type=TaskType.CAUSAL_LM, 
@@ -469,7 +506,11 @@ def main():
             target_modules=["q_proj", "o_proj", "v_proj", "k_proj", "gate_proj", "up_proj", "down_proj"]
         )
         model = get_peft_model(model, peft_config)
-        model.print_trainable_parameters()            
+        # peft breaks flash attention due to casting norms to fp32. This fixes it back up.
+        # See https://github.com/huggingface/peft/issues/790
+        from llama_flash_attn_monkey_patch import upcast_layer_for_flash_attention
+        model = upcast_layer_for_flash_attention(model, torch.bfloat16)
+        model.print_trainable_parameters()
 
     # Preprocessing the datasets.
     if "prompt" in raw_datasets["train"].column_names and "completion" in raw_datasets["train"].column_names:
@@ -486,7 +527,7 @@ def main():
         )
     else:
         raise ValueError("You need to have either 'prompt'&'completion' or 'messages' in your column names.")
-    
+
     with accelerator.main_process_first():
         lm_datasets = raw_datasets.map(
             encode_function,
@@ -526,15 +567,16 @@ def main():
             "weight_decay": 0.0,
         },
     ]
-    # if args.use_qlora:
-    #     from bitsandbytes.optim import AdamW
-    #     optimizer = AdamW(
-    #         optimizer_grouped_parameters,
-    #         lr=args.learning_rate,
-    #         is_paged=True
-    #     )
-    # else:
-    optimizer = torch.optim.AdamW(optimizer_grouped_parameters, lr=args.learning_rate)
+    if args.use_qlora:
+        from bitsandbytes.optim import AdamW
+        optimizer = AdamW(
+            optimizer_grouped_parameters,
+            lr=args.learning_rate,
+            optim_bits=8 if args.use_8bit_optimizer else 32,
+            is_paged=True
+        )
+    else:
+        optimizer = torch.optim.AdamW(optimizer_grouped_parameters, lr=args.learning_rate)
 
     # Scheduler and math around the number of training steps.
     overrode_max_train_steps = False
@@ -638,7 +680,7 @@ def main():
                     continue
 
             with accelerator.accumulate(model):
-                outputs = model(**batch, use_cache=False)
+                outputs = model(**batch, use_cache=False)                
                 loss = outputs.loss
                 # We keep track of the loss at each logged step
                 total_loss += loss.detach().float()
@@ -647,11 +689,13 @@ def main():
                 optimizer.zero_grad()
                 lr_scheduler.step()       
 
-            # # Checks if the accelerator has performed an optimization step behind the scenes
+            # Checks if the accelerator has performed an optimization step behind the scenes
             if accelerator.sync_gradients:
+                # if set, clip the gradient norm. Don't do this with deepspeed.
+                if args.clip_grad_norm > 0:
+                    accelerator.clip_grad_norm_(model.parameters(), args.clip_grad_norm)
                 progress_bar.update(1)
                 completed_steps += 1
-
                 if args.logging_steps and completed_steps % args.logging_steps == 0:
                     avg_loss = accelerator.gather(total_loss).mean().item() / args.gradient_accumulation_steps / args.logging_steps
                     logger.info(f"  Step: {completed_steps}, LR: {lr_scheduler.get_last_lr()[0]}, Loss: {avg_loss}")
@@ -670,7 +714,8 @@ def main():
                         output_dir = f"step_{completed_steps}"
                         if args.output_dir is not None:
                             output_dir = os.path.join(args.output_dir, output_dir)
-                        accelerator.save_state(output_dir)
+                        save_with_accelerate(accelerator, model, tokenizer, output_dir, args)
+
                 if completed_steps >= args.max_train_steps:
                     break
 
@@ -678,7 +723,7 @@ def main():
             output_dir = f"epoch_{epoch}"
             if args.output_dir is not None:
                 output_dir = os.path.join(args.output_dir, output_dir)
-            accelerator.save_state(output_dir)
+            save_with_accelerate(accelerator, model, tokenizer, output_dir, args)
 
     if args.with_tracking:
         accelerator.end_training()
@@ -687,24 +732,7 @@ def main():
         accelerator.wait_for_everyone()
         if accelerator.is_main_process:
             tokenizer.save_pretrained(args.output_dir)
-        unwrapped_model = accelerator.unwrap_model(model)
-        # When doing multi-gpu training, we need to use accelerator.get_state_dict(model) to get the state_dict.
-        # Otherwise, sometimes the model will be saved with only part of the parameters.
-        # Also, accelerator needs to use the wrapped model to get the state_dict.
-        state_dict = accelerator.get_state_dict(model)
-        if args.use_lora:
-            # When using lora, the unwrapped model is a PeftModel, which doesn't support the is_main_process 
-            # and has its own save_pretrained function for only saving lora modules.
-            # We have to mannually specify the is_main_process outside the save_pretrained function.
-            if accelerator.is_main_process:
-                unwrapped_model.save_pretrained(args.output_dir, state_dict=state_dict)
-                # quick generation test
-                print(tokenizer.decode(unwrapped_model.generate(input_ids=tokenizer("<|user|>\nAnswer 2+2\n<|assistant|>", return_tensors="pt").input_ids.cuda(), use_cache=False)[0]))
-        else:
-            unwrapped_model.save_pretrained(
-                args.output_dir, is_main_process=accelerator.is_main_process, save_function=accelerator.save, state_dict=state_dict
-            )
-        
+        save_with_accelerate(accelerator, model, tokenizer, args.output_dir, args)
 
 
 if __name__ == "__main__":
