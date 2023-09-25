@@ -6,11 +6,11 @@ BATCH_SIZE_PER_GPU=2
 TOTAL_BATCH_SIZE=128
 GRADIENT_ACC_STEPS=$(($TOTAL_BATCH_SIZE/$NUM_GPUS/$BATCH_SIZE_PER_GPU))
 
-DATASET_FILE=flan_v2/flan_v2_data.jsonl \
-DATASET=flan_v2
+# DATASET_FILE=flan_v2/flan_v2_data.jsonl \
+# DATASET=flan_v2
 
-# DATASET_FILE=cot/cot_data.jsonl \
-# DATASET=cot
+DATASET_FILE=cot/cot_data.jsonl \
+DATASET=cot
 
 # DATASET_FILE=oasst1/oasst1_data.jsonl \
 # DATASET=oasst1
