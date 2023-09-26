@@ -177,6 +177,7 @@ accelerate launch \
     --mixed_precision bf16 \
     --num_machines 1 \
     --num_processes $NUM_GPUS \
+    --main_process_port 0 \
     open_instruct/finetune.py \
     --model_name_or_path /net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/${MODEL_SIZE} \
     --use_lora \
@@ -209,6 +210,7 @@ accelerate launch \
     --mixed_precision bf16 \
     --num_machines 1 \
     --num_processes $NUM_GPUS \
+    --main_process_port 0 \
     open_instruct/finetune.py \
     --model_name_or_path /net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/${MODEL_SIZE} \
     --use_lora \
@@ -241,6 +243,7 @@ accelerate launch \
     --mixed_precision bf16 \
     --num_machines 1 \
     --num_processes $NUM_GPUS \
+    --main_process_port 0 \
     open_instruct/finetune.py \
     --model_name_or_path /net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/${MODEL_SIZE} \
     --use_lora \
@@ -273,6 +276,7 @@ accelerate launch \
     --mixed_precision bf16 \
     --num_machines 1 \
     --num_processes $NUM_GPUS \
+    --main_process_port 0 \
     open_instruct/finetune.py \
     --model_name_or_path /net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/${MODEL_SIZE} \
     --use_lora \
@@ -306,6 +310,7 @@ accelerate launch \
     --mixed_precision bf16 \
     --num_machines 1 \
     --num_processes $NUM_GPUS \
+    --main_process_port 0 \
     open_instruct/finetune.py \
     --model_name_or_path /net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/${MODEL_SIZE} \
     --use_lora \
