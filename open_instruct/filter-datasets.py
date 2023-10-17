@@ -39,10 +39,11 @@ with open("/net/nfs.cirrascale/allennlp/jacobm/tulu_data/tulu-v2/tulu_v2_data.js
         print(subset)
         dataset_name = subset[:-len("_subset")]
         with open(os.path.join('/tulu-data/', "tulu_v2", subset, f"{dataset_name}_data.jsonl"), "r") as fin, \
-            open(f"/net/nfs.cirrascale/allennlp/jacobm/tulu_data/tulu-v2/{dataset_name}_filtered_data.jsonl", "w") as fout_filtered:
+            open(f"/net/nfs.cirrascale/allennlp/jacobm/tulu_data/tulu-v2/{dataset_name}_filtered_data.jsonl", "w") as dataset_subset:
             for line in fin:
                 example = json.loads(line)
                 if subset not in ["hard_coded_subset"] and should_be_filtered(example):
                     fout_filtered.write(line)
                 else:
                     fout.write(line)
+                    dataset_subset.write(line)
