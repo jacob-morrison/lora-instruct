@@ -85,8 +85,6 @@ do
         --mixed_precision bf16 \
         --num_machines 1 \
         --num_processes $NUM_GPUS \
-        --use_deepspeed \
-        --deepspeed_config_file ds_configs/stage3_no_offloading_accelerate.conf \
         open_instruct/finetune.py \
         --model_name_or_path /net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/${MODEL_SIZE} \
         --use_flash_attn \
