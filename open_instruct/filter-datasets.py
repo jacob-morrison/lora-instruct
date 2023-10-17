@@ -36,6 +36,7 @@ all_subsets = [f for f in os.listdir(os.path.join('/tulu-data/', "tulu_v2")) if 
 with open("/net/nfs.cirrascale/allennlp/jacobm/tulu_data/tulu-v2/tulu_v2_data.jsonl", "w") as fout, \
     open("/net/nfs.cirrascale/allennlp/jacobm/tulu_data/tulu-v2/tulu_v2_filtered_data.jsonl", "w") as fout_filtered:
     for subset in all_subsets:
+        print(subset)
         dataset_name = subset[:-len("_subset")]
         with open(os.path.join('/tulu-data/', "tulu_v2", subset, f"{dataset_name}_data.jsonl"), "r") as fin, \
             open(f"/net/nfs.cirrascale/allennlp/jacobm/tulu_data/tulu-v2/{dataset_name}_filtered_data.jsonl", "w") as fout_filtered:
