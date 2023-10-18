@@ -78,7 +78,7 @@ GRADIENT_ACC_STEPS=$(($TOTAL_BATCH_SIZE/$NUM_GPUS/$BATCH_SIZE_PER_GPU))
 # sharegpt_filtered
 # tulu_v2
 
-for DATASET in code_alpaca_filtered flan_v2_filtered
+for DATASET in hard_coded_filtered oasst1_filtered science_filtered wizardlm_filtered cot_filtered gpt4_alpaca_filtered lima_filtered open_orca_filtered sharegpt_filtered tulu_v2
 do
     echo "Training llama model ${MODEL_SIZE} using $NUM_GPUS GPUs, $BATCH_SIZE_PER_GPU batch size per GPU, $GRADIENT_ACC_STEPS gradient accumulation steps, on $DATASET using $DATASET_FILE" &&
     accelerate launch \
