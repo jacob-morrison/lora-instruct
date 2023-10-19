@@ -135,6 +135,7 @@ def main(args):
         model, tokenizer = load_hf_lm_and_tokenizer(
             model_name_or_path=args.model_name_or_path, 
             tokenizer_name_or_path=args.tokenizer_name_or_path,
+            lora_weight_path=args.lora_weight_path if args.lora_weight_path else None,
             load_in_8bit=args.load_in_8bit, 
             device_map="balanced_low_0" if torch.cuda.device_count() > 1 else "auto",
             gptq_model=args.gptq
