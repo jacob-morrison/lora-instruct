@@ -199,7 +199,7 @@ def load_hf_lm_and_tokenizer(
         padding_side="left",
     ):
     
-    from transformers import AutoModelForCausalLM, AutoTokenizer, OPTForCausalLM, GPTNeoXForCausalLM, PeftModel
+    from transformers import AutoModelForCausalLM, AutoTokenizer, OPTForCausalLM, GPTNeoXForCausalLM
 
     if gptq_model:
         from auto_gptq import AutoGPTQForCausalLM
@@ -224,6 +224,7 @@ def load_hf_lm_and_tokenizer(
             model = model.half()
 
     if lora_weight_path:
+        from peft import PeftModel
         model = PeftModel.from_pretrained(model, lora_weight_path)
     model.eval()
 
