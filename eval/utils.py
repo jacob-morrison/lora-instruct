@@ -189,6 +189,7 @@ def score_completions(model, tokenizer, scoring_examples, disable_tqdm=False):
 def load_hf_lm_and_tokenizer(
         model_name_or_path, 
         tokenizer_name_or_path=None, 
+        lora_weight_path=None,
         device_map="auto", 
         torch_dtype="auto",
         load_in_8bit=False, 
@@ -198,7 +199,7 @@ def load_hf_lm_and_tokenizer(
         padding_side="left",
     ):
     
-    from transformers import AutoModelForCausalLM, AutoTokenizer, OPTForCausalLM, GPTNeoXForCausalLM
+    from transformers import AutoModelForCausalLM, AutoTokenizer, OPTForCausalLM, GPTNeoXForCausalLM, PeftModel
 
     if gptq_model:
         from auto_gptq import AutoGPTQForCausalLM
@@ -221,6 +222,9 @@ def load_hf_lm_and_tokenizer(
                 model = model.cuda()
         if convert_to_half:
             model = model.half()
+
+    if lora_weight_path:
+        model = PeftModel.from_pretrained(model, lora_weight_path)
     model.eval()
 
     if not tokenizer_name_or_path:

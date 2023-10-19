@@ -20,6 +20,10 @@ accelerate launch \
     --use_slow_tokenizer \
     --train_file data/processed/tulu_v1/tulu_v1_data.jsonl \
     --max_seq_length 2048 \
+    --use_lora \
+    --lora_rank 256 \
+    --lora_alpha 256 \
+    --lora_dropout 0.05 \
     --preprocessing_num_workers 16 \
     --per_device_train_batch_size $BATCH_SIZE_PER_GPU \
     --gradient_accumulation_steps $GRADIENT_ACC_STEPS \

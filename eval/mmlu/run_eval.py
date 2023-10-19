@@ -151,6 +151,7 @@ def main(args):
         model, tokenizer = load_hf_lm_and_tokenizer(
             model_name_or_path=args.model_name_or_path, 
             tokenizer_name_or_path=args.tokenizer_name_or_path,
+            lora_weight_path=args.lora_weight_path if args.lora_weight_path else None,
             load_in_8bit=args.load_in_8bit, 
             device_map="balanced_low_0" if torch.cuda.device_count() > 1 else "auto",
             gptq_model=args.gptq,
@@ -318,6 +319,7 @@ if __name__ == "__main__":
         default="eval.templates.create_prompt_with_tulu_chat_format", 
         help="The function to use to create the chat format. This function will be dynamically imported. Please see examples in `eval/templates.py`."
     )
+    parser.add_argument("--lora_weight_path", help="If given, we load lora weights.")
     args = parser.parse_args()
 
     # model_name_or_path and openai_engine cannot be both None or both not None.

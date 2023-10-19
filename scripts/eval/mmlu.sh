@@ -36,6 +36,19 @@ python -m eval.mmlu.run_eval \
     --use_chat_format \
     --chat_formatting_function eval.templates.create_prompt_with_tulu_chat_format
 
+python -m eval.mmlu.run_eval \
+    --ntrain 5 \
+    --data_dir /tulu-eval-data/mmlu/ \
+    --save_dir ../tulu-results/ \
+    --model_name_or_path /net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/7B/ \
+    --tokenizer_name_or_path /net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/7B/ \
+    --lora_weight_path /net/nfs.cirrascale/allennlp/jacobm/tulu_7B_lora_exp/tulu_v2/ \
+    --eval_batch_size 2 \
+    --use_chat_format \
+    --chat_formatting_function eval.templates.create_prompt_with_tulu_chat_format
+
+    # --load_in_8bit \
+
 
 # Evaluating Tulu 7B model using 5 shot and chat format
 python -m eval.mmlu.run_eval \
