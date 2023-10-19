@@ -241,6 +241,7 @@ if __name__ == "__main__":
     parser.add_argument("--load_in_8bit", action="store_true", help="load model in 8bit mode, which will reduce memory and speed up inference.")
     parser.add_argument("--gptq", action="store_true", help="If given, we're evaluating a 4-bit quantized GPTQ model.")
     parser.add_argument("--use_chat_format", action="store_true", help="If given, the prompt will be encoded as a chat format with the roles in prompt.")
+    parser.add_argument("--lora_weight_path", help="If given, we load lora weights.")
     args = parser.parse_args()
 
     # model_name_or_path and openai_engine cannot be both None or both not None.

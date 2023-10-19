@@ -19,9 +19,10 @@ python -m eval.mmlu.run_eval \
     --tokenizer_name_or_path /net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/7B/ \
     --lora_weight_path /net/nfs.cirrascale/allennlp/jacobm/tulu_7B_lora_exp/tulu_v2/ \
     --eval_batch_size 2 \
-    --load_in_8bit \
     --use_chat_format \
     --chat_formatting_function eval.templates.create_prompt_with_tulu_chat_format
+
+    # --load_in_8bit \
 
 
 # # zero-shot with chatgpt
