@@ -319,7 +319,10 @@ if __name__ == "__main__":
         default="eval.templates.create_prompt_with_tulu_chat_format", 
         help="The function to use to create the chat format. This function will be dynamically imported. Please see examples in `eval/templates.py`."
     )
-    parser.add_argument("--lora_weight_path", help="If given, we load lora weights.")
+    parser.add_argument(
+        "--lora_weight_path",
+        help="If given, we load lora weights."
+    )
     args = parser.parse_args()
 
     # model_name_or_path and openai_engine cannot be both None or both not None.
