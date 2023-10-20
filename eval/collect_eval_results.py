@@ -5,7 +5,7 @@ from pprint import pprint
 
 root_dir = '/net/nfs.cirrascale/allennlp/jacobm/tulu_7B_lora_exp/results/'
 subdirectories = glob(root_dir + '/*/', recursive=False)
-print(subdirectories)
+pprint(subdirectories)
 final_data = {}
 for subdir in subdirectories:
     print(subdir)
