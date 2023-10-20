@@ -48,15 +48,24 @@ for subdir in subdirectories:
         tydiqa_no_context_data = json.loads(f.read())
 
     final_data[dataset] = {
-        'bbh_cot_data': bbh_cot_data,
         'bbh_direct_data': bbh_direct_data,
-        'gsm_cot_data': gsm_cot_data,
+        'bbh_cot_data': bbh_cot_data,
         'gsm_direct_data': gsm_direct_data,
+        'gsm_cot_data': gsm_cot_data,
         'mmlu_0_shot_data': mmlu_0_shot_data,
         'mmlu_5_shot_data': mmlu_5_shot_data,
         'toxigen_data': toxigen_data,
-        'tydiqa_goldp_data': tydiqa_goldp_data,
         'tydiqa_no_context_data': tydiqa_no_context_data,
+        'tydiqa_goldp_data': tydiqa_goldp_data,
     }
 
 pprint(final_data)
+
+with open('./current-results.json', 'w') as results_file:
+    results_file.write(str(final_data))
+
+# with open('./current-results.csv', 'w') as results_file:
+#     results_file.write('dataset,bbh_direct_data,bbh_cot_data,gsm_direct_data,gsm_cot_data,mmlu_0_shot_data,mmlu_5_shot_data,toxigen_data,tydiqa_no_context_data,tydiqa_goldp_data\n')
+#     for dataset in final_data:
+#         results_file.write(dataset)
+#         results_file.write(',' + str(final_data[dataset][]))
