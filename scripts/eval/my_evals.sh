@@ -1,16 +1,16 @@
 # for DATASET in code_alpaca_filtered  cot_filtered  flan_v2_filtered  gpt4_alpaca_filtered  hard_coded_filtered  lima_filtered  oasst1_filtered  open_orca_filtered science_filtered  sharegpt_filtered wizardlm_filtered
 for DATASET in tulu_v2
 do
-    # toxigen
-    python -m eval.toxigen.run_eval \
-        --data_dir /tulu-eval-data/toxigen/ \
-        --save_dir /net/nfs.cirrascale/allennlp/jacobm/tulu_7B_lora_exp/results/${DATASET}/toxigen \
-        --model_name_or_path /net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/7B/ \
-        --tokenizer_name_or_path /net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/7B/ \
-        --lora_weight_path /net/nfs.cirrascale/allennlp/jacobm/tulu_7B_lora_exp/${DATASET}/ \
-        --eval_batch_size 16 \
-        --use_vllm \
-        --use_chat_format --chat_formatting_function eval.templates.create_prompt_with_tulu_chat_format
+    # # toxigen
+    # python -m eval.toxigen.run_eval \
+    #     --data_dir /tulu-eval-data/toxigen/ \
+    #     --save_dir /net/nfs.cirrascale/allennlp/jacobm/tulu_7B_lora_exp/results/${DATASET}/toxigen \
+    #     --model_name_or_path /net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/7B/ \
+    #     --tokenizer_name_or_path /net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/7B/ \
+    #     --lora_weight_path /net/nfs.cirrascale/allennlp/jacobm/tulu_7B_lora_exp/${DATASET}/ \
+    #     --eval_batch_size 16 \
+    #     --use_vllm \
+    #     --use_chat_format --chat_formatting_function eval.templates.create_prompt_with_tulu_chat_format
 
     # # MMLU
     # python -m eval.mmlu.run_eval \
@@ -24,17 +24,17 @@ do
     #     --use_chat_format \
     #     --chat_formatting_function eval.templates.create_prompt_with_tulu_chat_format
 
-    # TruthfulQA (WIP)
-    python -m eval.truthfulqa.run_eval \
-        --data_dir /tulu-eval-data/truthfulqa \
-        --save_dir /net/nfs.cirrascale/allennlp/jacobm/tulu_7B_lora_exp/results/${DATASET}/truthfulqa \
-        --model_name_or_path /net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/7B/ \
-        --tokenizer_name_or_path /net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/7B/ \
-        --lora_weight_path /net/nfs.cirrascale/allennlp/jacobm/tulu_7B_lora_exp/${DATASET}/ \
-        --eval_batch_size 10 \
-        --load_in_8bit \
-        --use_chat_format \
-        --chat_formatting_function eval.templates.create_prompt_with_tulu_chat_format
+    # # TruthfulQA (WIP)
+    # python -m eval.truthfulqa.run_eval \
+    #     --data_dir /tulu-eval-data/truthfulqa \
+    #     --save_dir /net/nfs.cirrascale/allennlp/jacobm/tulu_7B_lora_exp/results/${DATASET}/truthfulqa \
+    #     --model_name_or_path /net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/7B/ \
+    #     --tokenizer_name_or_path /net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/7B/ \
+    #     --lora_weight_path /net/nfs.cirrascale/allennlp/jacobm/tulu_7B_lora_exp/${DATASET}/ \
+    #     --eval_batch_size 10 \
+    #     --load_in_8bit \
+    #     --use_chat_format \
+    #     --chat_formatting_function eval.templates.create_prompt_with_tulu_chat_format
 
     # GSM CoT (WIP)
     python -m eval.gsm.run_eval \
