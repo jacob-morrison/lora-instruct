@@ -9,7 +9,7 @@ pprint(subdirectories)
 final_data = {}
 for subdir in subdirectories:
     print(subdir)
-    dataset = subdir.split('/')[-1]
+    dataset = subdir.split('/')[-2]
     print(dataset)
     # bbh
         # cot
