@@ -61,7 +61,7 @@ for subdir in subdirectories:
 
 pprint(final_data)
 
-with open('./current-results.json', 'w') as results_file:
+with open('/results/current-results.json', 'w') as results_file:
     results_file.write(str(final_data))
 
 # with open('./current-results.csv', 'w') as results_file:
