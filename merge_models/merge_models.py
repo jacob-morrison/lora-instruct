@@ -12,6 +12,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("-b", "--base_model", help = "Which base model", type = str)
 parser.add_argument("-l", "--base_lora_path", help = "Which base model", type = str)
 parser.add_argument('--target_lora_modules', nargs='+')
+parser.add_argument('--results_dir', nargs='?', default='/results')
 args = parser.parse_args()
 
 if args.base_lora_path:
@@ -67,7 +68,7 @@ model = get_peft_model(base_lora_model, peft_config)
 merged_model = set_peft_model_state_dict(base_model, new_state_dict)
 
 path_to_write = args.base_model.replace('/', '-')
-out_dir = f'/results/merged-lora-weights/'
+out_dir = os.path.join(args.results_dir, '/merged-lora-weights/')
 merged_model.save_pretrained(out_dir)
 tokenizer.save_pretrained(out_dir)
 
