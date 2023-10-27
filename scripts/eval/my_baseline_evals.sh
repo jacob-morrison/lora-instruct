@@ -9,7 +9,7 @@ do
         --tokenizer_name_or_path /net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/7B/ \
         --eval_batch_size 16 \
         --use_vllm \
-        --use_chat_format --chat_formatting_function eval.templates.create_prompt_with_tulu_chat_format
+        --chat_formatting_function eval.templates.create_prompt_with_tulu_chat_format
 
     # MMLU
     for SHOTS in 0 5
@@ -21,7 +21,6 @@ do
             --model_name_or_path /net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/7B/ \
             --tokenizer_name_or_path /net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/7B/ \
             --eval_batch_size 2 \
-            --use_chat_format \
             --chat_formatting_function eval.templates.create_prompt_with_tulu_chat_format
     done
 
@@ -34,7 +33,7 @@ do
         --model_name_or_path /net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/7B/ \
         --tokenizer_name_or_path /net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/7B/ \
         --n_shot 8 \
-        --use_chat_format --chat_formatting_function eval.templates.create_prompt_with_tulu_chat_format
+        --chat_formatting_function eval.templates.create_prompt_with_tulu_chat_format
 
     # GSM Direct (WIP)
     python -m eval.gsm.run_eval \
@@ -46,7 +45,7 @@ do
         --tokenizer_name_or_path /net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/7B/ \
         --n_shot 8 \
         --no_cot \
-        --use_chat_format --chat_formatting_function eval.templates.create_prompt_with_tulu_chat_format
+        --chat_formatting_function eval.templates.create_prompt_with_tulu_chat_format
 
     # TydiQA No Context (WIP)
     python -m eval.tydiqa.run_eval \
@@ -59,7 +58,7 @@ do
         --use_vllm \
         --model_name_or_path /net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/7B/ \
         --tokenizer_name_or_path /net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/7B/ \
-        --use_chat_format --chat_formatting_function eval.templates.create_prompt_with_tulu_chat_format
+        --chat_formatting_function eval.templates.create_prompt_with_tulu_chat_format
 
     # TydiQA GoldP (WIP)
     python -m eval.tydiqa.run_eval \
@@ -71,7 +70,7 @@ do
         --use_vllm \
         --model_name_or_path /net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/7B/ \
         --tokenizer_name_or_path /net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/7B/ \
-        --use_chat_format --chat_formatting_function eval.templates.create_prompt_with_tulu_chat_format
+        --chat_formatting_function eval.templates.create_prompt_with_tulu_chat_format
 
     # BBH CoT (WIP)
     python -m eval.bbh.run_eval \
@@ -81,7 +80,7 @@ do
         --model_name_or_path /net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/7B/ \
         --tokenizer_name_or_path /net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/7B/ \
         --max_num_examples_per_task 40 \
-        --use_chat_format --chat_formatting_function eval.templates.create_prompt_with_tulu_chat_format
+        --chat_formatting_function eval.templates.create_prompt_with_tulu_chat_format
 
     # BBH Direct (WIP)
     python -m eval.bbh.run_eval \
@@ -92,5 +91,5 @@ do
         --tokenizer_name_or_path /net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/7B/ \
         --max_num_examples_per_task 40 \
         --no_cot \
-        --use_chat_format --chat_formatting_function eval.templates.create_prompt_with_tulu_chat_format
+        --chat_formatting_function eval.templates.create_prompt_with_tulu_chat_format
 done

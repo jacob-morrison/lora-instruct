@@ -1,1 +1,2927 @@
-{'tulu_v2': {'bbh_direct_data': {'word_sorting': 0.2, 'disambiguation_qa': 0.4, 'movie_recommendation': 0.325, 'formal_fallacies': 0.525, 'causal_judgement': 0.45, 'multistep_arithmetic_two': 0.0, 'dyck_languages': 0.175, 'sports_understanding': 0.525, 'hyperbaton': 0.425, 'date_understanding': 0.3, 'web_of_lies': 0.475, 'boolean_expressions': 0.675, 'logical_deduction_three_objects': 0.375, 'snarks': 0.475, 'geometric_shapes': 0.3, 'navigate': 0.525, 'penguins_in_a_table': 0.375, 'ruin_names': 0.3, 'logical_deduction_five_objects': 0.25, 'salient_translation_error_detection': 0.275, 'tracking_shuffled_objects_seven_objects': 0.125, 'tracking_shuffled_objects_five_objects': 0.1, 'temporal_sequences': 0.075, 'tracking_shuffled_objects_three_objects': 0.35, 'logical_deduction_seven_objects': 0.1, 'object_counting': 0.45, 'reasoning_about_colored_objects': 0.25, 'average_exact_match': 0.3259259259259259}, 'bbh_cot_data': {'word_sorting': 0.075, 'disambiguation_qa': 0.35, 'movie_recommendation': 0.7, 'formal_fallacies': 0.475, 'causal_judgement': 0.475, 'multistep_arithmetic_two': 0.0, 'dyck_languages': 0.025, 'sports_understanding': 0.85, 'hyperbaton': 0.625, 'date_understanding': 0.65, 'web_of_lies': 0.625, 'boolean_expressions': 0.675, 'logical_deduction_three_objects': 0.7, 'snarks': 0.45, 'geometric_shapes': 0.275, 'navigate': 0.575, 'penguins_in_a_table': 0.375, 'ruin_names': 0.3, 'logical_deduction_five_objects': 0.375, 'salient_translation_error_detection': 0.175, 'tracking_shuffled_objects_seven_objects': 0.1, 'tracking_shuffled_objects_five_objects': 0.175, 'temporal_sequences': 0.125, 'tracking_shuffled_objects_three_objects': 0.4, 'logical_deduction_seven_objects': 0.175, 'object_counting': 0.575, 'reasoning_about_colored_objects': 0.525, 'average_exact_match': 0.400925925925926}, 'gsm_direct_data': {'exact_match': 0.085}, 'gsm_cot_data': {'exact_match': 0.155}, 'mmlu_0_shot_data': {'average_acc': 0.3826378008830651, 'subcat_acc': {'math': 0.26785714285714285, 'health': 0.3957317073170732, 'physics': 0.2953125, 'business': 0.4622425629290618, 'biology': 0.381057268722467, 'chemistry': 0.24092409240924093, 'computer science': 0.39563106796116504, 'economics': 0.31536388140161725, 'engineering': 0.33793103448275863, 'philosophy': 0.36381709741550694, 'other': 0.4609442060085837, 'history': 0.4731182795698925, 'geography': 0.41919191919191917, 'politics': 0.4645061728395062, 'psychology': 0.46153846153846156, 'culture': 0.49698795180722893, 'law': 0.31990924560408396}, 'cat_acc': {'STEM': 0.30881378396288933, 'humanities': 0.3689691817215728, 'social sciences': 0.4280142996425089, 'other (business, health, misc.)': 0.4281307834669957}}, 'mmlu_5_shot_data': {'average_acc': 0.47336561743341404, 'subcat_acc': {'math': 0.31296992481203006, 'health': 0.4945121951219512, 'physics': 0.3796875, 'business': 0.6727688787185355, 'biology': 0.552863436123348, 'chemistry': 0.36633663366336633, 'computer science': 0.40048543689320387, 'economics': 0.42183288409703507, 'engineering': 0.43448275862068964, 'philosophy': 0.4423459244532803, 'other': 0.5914163090128756, 'history': 0.5193548387096775, 'geography': 0.6616161616161617, 'politics': 0.5462962962962963, 'psychology': 0.6248919619706137, 'culture': 0.6234939759036144, 'law': 0.33238797504254114}, 'cat_acc': {'STEM': 0.3863485752153744, 'humanities': 0.416365568544102, 'social sciences': 0.5615859603509912, 'other (business, health, misc.)': 0.5533621221468229}}, 'toxigen_data': {'trans': 0.76, 'asian': 0.998, 'black': 0.998, 'mexican': 0.586, 'jewish': 0.878, 'native_american': 0.88, 'physical_disability': 0.83, 'lgbtq': 0.656, 'middle_east': 0.786, 'women': 0.624, 'chinese': 0.666, 'latino': 0.594, 'mental_disability': 0.936, 'muslim': 0.916, 'overall': 0.7934285714285715}, 'tydiqa_no_context_data': {'arabic': {'exact_match': 1.0, 'f1': 4.132565657086941}, 'telugu': {'exact_match': 0.0, 'f1': 0.28571428571428575}, 'russian': {'exact_match': 4.0, 'f1': 8.969444444444445}, 'bengali': {'exact_match': 1.0, 'f1': 1.4857142857142858}, 'finnish': {'exact_match': 17.0, 'f1': 22.37061504541157}, 'korean': {'exact_match': 14.0, 'f1': 19.990816326530616}, 'indonesian': {'exact_match': 7.0, 'f1': 19.860783376973192}, 'english': {'exact_match': 26.0, 'f1': 37.99386159248388}, 'swahili': {'exact_match': 6.0, 'f1': 7.404040404040404}, 'average': {'f1': 13.610395046488847, 'exact_match': 8.444444444444445}}, 'tydiqa_goldp_data': {'finnish': {'exact_match': 41.0, 'f1': 54.23299833686031}, 'swahili': {'exact_match': 41.0, 'f1': 51.821466456249055}, 'korean': {'exact_match': 40.0, 'f1': 52.18686868686868}, 'arabic': {'exact_match': 17.0, 'f1': 40.93295462787959}, 'indonesian': {'exact_match': 47.0, 'f1': 62.62093223422043}, 'english': {'exact_match': 50.0, 'f1': 68.85843055820656}, 'russian': {'exact_match': 23.0, 'f1': 50.19171406775192}, 'telugu': {'exact_match': 0.0, 'f1': 0.7333333333333334}, 'bengali': {'exact_match': 21.0, 'f1': 30.9527417027417}, 'average': {'f1': 45.83682666712351, 'exact_match': 31.11111111111111}}}, 'code_alpaca_filtered': {'bbh_direct_data': {'word_sorting': 0.2, 'disambiguation_qa': 0.4, 'movie_recommendation': 0.325, 'formal_fallacies': 0.525, 'causal_judgement': 0.45, 'multistep_arithmetic_two': 0.0, 'dyck_languages': 0.175, 'sports_understanding': 0.525, 'hyperbaton': 0.425, 'date_understanding': 0.3, 'web_of_lies': 0.475, 'boolean_expressions': 0.675, 'logical_deduction_three_objects': 0.375, 'snarks': 0.475, 'geometric_shapes': 0.3, 'navigate': 0.525, 'penguins_in_a_table': 0.375, 'ruin_names': 0.3, 'logical_deduction_five_objects': 0.25, 'salient_translation_error_detection': 0.275, 'tracking_shuffled_objects_seven_objects': 0.125, 'tracking_shuffled_objects_five_objects': 0.1, 'temporal_sequences': 0.075, 'tracking_shuffled_objects_three_objects': 0.35, 'logical_deduction_seven_objects': 0.1, 'object_counting': 0.45, 'reasoning_about_colored_objects': 0.25, 'average_exact_match': 0.3259259259259259}, 'bbh_cot_data': {'word_sorting': 0.075, 'disambiguation_qa': 0.35, 'movie_recommendation': 0.7, 'formal_fallacies': 0.475, 'causal_judgement': 0.475, 'multistep_arithmetic_two': 0.0, 'dyck_languages': 0.025, 'sports_understanding': 0.85, 'hyperbaton': 0.625, 'date_understanding': 0.65, 'web_of_lies': 0.625, 'boolean_expressions': 0.675, 'logical_deduction_three_objects': 0.7, 'snarks': 0.45, 'geometric_shapes': 0.275, 'navigate': 0.575, 'penguins_in_a_table': 0.375, 'ruin_names': 0.3, 'logical_deduction_five_objects': 0.375, 'salient_translation_error_detection': 0.175, 'tracking_shuffled_objects_seven_objects': 0.1, 'tracking_shuffled_objects_five_objects': 0.175, 'temporal_sequences': 0.125, 'tracking_shuffled_objects_three_objects': 0.4, 'logical_deduction_seven_objects': 0.175, 'object_counting': 0.575, 'reasoning_about_colored_objects': 0.525, 'average_exact_match': 0.400925925925926}, 'gsm_direct_data': {'exact_match': 0.085}, 'gsm_cot_data': {'exact_match': 0.155}, 'mmlu_0_shot_data': {'average_acc': 0.32488249537102976, 'subcat_acc': {'math': 0.24718045112781956, 'health': 0.33902439024390246, 'physics': 0.278125, 'business': 0.38672768878718533, 'biology': 0.3458149779735683, 'chemistry': 0.22772277227722773, 'computer science': 0.3470873786407767, 'economics': 0.2816711590296496, 'engineering': 0.33793103448275863, 'philosophy': 0.3106361829025845, 'other': 0.3587982832618026, 'history': 0.3763440860215054, 'geography': 0.35353535353535354, 'politics': 0.36728395061728397, 'psychology': 0.34917891097666376, 'culture': 0.4367469879518072, 'law': 0.2943845717526943}, 'cat_acc': {'STEM': 0.2846255798542081, 'humanities': 0.3175345377258236, 'social sciences': 0.34644133896652585, 'other (business, health, misc.)': 0.35256014805675506}}, 'mmlu_5_shot_data': {'average_acc': 0.3288705312633528, 'subcat_acc': {'math': 0.24906015037593984, 'health': 0.3475609756097561, 'physics': 0.2828125, 'business': 0.39359267734553777, 'biology': 0.3303964757709251, 'chemistry': 0.23102310231023102, 'computer science': 0.3422330097087379, 'economics': 0.2776280323450135, 'engineering': 0.3448275862068966, 'philosophy': 0.31411530815109345, 'other': 0.36738197424892705, 'history': 0.3709677419354839, 'geography': 0.41414141414141414, 'politics': 0.37962962962962965, 'psychology': 0.36646499567847884, 'culture': 0.4036144578313253, 'law': 0.29608621667612023}, 'cat_acc': {'STEM': 0.2839628893306826, 'humanities': 0.3185972369819341, 'social sciences': 0.354891127721807, 'other (business, health, misc.)': 0.3608883405305367}}, 'toxigen_data': {'trans': 0.76, 'asian': 0.998, 'black': 0.998, 'mexican': 0.586, 'jewish': 0.878, 'native_american': 0.88, 'physical_disability': 0.83, 'lgbtq': 0.656, 'middle_east': 0.786, 'women': 0.624, 'chinese': 0.666, 'latino': 0.594, 'mental_disability': 0.936, 'muslim': 0.916, 'overall': 0.7934285714285715}, 'tydiqa_no_context_data': {'arabic': {'exact_match': 1.0, 'f1': 4.132565657086941}, 'bengali': {'exact_match': 2.0, 'f1': 2.5357142857142856}, 'telugu': {'exact_match': 0.0, 'f1': 0.0}, 'korean': {'exact_match': 4.0, 'f1': 8.233333333333334}, 'russian': {'exact_match': 1.0, 'f1': 4.671428571428571}, 'indonesian': {'exact_match': 9.0, 'f1': 22.01531297461877}, 'swahili': {'exact_match': 4.0, 'f1': 7.18210008945303}, 'english': {'exact_match': 23.0, 'f1': 36.98261947203123}, 'finnish': {'exact_match': 17.0, 'f1': 27.059654964918124}, 'average': {'f1': 12.534747705398253, 'exact_match': 6.777777777777778}}, 'tydiqa_goldp_data': {'korean': {'exact_match': 57.0, 'f1': 67.36790801790801}, 'telugu': {'exact_match': 0.0, 'f1': 1.269047619047619}, 'english': {'exact_match': 48.0, 'f1': 69.22847623137098}, 'arabic': {'exact_match': 25.0, 'f1': 47.915051652382054}, 'finnish': {'exact_match': 47.0, 'f1': 57.995816021663956}, 'swahili': {'exact_match': 22.0, 'f1': 32.18513169474267}, 'indonesian': {'exact_match': 38.0, 'f1': 51.064307691456015}, 'russian': {'exact_match': 27.0, 'f1': 52.06203726131989}, 'bengali': {'exact_match': 21.0, 'f1': 30.228860028860026}, 'average': {'f1': 45.479626246527914, 'exact_match': 31.666666666666668}}}, 'cot_filtered': {'bbh_direct_data': {'word_sorting': 0.2, 'disambiguation_qa': 0.4, 'movie_recommendation': 0.325, 'formal_fallacies': 0.525, 'causal_judgement': 0.45, 'multistep_arithmetic_two': 0.0, 'dyck_languages': 0.175, 'sports_understanding': 0.525, 'hyperbaton': 0.425, 'date_understanding': 0.3, 'web_of_lies': 0.475, 'boolean_expressions': 0.675, 'logical_deduction_three_objects': 0.375, 'snarks': 0.475, 'geometric_shapes': 0.3, 'navigate': 0.525, 'penguins_in_a_table': 0.375, 'ruin_names': 0.3, 'logical_deduction_five_objects': 0.25, 'salient_translation_error_detection': 0.275, 'tracking_shuffled_objects_seven_objects': 0.125, 'tracking_shuffled_objects_five_objects': 0.1, 'temporal_sequences': 0.075, 'tracking_shuffled_objects_three_objects': 0.35, 'logical_deduction_seven_objects': 0.1, 'object_counting': 0.45, 'reasoning_about_colored_objects': 0.25, 'average_exact_match': 0.3259259259259259}, 'bbh_cot_data': {'word_sorting': 0.075, 'disambiguation_qa': 0.35, 'movie_recommendation': 0.7, 'formal_fallacies': 0.475, 'causal_judgement': 0.475, 'multistep_arithmetic_two': 0.0, 'dyck_languages': 0.025, 'sports_understanding': 0.85, 'hyperbaton': 0.625, 'date_understanding': 0.65, 'web_of_lies': 0.625, 'boolean_expressions': 0.675, 'logical_deduction_three_objects': 0.7, 'snarks': 0.45, 'geometric_shapes': 0.275, 'navigate': 0.575, 'penguins_in_a_table': 0.375, 'ruin_names': 0.3, 'logical_deduction_five_objects': 0.375, 'salient_translation_error_detection': 0.175, 'tracking_shuffled_objects_seven_objects': 0.1, 'tracking_shuffled_objects_five_objects': 0.175, 'temporal_sequences': 0.125, 'tracking_shuffled_objects_three_objects': 0.4, 'logical_deduction_seven_objects': 0.175, 'object_counting': 0.575, 'reasoning_about_colored_objects': 0.525, 'average_exact_match': 0.400925925925926}, 'gsm_direct_data': {'exact_match': 0.085}, 'gsm_cot_data': {'exact_match': 0.155}, 'mmlu_0_shot_data': {'average_acc': 0.32901296111665007, 'subcat_acc': {'math': 0.23684210526315788, 'health': 0.3432926829268293, 'physics': 0.2734375, 'business': 0.43935926773455375, 'biology': 0.3436123348017621, 'chemistry': 0.2079207920792079, 'computer science': 0.33495145631067963, 'economics': 0.2857142857142857, 'engineering': 0.2896551724137931, 'philosophy': 0.3036779324055666, 'other': 0.38626609442060084, 'history': 0.3935483870967742, 'geography': 0.35858585858585856, 'politics': 0.37808641975308643, 'psychology': 0.3742437337942956, 'culture': 0.3825301204819277, 'law': 0.2972206466250709}, 'cat_acc': {'STEM': 0.2736911862160371, 'humanities': 0.3190223166843783, 'social sciences': 0.35359116022099446, 'other (business, health, misc.)': 0.3716841455891425}}, 'mmlu_5_shot_data': {'average_acc': 0.3404785643070788, 'subcat_acc': {'math': 0.26033834586466165, 'health': 0.3518292682926829, 'physics': 0.29375, 'business': 0.42105263157894735, 'biology': 0.36123348017621143, 'chemistry': 0.23102310231023102, 'computer science': 0.33495145631067963, 'economics': 0.29514824797843664, 'engineering': 0.30344827586206896, 'philosophy': 0.323558648111332, 'other': 0.39914163090128757, 'history': 0.4032258064516129, 'geography': 0.4090909090909091, 'politics': 0.37808641975308643, 'psychology': 0.3958513396715644, 'culture': 0.3795180722891566, 'law': 0.2943845717526943}, 'cat_acc': {'STEM': 0.29191517561298874, 'humanities': 0.3283740701381509, 'social sciences': 0.3669158271043224, 'other (business, health, misc.)': 0.37816162862430597}}, 'toxigen_data': {'trans': 0.76, 'asian': 0.998, 'black': 0.998, 'mexican': 0.586, 'jewish': 0.878, 'native_american': 0.88, 'physical_disability': 0.83, 'lgbtq': 0.656, 'middle_east': 0.786, 'women': 0.624, 'chinese': 0.666, 'latino': 0.594, 'mental_disability': 0.936, 'muslim': 0.916, 'overall': 0.7934285714285715}, 'tydiqa_no_context_data': {'korean': {'exact_match': 16.0, 'f1': 22.84081632653061}, 'english': {'exact_match': 24.0, 'f1': 34.27490650607711}, 'finnish': {'exact_match': 13.0, 'f1': 19.879206349206353}, 'swahili': {'exact_match': 1.0, 'f1': 3.865384615384616}, 'indonesian': {'exact_match': 13.0, 'f1': 24.88719499081515}, 'telugu': {'exact_match': 0.0, 'f1': 0.28571428571428575}, 'bengali': {'exact_match': 0.0, 'f1': 0.7357142857142859}, 'russian': {'exact_match': 5.0, 'f1': 9.783333333333331}, 'arabic': {'exact_match': 1.0, 'f1': 4.6111571489974565}, 'average': {'f1': 13.462603093530355, 'exact_match': 8.11111111111111}}, 'tydiqa_goldp_data': {'english': {'exact_match': 48.0, 'f1': 63.19258792037145}, 'bengali': {'exact_match': 20.0, 'f1': 30.960678210678207}, 'russian': {'exact_match': 27.0, 'f1': 42.922364175010934}, 'swahili': {'exact_match': 28.0, 'f1': 41.23626459129518}, 'telugu': {'exact_match': 0.0, 'f1': 0.6666666666666665}, 'korean': {'exact_match': 51.0, 'f1': 61.968154068154064}, 'finnish': {'exact_match': 57.0, 'f1': 70.13324576176971}, 'indonesian': {'exact_match': 46.0, 'f1': 61.826756995226816}, 'arabic': {'exact_match': 30.0, 'f1': 51.58194677848734}, 'average': {'f1': 47.16540724085115, 'exact_match': 34.111111111111114}}}, 'flan_v2_filtered': {'bbh_direct_data': {'word_sorting': 0.2, 'disambiguation_qa': 0.4, 'movie_recommendation': 0.325, 'formal_fallacies': 0.525, 'causal_judgement': 0.45, 'multistep_arithmetic_two': 0.0, 'dyck_languages': 0.175, 'sports_understanding': 0.525, 'hyperbaton': 0.425, 'date_understanding': 0.3, 'web_of_lies': 0.475, 'boolean_expressions': 0.675, 'logical_deduction_three_objects': 0.375, 'snarks': 0.475, 'geometric_shapes': 0.3, 'navigate': 0.525, 'penguins_in_a_table': 0.375, 'ruin_names': 0.3, 'logical_deduction_five_objects': 0.25, 'salient_translation_error_detection': 0.275, 'tracking_shuffled_objects_seven_objects': 0.125, 'tracking_shuffled_objects_five_objects': 0.1, 'temporal_sequences': 0.075, 'tracking_shuffled_objects_three_objects': 0.35, 'logical_deduction_seven_objects': 0.1, 'object_counting': 0.45, 'reasoning_about_colored_objects': 0.25, 'average_exact_match': 0.3259259259259259}, 'bbh_cot_data': {'word_sorting': 0.075, 'disambiguation_qa': 0.35, 'movie_recommendation': 0.7, 'formal_fallacies': 0.475, 'causal_judgement': 0.475, 'multistep_arithmetic_two': 0.0, 'dyck_languages': 0.025, 'sports_understanding': 0.85, 'hyperbaton': 0.625, 'date_understanding': 0.65, 'web_of_lies': 0.625, 'boolean_expressions': 0.675, 'logical_deduction_three_objects': 0.7, 'snarks': 0.45, 'geometric_shapes': 0.275, 'navigate': 0.575, 'penguins_in_a_table': 0.375, 'ruin_names': 0.3, 'logical_deduction_five_objects': 0.375, 'salient_translation_error_detection': 0.175, 'tracking_shuffled_objects_seven_objects': 0.1, 'tracking_shuffled_objects_five_objects': 0.175, 'temporal_sequences': 0.125, 'tracking_shuffled_objects_three_objects': 0.4, 'logical_deduction_seven_objects': 0.175, 'object_counting': 0.575, 'reasoning_about_colored_objects': 0.525, 'average_exact_match': 0.400925925925926}, 'gsm_direct_data': {'exact_match': 0.085}, 'gsm_cot_data': {'exact_match': 0.155}, 'mmlu_0_shot_data': {'average_acc': 0.35436547500356075, 'subcat_acc': {'math': 0.24530075187969924, 'health': 0.3524390243902439, 'physics': 0.2765625, 'business': 0.43935926773455375, 'biology': 0.3722466960352423, 'chemistry': 0.22442244224422442, 'computer science': 0.3737864077669903, 'economics': 0.3059299191374663, 'engineering': 0.3586206896551724, 'philosophy': 0.3320079522862823, 'other': 0.40429184549356223, 'history': 0.4290322580645161, 'geography': 0.40404040404040403, 'politics': 0.4243827160493827, 'psychology': 0.41745894554883317, 'culture': 0.46987951807228917, 'law': 0.3210436755530346}, 'cat_acc': {'STEM': 0.29191517561298874, 'humanities': 0.3470775770456961, 'social sciences': 0.39681507962300944, 'other (business, health, misc.)': 0.3827884022208513}}, 'mmlu_5_shot_data': {'average_acc': 0.37131462754593364, 'subcat_acc': {'math': 0.25281954887218044, 'health': 0.38170731707317074, 'physics': 0.3453125, 'business': 0.4782608695652174, 'biology': 0.3700440528634361, 'chemistry': 0.23432343234323433, 'computer science': 0.3422330097087379, 'economics': 0.3005390835579515, 'engineering': 0.31724137931034485, 'philosophy': 0.3742544731610338, 'other': 0.4188841201716738, 'history': 0.4505376344086022, 'geography': 0.4696969696969697, 'politics': 0.44598765432098764, 'psychology': 0.4191875540190147, 'culture': 0.39759036144578314, 'law': 0.3295519001701645}, 'cat_acc': {'STEM': 0.3035122597746852, 'humanities': 0.37258235919234856, 'social sciences': 0.39714007149821257, 'other (business, health, misc.)': 0.4080814312152992}}, 'toxigen_data': {'trans': 0.76, 'asian': 0.998, 'black': 0.998, 'mexican': 0.586, 'jewish': 0.878, 'native_american': 0.88, 'physical_disability': 0.83, 'lgbtq': 0.656, 'middle_east': 0.786, 'women': 0.624, 'chinese': 0.666, 'latino': 0.594, 'mental_disability': 0.936, 'muslim': 0.916, 'overall': 0.7934285714285715}, 'tydiqa_no_context_data': {'korean': {'exact_match': 11.0, 'f1': 17.16125541125541}, 'arabic': {'exact_match': 1.0, 'f1': 4.487589044941986}, 'swahili': {'exact_match': 4.0, 'f1': 4.142857142857142}, 'bengali': {'exact_match': 1.0, 'f1': 1.2857142857142858}, 'telugu': {'exact_match': 0.0, 'f1': 0.33333333333333326}, 'indonesian': {'exact_match': 11.0, 'f1': 22.41833705776804}, 'russian': {'exact_match': 7.0, 'f1': 14.405194805194808}, 'english': {'exact_match': 27.0, 'f1': 39.71511878105593}, 'finnish': {'exact_match': 12.0, 'f1': 20.219746431067183}, 'average': {'f1': 13.796571810354234, 'exact_match': 8.222222222222221}}, 'tydiqa_goldp_data': {'english': {'exact_match': 49.0, 'f1': 67.981341049293}, 'bengali': {'exact_match': 21.0, 'f1': 31.048196248196245}, 'russian': {'exact_match': 24.0, 'f1': 39.823293870791886}, 'telugu': {'exact_match': 0.0, 'f1': 0.33333333333333326}, 'indonesian': {'exact_match': 44.0, 'f1': 63.202379665209484}, 'korean': {'exact_match': 43.0, 'f1': 54.439278390782135}, 'arabic': {'exact_match': 24.0, 'f1': 48.530353847117546}, 'finnish': {'exact_match': 48.0, 'f1': 61.63854287474977}, 'swahili': {'exact_match': 22.0, 'f1': 37.64862343518329}, 'average': {'f1': 44.96059363496185, 'exact_match': 30.555555555555557}}}, 'gpt4_alpaca_filtered': {'bbh_direct_data': {'word_sorting': 0.2, 'disambiguation_qa': 0.4, 'movie_recommendation': 0.325, 'formal_fallacies': 0.525, 'causal_judgement': 0.45, 'multistep_arithmetic_two': 0.0, 'dyck_languages': 0.175, 'sports_understanding': 0.525, 'hyperbaton': 0.425, 'date_understanding': 0.3, 'web_of_lies': 0.475, 'boolean_expressions': 0.675, 'logical_deduction_three_objects': 0.375, 'snarks': 0.475, 'geometric_shapes': 0.3, 'navigate': 0.525, 'penguins_in_a_table': 0.375, 'ruin_names': 0.3, 'logical_deduction_five_objects': 0.25, 'salient_translation_error_detection': 0.275, 'tracking_shuffled_objects_seven_objects': 0.125, 'tracking_shuffled_objects_five_objects': 0.1, 'temporal_sequences': 0.075, 'tracking_shuffled_objects_three_objects': 0.35, 'logical_deduction_seven_objects': 0.1, 'object_counting': 0.45, 'reasoning_about_colored_objects': 0.25, 'average_exact_match': 0.3259259259259259}, 'bbh_cot_data': {'word_sorting': 0.075, 'disambiguation_qa': 0.35, 'movie_recommendation': 0.7, 'formal_fallacies': 0.475, 'causal_judgement': 0.475, 'multistep_arithmetic_two': 0.0, 'dyck_languages': 0.025, 'sports_understanding': 0.85, 'hyperbaton': 0.625, 'date_understanding': 0.65, 'web_of_lies': 0.625, 'boolean_expressions': 0.675, 'logical_deduction_three_objects': 0.7, 'snarks': 0.45, 'geometric_shapes': 0.275, 'navigate': 0.575, 'penguins_in_a_table': 0.375, 'ruin_names': 0.3, 'logical_deduction_five_objects': 0.375, 'salient_translation_error_detection': 0.175, 'tracking_shuffled_objects_seven_objects': 0.1, 'tracking_shuffled_objects_five_objects': 0.175, 'temporal_sequences': 0.125, 'tracking_shuffled_objects_three_objects': 0.4, 'logical_deduction_seven_objects': 0.175, 'object_counting': 0.575, 'reasoning_about_colored_objects': 0.525, 'average_exact_match': 0.400925925925926}, 'gsm_direct_data': {'exact_match': 0.085}, 'gsm_cot_data': {'exact_match': 0.155}, 'mmlu_0_shot_data': {'average_acc': 0.3196125907990315, 'subcat_acc': {'math': 0.23590225563909775, 'health': 0.3280487804878049, 'physics': 0.2734375, 'business': 0.40274599542334094, 'biology': 0.3392070484581498, 'chemistry': 0.18151815181518152, 'computer science': 0.3300970873786408, 'economics': 0.24528301886792453, 'engineering': 0.32413793103448274, 'philosophy': 0.3061630218687873, 'other': 0.3648068669527897, 'history': 0.3774193548387097, 'geography': 0.3484848484848485, 'politics': 0.37191358024691357, 'psychology': 0.35695764909248057, 'culture': 0.42771084337349397, 'law': 0.2932501418037436}, 'cat_acc': {'STEM': 0.2710404241219351, 'humanities': 0.31540913921360253, 'social sciences': 0.34026649333766656, 'other (business, health, misc.)': 0.351326341764343}}, 'mmlu_5_shot_data': {'average_acc': 0.3364193134881071, 'subcat_acc': {'math': 0.25375939849624063, 'health': 0.35853658536585364, 'physics': 0.2734375, 'business': 0.38443935926773454, 'biology': 0.32158590308370044, 'chemistry': 0.23102310231023102, 'computer science': 0.3470873786407767, 'economics': 0.261455525606469, 'engineering': 0.36551724137931035, 'philosophy': 0.32852882703777336, 'other': 0.3725321888412017, 'history': 0.4, 'geography': 0.4090909090909091, 'politics': 0.42592592592592593, 'psychology': 0.3802938634399309, 'culture': 0.4246987951807229, 'law': 0.290414066931367}, 'cat_acc': {'STEM': 0.2839628893306826, 'humanities': 0.3283740701381509, 'social sciences': 0.36789080272993174, 'other (business, health, misc.)': 0.36705737199259714}}, 'toxigen_data': {'trans': 0.76, 'asian': 0.998, 'black': 0.998, 'mexican': 0.586, 'jewish': 0.878, 'native_american': 0.88, 'physical_disability': 0.83, 'lgbtq': 0.656, 'middle_east': 0.786, 'women': 0.624, 'chinese': 0.666, 'latino': 0.594, 'mental_disability': 0.936, 'muslim': 0.916, 'overall': 0.7934285714285715}, 'tydiqa_no_context_data': {'english': {'exact_match': 20.0, 'f1': 32.313383266350016}, 'swahili': {'exact_match': 4.0, 'f1': 5.310411810411811}, 'indonesian': {'exact_match': 7.0, 'f1': 20.32504771307466}, 'korean': {'exact_match': 13.0, 'f1': 18.2}, 'bengali': {'exact_match': 1.0, 'f1': 1.7857142857142858}, 'telugu': {'exact_match': 0.0, 'f1': 0.0}, 'finnish': {'exact_match': 16.0, 'f1': 22.058673693456303}, 'arabic': {'exact_match': 0.0, 'f1': 3.364206530383001}, 'russian': {'exact_match': 4.0, 'f1': 14.846775446775448}, 'average': {'f1': 13.133801416240614, 'exact_match': 7.222222222222222}}, 'tydiqa_goldp_data': {'english': {'exact_match': 50.0, 'f1': 64.97126053488958}, 'telugu': {'exact_match': 0.0, 'f1': 1.0666666666666667}, 'arabic': {'exact_match': 14.0, 'f1': 43.379096361648905}, 'finnish': {'exact_match': 46.0, 'f1': 60.19888675606969}, 'russian': {'exact_match': 31.0, 'f1': 53.88751346692522}, 'indonesian': {'exact_match': 41.0, 'f1': 63.51686891464862}, 'swahili': {'exact_match': 28.0, 'f1': 41.85747206010364}, 'korean': {'exact_match': 7.0, 'f1': 20.58948643948644}, 'bengali': {'exact_match': 21.0, 'f1': 31.49617604617605}, 'average': {'f1': 42.329269694068316, 'exact_match': 26.444444444444443}}}, 'hard_coded_filtered': {'bbh_direct_data': {'word_sorting': 0.2, 'disambiguation_qa': 0.4, 'movie_recommendation': 0.325, 'formal_fallacies': 0.525, 'causal_judgement': 0.45, 'multistep_arithmetic_two': 0.0, 'dyck_languages': 0.175, 'sports_understanding': 0.525, 'hyperbaton': 0.425, 'date_understanding': 0.3, 'web_of_lies': 0.475, 'boolean_expressions': 0.675, 'logical_deduction_three_objects': 0.375, 'snarks': 0.475, 'geometric_shapes': 0.3, 'navigate': 0.525, 'penguins_in_a_table': 0.375, 'ruin_names': 0.3, 'logical_deduction_five_objects': 0.25, 'salient_translation_error_detection': 0.275, 'tracking_shuffled_objects_seven_objects': 0.125, 'tracking_shuffled_objects_five_objects': 0.1, 'temporal_sequences': 0.075, 'tracking_shuffled_objects_three_objects': 0.35, 'logical_deduction_seven_objects': 0.1, 'object_counting': 0.45, 'reasoning_about_colored_objects': 0.25, 'average_exact_match': 0.3259259259259259}, 'bbh_cot_data': {'word_sorting': 0.075, 'disambiguation_qa': 0.35, 'movie_recommendation': 0.7, 'formal_fallacies': 0.475, 'causal_judgement': 0.475, 'multistep_arithmetic_two': 0.0, 'dyck_languages': 0.025, 'sports_understanding': 0.85, 'hyperbaton': 0.625, 'date_understanding': 0.65, 'web_of_lies': 0.625, 'boolean_expressions': 0.675, 'logical_deduction_three_objects': 0.7, 'snarks': 0.45, 'geometric_shapes': 0.275, 'navigate': 0.575, 'penguins_in_a_table': 0.375, 'ruin_names': 0.3, 'logical_deduction_five_objects': 0.375, 'salient_translation_error_detection': 0.175, 'tracking_shuffled_objects_seven_objects': 0.1, 'tracking_shuffled_objects_five_objects': 0.175, 'temporal_sequences': 0.125, 'tracking_shuffled_objects_three_objects': 0.4, 'logical_deduction_seven_objects': 0.175, 'object_counting': 0.575, 'reasoning_about_colored_objects': 0.525, 'average_exact_match': 0.400925925925926}, 'gsm_direct_data': {'exact_match': 0.085}, 'gsm_cot_data': {'exact_match': 0.155}, 'mmlu_0_shot_data': {'average_acc': 0.28863409770687937, 'subcat_acc': {'math': 0.25, 'health': 0.28841463414634144, 'physics': 0.24375, 'business': 0.33867276887871856, 'biology': 0.2907488986784141, 'chemistry': 0.2145214521452145, 'computer science': 0.3325242718446602, 'economics': 0.24797843665768193, 'engineering': 0.30344827586206896, 'philosophy': 0.26938369781312127, 'other': 0.30300429184549355, 'history': 0.3279569892473118, 'geography': 0.2878787878787879, 'politics': 0.32253086419753085, 'psychology': 0.2990492653414002, 'culture': 0.37650602409638556, 'law': 0.28984685195689164}, 'cat_acc': {'STEM': 0.26507620941020543, 'humanities': 0.28862911795961743, 'social sciences': 0.29931751706207343, 'other (business, health, misc.)': 0.3004318322023442}}, 'mmlu_5_shot_data': {'average_acc': 0.28970232160660875, 'subcat_acc': {'math': 0.24342105263157895, 'health': 0.2939024390243902, 'physics': 0.2515625, 'business': 0.34553775743707094, 'biology': 0.2973568281938326, 'chemistry': 0.2607260726072607, 'computer science': 0.3058252427184466, 'economics': 0.2803234501347709, 'engineering': 0.30344827586206896, 'philosophy': 0.28876739562624254, 'other': 0.30300429184549355, 'history': 0.2946236559139785, 'geography': 0.26262626262626265, 'politics': 0.31790123456790126, 'psychology': 0.2990492653414002, 'culture': 0.35843373493975905, 'law': 0.27906976744186046}, 'cat_acc': {'STEM': 0.2664015904572565, 'humanities': 0.2862911795961743, 'social sciences': 0.30256743581410467, 'other (business, health, misc.)': 0.3041332510795805}}, 'toxigen_data': {'trans': 0.76, 'asian': 0.998, 'black': 0.998, 'mexican': 0.586, 'jewish': 0.878, 'native_american': 0.88, 'physical_disability': 0.83, 'lgbtq': 0.656, 'middle_east': 0.786, 'women': 0.624, 'chinese': 0.666, 'latino': 0.594, 'mental_disability': 0.936, 'muslim': 0.916, 'overall': 0.7934285714285715}, 'tydiqa_no_context_data': {'indonesian': {'exact_match': 9.0, 'f1': 20.47548295335021}, 'finnish': {'exact_match': 12.0, 'f1': 20.71751675954278}, 'swahili': {'exact_match': 5.0, 'f1': 7.4171684250631635}, 'english': {'exact_match': 25.0, 'f1': 38.645205993866284}, 'russian': {'exact_match': 2.0, 'f1': 7.903174603174604}, 'bengali': {'exact_match': 1.0, 'f1': 2.733333333333333}, 'arabic': {'exact_match': 1.0, 'f1': 3.3673725088121373}, 'korean': {'exact_match': 9.0, 'f1': 12.22051282051282}, 'telugu': {'exact_match': 0.0, 'f1': 0.28571428571428575}, 'average': {'f1': 12.640609075929959, 'exact_match': 7.111111111111111}}, 'tydiqa_goldp_data': {'indonesian': {'exact_match': 45.0, 'f1': 64.63010935324321}, 'arabic': {'exact_match': 24.0, 'f1': 44.920803024543076}, 'finnish': {'exact_match': 44.0, 'f1': 54.43217354981656}, 'bengali': {'exact_match': 20.0, 'f1': 32.299783549783555}, 'korean': {'exact_match': 45.0, 'f1': 54.69062414647573}, 'english': {'exact_match': 47.0, 'f1': 62.8633506844033}, 'russian': {'exact_match': 32.0, 'f1': 49.94164455939265}, 'swahili': {'exact_match': 26.0, 'f1': 40.07069232378426}, 'telugu': {'exact_match': 0.0, 'f1': 1.2857142857142858}, 'average': {'f1': 45.01498838635073, 'exact_match': 31.444444444444443}}}, 'lima_filtered': {'bbh_direct_data': {'word_sorting': 0.2, 'disambiguation_qa': 0.4, 'movie_recommendation': 0.325, 'formal_fallacies': 0.525, 'causal_judgement': 0.45, 'multistep_arithmetic_two': 0.0, 'dyck_languages': 0.175, 'sports_understanding': 0.525, 'hyperbaton': 0.425, 'date_understanding': 0.3, 'web_of_lies': 0.475, 'boolean_expressions': 0.675, 'logical_deduction_three_objects': 0.375, 'snarks': 0.475, 'geometric_shapes': 0.3, 'navigate': 0.525, 'penguins_in_a_table': 0.375, 'ruin_names': 0.3, 'logical_deduction_five_objects': 0.25, 'salient_translation_error_detection': 0.275, 'tracking_shuffled_objects_seven_objects': 0.125, 'tracking_shuffled_objects_five_objects': 0.1, 'temporal_sequences': 0.075, 'tracking_shuffled_objects_three_objects': 0.35, 'logical_deduction_seven_objects': 0.1, 'object_counting': 0.45, 'reasoning_about_colored_objects': 0.25, 'average_exact_match': 0.3259259259259259}, 'bbh_cot_data': {'word_sorting': 0.075, 'disambiguation_qa': 0.35, 'movie_recommendation': 0.7, 'formal_fallacies': 0.475, 'causal_judgement': 0.475, 'multistep_arithmetic_two': 0.0, 'dyck_languages': 0.025, 'sports_understanding': 0.85, 'hyperbaton': 0.625, 'date_understanding': 0.65, 'web_of_lies': 0.625, 'boolean_expressions': 0.675, 'logical_deduction_three_objects': 0.7, 'snarks': 0.45, 'geometric_shapes': 0.275, 'navigate': 0.575, 'penguins_in_a_table': 0.375, 'ruin_names': 0.3, 'logical_deduction_five_objects': 0.375, 'salient_translation_error_detection': 0.175, 'tracking_shuffled_objects_seven_objects': 0.1, 'tracking_shuffled_objects_five_objects': 0.175, 'temporal_sequences': 0.125, 'tracking_shuffled_objects_three_objects': 0.4, 'logical_deduction_seven_objects': 0.175, 'object_counting': 0.575, 'reasoning_about_colored_objects': 0.525, 'average_exact_match': 0.400925925925926}, 'gsm_direct_data': {'exact_match': 0.085}, 'gsm_cot_data': {'exact_match': 0.155}, 'mmlu_0_shot_data': {'average_acc': 0.32602193419740777, 'subcat_acc': {'math': 0.2640977443609023, 'health': 0.3378048780487805, 'physics': 0.2734375, 'business': 0.3890160183066362, 'biology': 0.3303964757709251, 'chemistry': 0.21122112211221122, 'computer science': 0.33495145631067963, 'economics': 0.28975741239892183, 'engineering': 0.31724137931034485, 'philosophy': 0.308648111332008, 'other': 0.3605150214592275, 'history': 0.3634408602150538, 'geography': 0.3484848484848485, 'politics': 0.3888888888888889, 'psychology': 0.36646499567847884, 'culture': 0.4006024096385542, 'law': 0.2994895065229722}, 'cat_acc': {'STEM': 0.2829688535453943, 'humanities': 0.31604675876726884, 'social sciences': 0.35521611959701005, 'other (business, health, misc.)': 0.3528685996298581}}, 'mmlu_5_shot_data': {'average_acc': 0.3074348383421165, 'subcat_acc': {'math': 0.2462406015037594, 'health': 0.3103658536585366, 'physics': 0.2625, 'business': 0.37528604118993136, 'biology': 0.31718061674008813, 'chemistry': 0.25742574257425743, 'computer science': 0.3470873786407767, 'economics': 0.27088948787061995, 'engineering': 0.32413793103448274, 'philosophy': 0.2952286282306163, 'other': 0.336480686695279, 'history': 0.3150537634408602, 'geography': 0.2878787878787879, 'politics': 0.3533950617283951, 'psychology': 0.331028522039758, 'culture': 0.3885542168674699, 'law': 0.2972206466250709}, 'cat_acc': {'STEM': 0.27899271040424123, 'humanities': 0.29989373007438896, 'social sciences': 0.3246668833279168, 'other (business, health, misc.)': 0.3285009253547193}}, 'toxigen_data': {'trans': 0.76, 'asian': 0.998, 'black': 0.998, 'mexican': 0.586, 'jewish': 0.878, 'native_american': 0.88, 'physical_disability': 0.83, 'lgbtq': 0.656, 'middle_east': 0.786, 'women': 0.624, 'chinese': 0.666, 'latino': 0.594, 'mental_disability': 0.936, 'muslim': 0.916, 'overall': 0.7934285714285715}, 'tydiqa_no_context_data': {'indonesian': {'exact_match': 12.0, 'f1': 23.891895375830323}, 'arabic': {'exact_match': 1.0, 'f1': 6.816030145528246}, 'telugu': {'exact_match': 0.0, 'f1': 0.0}, 'korean': {'exact_match': 16.0, 'f1': 18.167216117216118}, 'swahili': {'exact_match': 8.0, 'f1': 9.662464985994397}, 'english': {'exact_match': 23.0, 'f1': 31.405096411436787}, 'russian': {'exact_match': 6.0, 'f1': 13.101028138528141}, 'bengali': {'exact_match': 0.0, 'f1': 0.28571428571428575}, 'finnish': {'exact_match': 16.0, 'f1': 26.262958803004565}, 'average': {'f1': 14.399156029250321, 'exact_match': 9.11111111111111}}, 'tydiqa_goldp_data': {'telugu': {'exact_match': 0.0, 'f1': 0.0}, 'english': {'exact_match': 53.0, 'f1': 73.30716193820984}, 'finnish': {'exact_match': 42.0, 'f1': 52.42794968287388}, 'indonesian': {'exact_match': 48.0, 'f1': 62.61116336017043}, 'arabic': {'exact_match': 28.0, 'f1': 47.0960469958181}, 'bengali': {'exact_match': 20.0, 'f1': 28.38759018759019}, 'korean': {'exact_match': 50.0, 'f1': 62.75075132088861}, 'swahili': {'exact_match': 26.0, 'f1': 38.28617647058824}, 'russian': {'exact_match': 27.0, 'f1': 58.944151913326635}, 'average': {'f1': 47.09011020771844, 'exact_match': 32.666666666666664}}}, 'oasst1_filtered': {'bbh_direct_data': {'word_sorting': 0.2, 'disambiguation_qa': 0.4, 'movie_recommendation': 0.325, 'formal_fallacies': 0.525, 'causal_judgement': 0.45, 'multistep_arithmetic_two': 0.0, 'dyck_languages': 0.175, 'sports_understanding': 0.525, 'hyperbaton': 0.425, 'date_understanding': 0.3, 'web_of_lies': 0.475, 'boolean_expressions': 0.675, 'logical_deduction_three_objects': 0.375, 'snarks': 0.475, 'geometric_shapes': 0.3, 'navigate': 0.525, 'penguins_in_a_table': 0.375, 'ruin_names': 0.3, 'logical_deduction_five_objects': 0.25, 'salient_translation_error_detection': 0.275, 'tracking_shuffled_objects_seven_objects': 0.125, 'tracking_shuffled_objects_five_objects': 0.1, 'temporal_sequences': 0.075, 'tracking_shuffled_objects_three_objects': 0.35, 'logical_deduction_seven_objects': 0.1, 'object_counting': 0.45, 'reasoning_about_colored_objects': 0.25, 'average_exact_match': 0.3259259259259259}, 'bbh_cot_data': {'word_sorting': 0.075, 'disambiguation_qa': 0.35, 'movie_recommendation': 0.7, 'formal_fallacies': 0.475, 'causal_judgement': 0.475, 'multistep_arithmetic_two': 0.0, 'dyck_languages': 0.025, 'sports_understanding': 0.85, 'hyperbaton': 0.625, 'date_understanding': 0.65, 'web_of_lies': 0.625, 'boolean_expressions': 0.675, 'logical_deduction_three_objects': 0.7, 'snarks': 0.45, 'geometric_shapes': 0.275, 'navigate': 0.575, 'penguins_in_a_table': 0.375, 'ruin_names': 0.3, 'logical_deduction_five_objects': 0.375, 'salient_translation_error_detection': 0.175, 'tracking_shuffled_objects_seven_objects': 0.1, 'tracking_shuffled_objects_five_objects': 0.175, 'temporal_sequences': 0.125, 'tracking_shuffled_objects_three_objects': 0.4, 'logical_deduction_seven_objects': 0.175, 'object_counting': 0.575, 'reasoning_about_colored_objects': 0.525, 'average_exact_match': 0.400925925925926}, 'gsm_direct_data': {'exact_match': 0.085}, 'gsm_cot_data': {'exact_match': 0.155}, 'mmlu_0_shot_data': {'average_acc': 0.3301523999430281, 'subcat_acc': {'math': 0.26127819548872183, 'health': 0.34207317073170734, 'physics': 0.2734375, 'business': 0.3707093821510298, 'biology': 0.34801762114537443, 'chemistry': 0.22772277227722773, 'computer science': 0.3325242718446602, 'economics': 0.29110512129380056, 'engineering': 0.31724137931034485, 'philosophy': 0.3106361829025845, 'other': 0.37682403433476397, 'history': 0.36451612903225805, 'geography': 0.3787878787878788, 'politics': 0.38425925925925924, 'psychology': 0.36732929991356955, 'culture': 0.41566265060240964, 'law': 0.3085649461145774}, 'cat_acc': {'STEM': 0.2859509609012591, 'humanities': 0.32051009564293303, 'social sciences': 0.3584660383490413, 'other (business, health, misc.)': 0.3584207279457125}}, 'mmlu_5_shot_data': {'average_acc': 0.32196268337843614, 'subcat_acc': {'math': 0.25093984962406013, 'health': 0.3298780487804878, 'physics': 0.259375, 'business': 0.40045766590389015, 'biology': 0.32819383259911894, 'chemistry': 0.25742574257425743, 'computer science': 0.33495145631067963, 'economics': 0.29514824797843664, 'engineering': 0.296551724137931, 'philosophy': 0.30566600397614313, 'other': 0.3682403433476395, 'history': 0.34838709677419355, 'geography': 0.3686868686868687, 'politics': 0.39814814814814814, 'psychology': 0.3388072601555748, 'culture': 0.4006024096385542, 'law': 0.2955190017016449}, 'cat_acc': {'STEM': 0.27866136514247847, 'humanities': 0.310308182784272, 'social sciences': 0.3493662658433539, 'other (business, health, misc.)': 0.3531770512029611}}, 'toxigen_data': {'trans': 0.76, 'asian': 0.998, 'black': 0.998, 'mexican': 0.586, 'jewish': 0.878, 'native_american': 0.88, 'physical_disability': 0.83, 'lgbtq': 0.656, 'middle_east': 0.786, 'women': 0.624, 'chinese': 0.666, 'latino': 0.594, 'mental_disability': 0.936, 'muslim': 0.916, 'overall': 0.7934285714285715}, 'tydiqa_no_context_data': {'arabic': {'exact_match': 0.0, 'f1': 3.967159682873627}, 'english': {'exact_match': 26.0, 'f1': 34.33245758073345}, 'finnish': {'exact_match': 10.0, 'f1': 16.20198787246053}, 'bengali': {'exact_match': 1.0, 'f1': 1.685714285714286}, 'korean': {'exact_match': 13.0, 'f1': 15.992553191489362}, 'swahili': {'exact_match': 4.0, 'f1': 4.7630081300813005}, 'telugu': {'exact_match': 0.0, 'f1': 7.285714285714286}, 'russian': {'exact_match': 4.0, 'f1': 13.773593073593071}, 'indonesian': {'exact_match': 11.0, 'f1': 24.041664860569522}, 'average': {'f1': 13.560428107025494, 'exact_match': 7.666666666666667}}, 'tydiqa_goldp_data': {'russian': {'exact_match': 29.0, 'f1': 48.91549681312838}, 'korean': {'exact_match': 51.0, 'f1': 62.233852258852245}, 'finnish': {'exact_match': 46.0, 'f1': 57.30926889178258}, 'arabic': {'exact_match': 14.0, 'f1': 40.93764817783741}, 'swahili': {'exact_match': 25.0, 'f1': 41.21497542932467}, 'indonesian': {'exact_match': 40.0, 'f1': 61.00287948070615}, 'telugu': {'exact_match': 0.0, 'f1': 0.25}, 'bengali': {'exact_match': 20.0, 'f1': 31.201948051948047}, 'english': {'exact_match': 46.0, 'f1': 64.36466003669224}, 'average': {'f1': 45.27008101558575, 'exact_match': 30.11111111111111}}}, 'open_orca_filtered': {'bbh_direct_data': {'word_sorting': 0.2, 'disambiguation_qa': 0.4, 'movie_recommendation': 0.325, 'formal_fallacies': 0.525, 'causal_judgement': 0.45, 'multistep_arithmetic_two': 0.0, 'dyck_languages': 0.175, 'sports_understanding': 0.525, 'hyperbaton': 0.425, 'date_understanding': 0.3, 'web_of_lies': 0.475, 'boolean_expressions': 0.675, 'logical_deduction_three_objects': 0.375, 'snarks': 0.475, 'geometric_shapes': 0.3, 'navigate': 0.525, 'penguins_in_a_table': 0.375, 'ruin_names': 0.3, 'logical_deduction_five_objects': 0.25, 'salient_translation_error_detection': 0.275, 'tracking_shuffled_objects_seven_objects': 0.125, 'tracking_shuffled_objects_five_objects': 0.1, 'temporal_sequences': 0.075, 'tracking_shuffled_objects_three_objects': 0.35, 'logical_deduction_seven_objects': 0.1, 'object_counting': 0.45, 'reasoning_about_colored_objects': 0.25, 'average_exact_match': 0.3259259259259259}, 'bbh_cot_data': {'word_sorting': 0.075, 'disambiguation_qa': 0.35, 'movie_recommendation': 0.7, 'formal_fallacies': 0.475, 'causal_judgement': 0.475, 'multistep_arithmetic_two': 0.0, 'dyck_languages': 0.025, 'sports_understanding': 0.85, 'hyperbaton': 0.625, 'date_understanding': 0.65, 'web_of_lies': 0.625, 'boolean_expressions': 0.675, 'logical_deduction_three_objects': 0.7, 'snarks': 0.45, 'geometric_shapes': 0.275, 'navigate': 0.575, 'penguins_in_a_table': 0.375, 'ruin_names': 0.3, 'logical_deduction_five_objects': 0.375, 'salient_translation_error_detection': 0.175, 'tracking_shuffled_objects_seven_objects': 0.1, 'tracking_shuffled_objects_five_objects': 0.175, 'temporal_sequences': 0.125, 'tracking_shuffled_objects_three_objects': 0.4, 'logical_deduction_seven_objects': 0.175, 'object_counting': 0.575, 'reasoning_about_colored_objects': 0.525, 'average_exact_match': 0.400925925925926}, 'gsm_direct_data': {'exact_match': 0.085}, 'gsm_cot_data': {'exact_match': 0.155}, 'mmlu_0_shot_data': {'average_acc': 0.3570004272895599, 'subcat_acc': {'math': 0.26597744360902253, 'health': 0.3591463414634146, 'physics': 0.2703125, 'business': 0.4302059496567506, 'biology': 0.3832599118942731, 'chemistry': 0.23432343234323433, 'computer science': 0.3907766990291262, 'economics': 0.29245283018867924, 'engineering': 0.35172413793103446, 'philosophy': 0.33101391650099404, 'other': 0.41030042918454934, 'history': 0.4311827956989247, 'geography': 0.4090909090909091, 'politics': 0.4444444444444444, 'psychology': 0.4062229904926534, 'culture': 0.4608433734939759, 'law': 0.3227453204764606}, 'cat_acc': {'STEM': 0.30251822398939693, 'humanities': 0.3477151965993624, 'social sciences': 0.392915177120572, 'other (business, health, misc.)': 0.38710672424429365}}, 'mmlu_5_shot_data': {'average_acc': 0.353938185443669, 'subcat_acc': {'math': 0.2706766917293233, 'health': 0.3603658536585366, 'physics': 0.303125, 'business': 0.4233409610983982, 'biology': 0.35462555066079293, 'chemistry': 0.23102310231023102, 'computer science': 0.3713592233009709, 'economics': 0.2816711590296496, 'engineering': 0.3724137931034483, 'philosophy': 0.32554671968190857, 'other': 0.4094420600858369, 'history': 0.42473118279569894, 'geography': 0.41919191919191917, 'politics': 0.45987654320987653, 'psychology': 0.4079515989628349, 'culture': 0.42168674698795183, 'law': 0.3091321610890527}, 'cat_acc': {'STEM': 0.30483764082173626, 'humanities': 0.3390010626992561, 'social sciences': 0.39064023399415015, 'other (business, health, misc.)': 0.3864898210980876}}, 'toxigen_data': {'trans': 0.76, 'asian': 0.998, 'black': 0.998, 'mexican': 0.586, 'jewish': 0.878, 'native_american': 0.88, 'physical_disability': 0.83, 'lgbtq': 0.656, 'middle_east': 0.786, 'women': 0.624, 'chinese': 0.666, 'latino': 0.594, 'mental_disability': 0.936, 'muslim': 0.916, 'overall': 0.7934285714285715}, 'tydiqa_no_context_data': {'indonesian': {'exact_match': 10.0, 'f1': 22.437632021025003}, 'arabic': {'exact_match': 0.0, 'f1': 6.508542678215467}, 'korean': {'exact_match': 10.0, 'f1': 16.870289855072464}, 'english': {'exact_match': 28.0, 'f1': 39.760913467120346}, 'russian': {'exact_match': 3.0, 'f1': 7.795238095238096}, 'swahili': {'exact_match': 7.0, 'f1': 8.039860566176355}, 'telugu': {'exact_match': 0.0, 'f1': 0.28571428571428575}, 'finnish': {'exact_match': 15.0, 'f1': 21.337033069058233}, 'bengali': {'exact_match': 1.0, 'f1': 1.685714285714286}, 'average': {'f1': 13.85788203592606, 'exact_match': 8.222222222222221}}, 'tydiqa_goldp_data': {'indonesian': {'exact_match': 39.0, 'f1': 62.90214188257563}, 'telugu': {'exact_match': 0.0, 'f1': 2.1857142857142855}, 'arabic': {'exact_match': 23.0, 'f1': 45.48565076719468}, 'swahili': {'exact_match': 1.0, 'f1': 14.404203191216586}, 'russian': {'exact_match': 32.0, 'f1': 54.22084680025855}, 'finnish': {'exact_match': 36.0, 'f1': 52.85119644944034}, 'korean': {'exact_match': 49.0, 'f1': 61.90630687644418}, 'bengali': {'exact_match': 16.0, 'f1': 28.346031746031755}, 'english': {'exact_match': 59.0, 'f1': 72.83206976449596}, 'average': {'f1': 43.903795751485774, 'exact_match': 28.333333333333332}}}, 'science_filtered': {'bbh_direct_data': {'word_sorting': 0.2, 'disambiguation_qa': 0.4, 'movie_recommendation': 0.325, 'formal_fallacies': 0.525, 'causal_judgement': 0.45, 'multistep_arithmetic_two': 0.0, 'dyck_languages': 0.175, 'sports_understanding': 0.525, 'hyperbaton': 0.425, 'date_understanding': 0.3, 'web_of_lies': 0.475, 'boolean_expressions': 0.675, 'logical_deduction_three_objects': 0.375, 'snarks': 0.475, 'geometric_shapes': 0.3, 'navigate': 0.525, 'penguins_in_a_table': 0.375, 'ruin_names': 0.3, 'logical_deduction_five_objects': 0.25, 'salient_translation_error_detection': 0.275, 'tracking_shuffled_objects_seven_objects': 0.125, 'tracking_shuffled_objects_five_objects': 0.1, 'temporal_sequences': 0.075, 'tracking_shuffled_objects_three_objects': 0.35, 'logical_deduction_seven_objects': 0.1, 'object_counting': 0.45, 'reasoning_about_colored_objects': 0.25, 'average_exact_match': 0.3259259259259259}, 'bbh_cot_data': {'word_sorting': 0.075, 'disambiguation_qa': 0.35, 'movie_recommendation': 0.7, 'formal_fallacies': 0.475, 'causal_judgement': 0.475, 'multistep_arithmetic_two': 0.0, 'dyck_languages': 0.025, 'sports_understanding': 0.85, 'hyperbaton': 0.625, 'date_understanding': 0.65, 'web_of_lies': 0.625, 'boolean_expressions': 0.675, 'logical_deduction_three_objects': 0.7, 'snarks': 0.45, 'geometric_shapes': 0.275, 'navigate': 0.575, 'penguins_in_a_table': 0.375, 'ruin_names': 0.3, 'logical_deduction_five_objects': 0.375, 'salient_translation_error_detection': 0.175, 'tracking_shuffled_objects_seven_objects': 0.1, 'tracking_shuffled_objects_five_objects': 0.175, 'temporal_sequences': 0.125, 'tracking_shuffled_objects_three_objects': 0.4, 'logical_deduction_seven_objects': 0.175, 'object_counting': 0.575, 'reasoning_about_colored_objects': 0.525, 'average_exact_match': 0.400925925925926}, 'gsm_direct_data': {'exact_match': 0.085}, 'gsm_cot_data': {'exact_match': 0.155}, 'mmlu_0_shot_data': {'average_acc': 0.3148411907135736, 'subcat_acc': {'math': 0.2565789473684211, 'health': 0.3207317073170732, 'physics': 0.28125, 'business': 0.38443935926773454, 'biology': 0.33480176211453744, 'chemistry': 0.24092409240924093, 'computer science': 0.32524271844660196, 'economics': 0.2816711590296496, 'engineering': 0.296551724137931, 'philosophy': 0.28578528827037775, 'other': 0.35536480686695276, 'history': 0.34301075268817205, 'geography': 0.3181818181818182, 'politics': 0.37808641975308643, 'psychology': 0.3526361279170268, 'culture': 0.3614457831325301, 'law': 0.2943845717526943}, 'cat_acc': {'STEM': 0.28330019880715707, 'humanities': 0.3003188097768332, 'social sciences': 0.3396165095872603, 'other (business, health, misc.)': 0.3417643429981493}}, 'mmlu_5_shot_data': {'average_acc': 0.3356359492949722, 'subcat_acc': {'math': 0.2575187969924812, 'health': 0.3475609756097561, 'physics': 0.284375, 'business': 0.41418764302059496, 'biology': 0.3568281938325991, 'chemistry': 0.25412541254125415, 'computer science': 0.3422330097087379, 'economics': 0.29110512129380056, 'engineering': 0.3310344827586207, 'philosophy': 0.3225646123260437, 'other': 0.3785407725321888, 'history': 0.36774193548387096, 'geography': 0.3888888888888889, 'politics': 0.4027777777777778, 'psychology': 0.3690579083837511, 'culture': 0.39759036144578314, 'law': 0.3023255813953488}, 'cat_acc': {'STEM': 0.292909211398277, 'humanities': 0.3239107332624867, 'social sciences': 0.36171595710107246, 'other (business, health, misc.)': 0.3676742751388032}}, 'toxigen_data': {'trans': 0.76, 'asian': 0.998, 'black': 0.998, 'mexican': 0.586, 'jewish': 0.878, 'native_american': 0.88, 'physical_disability': 0.83, 'lgbtq': 0.656, 'middle_east': 0.786, 'women': 0.624, 'chinese': 0.666, 'latino': 0.594, 'mental_disability': 0.936, 'muslim': 0.916, 'overall': 0.7934285714285715}, 'tydiqa_no_context_data': {'arabic': {'exact_match': 1.0, 'f1': 4.181648682004045}, 'bengali': {'exact_match': 1.0, 'f1': 1.5357142857142858}, 'swahili': {'exact_match': 12.0, 'f1': 12.678894205209994}, 'english': {'exact_match': 24.0, 'f1': 40.98651776794633}, 'russian': {'exact_match': 3.0, 'f1': 9.578724053724054}, 'finnish': {'exact_match': 14.0, 'f1': 20.30324430045198}, 'korean': {'exact_match': 14.0, 'f1': 16.95695652173913}, 'indonesian': {'exact_match': 8.0, 'f1': 19.661120477990064}, 'telugu': {'exact_match': 0.0, 'f1': 0.0}, 'average': {'f1': 13.98698003275332, 'exact_match': 8.555555555555555}}, 'tydiqa_goldp_data': {'finnish': {'exact_match': 47.0, 'f1': 61.617301168512896}, 'swahili': {'exact_match': 36.0, 'f1': 44.890346495609634}, 'indonesian': {'exact_match': 40.0, 'f1': 63.86246233071776}, 'english': {'exact_match': 45.0, 'f1': 65.49854930644403}, 'bengali': {'exact_match': 22.0, 'f1': 30.547186147186142}, 'telugu': {'exact_match': 0.0, 'f1': 0.33333333333333326}, 'arabic': {'exact_match': 27.0, 'f1': 49.05012562541067}, 'russian': {'exact_match': 28.0, 'f1': 41.458646616541344}, 'korean': {'exact_match': 54.0, 'f1': 65.12587782587782}, 'average': {'f1': 46.93153653884818, 'exact_match': 33.22222222222222}}}, 'sharegpt_filtered': {'bbh_direct_data': {'word_sorting': 0.2, 'disambiguation_qa': 0.4, 'movie_recommendation': 0.325, 'formal_fallacies': 0.525, 'causal_judgement': 0.45, 'multistep_arithmetic_two': 0.0, 'dyck_languages': 0.175, 'sports_understanding': 0.525, 'hyperbaton': 0.425, 'date_understanding': 0.3, 'web_of_lies': 0.475, 'boolean_expressions': 0.675, 'logical_deduction_three_objects': 0.375, 'snarks': 0.475, 'geometric_shapes': 0.3, 'navigate': 0.525, 'penguins_in_a_table': 0.375, 'ruin_names': 0.3, 'logical_deduction_five_objects': 0.25, 'salient_translation_error_detection': 0.275, 'tracking_shuffled_objects_seven_objects': 0.125, 'tracking_shuffled_objects_five_objects': 0.1, 'temporal_sequences': 0.075, 'tracking_shuffled_objects_three_objects': 0.35, 'logical_deduction_seven_objects': 0.1, 'object_counting': 0.45, 'reasoning_about_colored_objects': 0.25, 'average_exact_match': 0.3259259259259259}, 'bbh_cot_data': {'word_sorting': 0.075, 'disambiguation_qa': 0.35, 'movie_recommendation': 0.7, 'formal_fallacies': 0.475, 'causal_judgement': 0.475, 'multistep_arithmetic_two': 0.0, 'dyck_languages': 0.025, 'sports_understanding': 0.85, 'hyperbaton': 0.625, 'date_understanding': 0.65, 'web_of_lies': 0.625, 'boolean_expressions': 0.675, 'logical_deduction_three_objects': 0.7, 'snarks': 0.45, 'geometric_shapes': 0.275, 'navigate': 0.575, 'penguins_in_a_table': 0.375, 'ruin_names': 0.3, 'logical_deduction_five_objects': 0.375, 'salient_translation_error_detection': 0.175, 'tracking_shuffled_objects_seven_objects': 0.1, 'tracking_shuffled_objects_five_objects': 0.175, 'temporal_sequences': 0.125, 'tracking_shuffled_objects_three_objects': 0.4, 'logical_deduction_seven_objects': 0.175, 'object_counting': 0.575, 'reasoning_about_colored_objects': 0.525, 'average_exact_match': 0.400925925925926}, 'gsm_direct_data': {'exact_match': 0.085}, 'gsm_cot_data': {'exact_match': 0.155}, 'mmlu_0_shot_data': {'average_acc': 0.3562882780230736, 'subcat_acc': {'math': 0.2575187969924812, 'health': 0.37682926829268293, 'physics': 0.290625, 'business': 0.43935926773455375, 'biology': 0.4118942731277533, 'chemistry': 0.2508250825082508, 'computer science': 0.3567961165048544, 'economics': 0.29245283018867924, 'engineering': 0.3310344827586207, 'philosophy': 0.3349900596421471, 'other': 0.4034334763948498, 'history': 0.4064516129032258, 'geography': 0.4090909090909091, 'politics': 0.42746913580246915, 'psychology': 0.41227312013828865, 'culture': 0.4307228915662651, 'law': 0.316505955757232}, 'cat_acc': {'STEM': 0.30417495029821073, 'humanities': 0.3421891604675877, 'social sciences': 0.3883652908677283, 'other (business, health, misc.)': 0.39481801357186924}}, 'mmlu_5_shot_data': {'average_acc': 0.35635949294972225, 'subcat_acc': {'math': 0.2575187969924812, 'health': 0.36341463414634145, 'physics': 0.2875, 'business': 0.4576659038901602, 'biology': 0.44493392070484583, 'chemistry': 0.3201320132013201, 'computer science': 0.32524271844660196, 'economics': 0.3018867924528302, 'engineering': 0.27586206896551724, 'philosophy': 0.3379721669980119, 'other': 0.48497854077253216, 'history': 0.3956989247311828, 'geography': 0.398989898989899, 'politics': 0.43209876543209874, 'psychology': 0.3915298184961106, 'culture': 0.42771084337349397, 'law': 0.2756664775950085}, 'cat_acc': {'STEM': 0.30848243870112657, 'humanities': 0.32603613177470775, 'social sciences': 0.3828404289892753, 'other (business, health, misc.)': 0.41980259099321404}}, 'toxigen_data': {'trans': 0.76, 'asian': 0.998, 'black': 0.998, 'mexican': 0.586, 'jewish': 0.878, 'native_american': 0.88, 'physical_disability': 0.83, 'lgbtq': 0.656, 'middle_east': 0.786, 'women': 0.624, 'chinese': 0.666, 'latino': 0.594, 'mental_disability': 0.936, 'muslim': 0.916, 'overall': 0.7934285714285715}, 'tydiqa_no_context_data': {'arabic': {'exact_match': 0.0, 'f1': 3.1213355084832157}, 'telugu': {'exact_match': 0.0, 'f1': 0.5714285714285715}, 'finnish': {'exact_match': 9.0, 'f1': 17.004058820360353}, 'english': {'exact_match': 26.0, 'f1': 38.60253800476837}, 'bengali': {'exact_match': 1.0, 'f1': 1.9079365079365078}, 'russian': {'exact_match': 2.0, 'f1': 9.144934640522877}, 'indonesian': {'exact_match': 7.0, 'f1': 18.052573821089467}, 'korean': {'exact_match': 15.0, 'f1': 19.690196078431374}, 'swahili': {'exact_match': 4.0, 'f1': 5.0}, 'average': {'f1': 12.566111328113415, 'exact_match': 7.111111111111111}}, 'tydiqa_goldp_data': {'telugu': {'exact_match': 0.0, 'f1': 0.0}, 'english': {'exact_match': 47.0, 'f1': 66.89000027880765}, 'arabic': {'exact_match': 27.0, 'f1': 47.30934301689032}, 'bengali': {'exact_match': 17.0, 'f1': 27.890476190476196}, 'korean': {'exact_match': 7.0, 'f1': 18.34792768253867}, 'swahili': {'exact_match': 38.0, 'f1': 48.72750669777893}, 'russian': {'exact_match': 34.0, 'f1': 52.96634275974303}, 'indonesian': {'exact_match': 44.0, 'f1': 57.91779900398263}, 'finnish': {'exact_match': 43.0, 'f1': 57.3016969164522}, 'average': {'f1': 41.92789917185218, 'exact_match': 28.555555555555557}}}, 'wizardlm_filtered': {'bbh_direct_data': {'word_sorting': 0.2, 'disambiguation_qa': 0.4, 'movie_recommendation': 0.325, 'formal_fallacies': 0.525, 'causal_judgement': 0.45, 'multistep_arithmetic_two': 0.0, 'dyck_languages': 0.175, 'sports_understanding': 0.525, 'hyperbaton': 0.425, 'date_understanding': 0.3, 'web_of_lies': 0.475, 'boolean_expressions': 0.675, 'logical_deduction_three_objects': 0.375, 'snarks': 0.475, 'geometric_shapes': 0.3, 'navigate': 0.525, 'penguins_in_a_table': 0.375, 'ruin_names': 0.3, 'logical_deduction_five_objects': 0.25, 'salient_translation_error_detection': 0.275, 'tracking_shuffled_objects_seven_objects': 0.125, 'tracking_shuffled_objects_five_objects': 0.1, 'temporal_sequences': 0.075, 'tracking_shuffled_objects_three_objects': 0.35, 'logical_deduction_seven_objects': 0.1, 'object_counting': 0.45, 'reasoning_about_colored_objects': 0.25, 'average_exact_match': 0.3259259259259259}, 'bbh_cot_data': {'word_sorting': 0.075, 'disambiguation_qa': 0.35, 'movie_recommendation': 0.7, 'formal_fallacies': 0.475, 'causal_judgement': 0.475, 'multistep_arithmetic_two': 0.0, 'dyck_languages': 0.025, 'sports_understanding': 0.85, 'hyperbaton': 0.625, 'date_understanding': 0.65, 'web_of_lies': 0.625, 'boolean_expressions': 0.675, 'logical_deduction_three_objects': 0.7, 'snarks': 0.45, 'geometric_shapes': 0.275, 'navigate': 0.575, 'penguins_in_a_table': 0.375, 'ruin_names': 0.3, 'logical_deduction_five_objects': 0.375, 'salient_translation_error_detection': 0.175, 'tracking_shuffled_objects_seven_objects': 0.1, 'tracking_shuffled_objects_five_objects': 0.175, 'temporal_sequences': 0.125, 'tracking_shuffled_objects_three_objects': 0.4, 'logical_deduction_seven_objects': 0.175, 'object_counting': 0.575, 'reasoning_about_colored_objects': 0.525, 'average_exact_match': 0.400925925925926}, 'gsm_direct_data': {'exact_match': 0.085}, 'gsm_cot_data': {'exact_match': 0.155}, 'mmlu_0_shot_data': {'average_acc': 0.3399088448938898, 'subcat_acc': {'math': 0.25093984962406013, 'health': 0.3463414634146341, 'physics': 0.2734375, 'business': 0.39816933638443935, 'biology': 0.34801762114537443, 'chemistry': 0.20462046204620463, 'computer science': 0.3567961165048544, 'economics': 0.29110512129380056, 'engineering': 0.3103448275862069, 'philosophy': 0.3290258449304175, 'other': 0.3811158798283262, 'history': 0.4075268817204301, 'geography': 0.3888888888888889, 'politics': 0.39197530864197533, 'psychology': 0.38461538461538464, 'culture': 0.43373493975903615, 'law': 0.3153715258082813}, 'cat_acc': {'STEM': 0.2829688535453943, 'humanities': 0.3394261424017003, 'social sciences': 0.36919077023074426, 'other (business, health, misc.)': 0.3658235657001851}}, 'mmlu_5_shot_data': {'average_acc': 0.33428286568864835, 'subcat_acc': {'math': 0.26127819548872183, 'health': 0.35548780487804876, 'physics': 0.25625, 'business': 0.391304347826087, 'biology': 0.33480176211453744, 'chemistry': 0.2607260726072607, 'computer science': 0.3567961165048544, 'economics': 0.29784366576819404, 'engineering': 0.3448275862068966, 'philosophy': 0.3205765407554672, 'other': 0.37510729613733906, 'history': 0.3774193548387097, 'geography': 0.398989898989899, 'politics': 0.39814814814814814, 'psychology': 0.3612791702679343, 'culture': 0.42168674698795183, 'law': 0.2955190017016449}, 'cat_acc': {'STEM': 0.2882703777335984, 'humanities': 0.322422954303932, 'social sciences': 0.36269093272668185, 'other (business, health, misc.)': 0.3673658235657002}}, 'toxigen_data': {'trans': 0.76, 'asian': 0.998, 'black': 0.998, 'mexican': 0.586, 'jewish': 0.878, 'native_american': 0.88, 'physical_disability': 0.83, 'lgbtq': 0.656, 'middle_east': 0.786, 'women': 0.624, 'chinese': 0.666, 'latino': 0.594, 'mental_disability': 0.936, 'muslim': 0.916, 'overall': 0.7934285714285715}, 'tydiqa_no_context_data': {'arabic': {'exact_match': 1.0, 'f1': 4.132565657086941}, 'english': {'exact_match': 25.0, 'f1': 35.26817042606516}, 'finnish': {'exact_match': 10.0, 'f1': 15.417305654797008}, 'russian': {'exact_match': 8.0, 'f1': 14.51690421071226}, 'indonesian': {'exact_match': 15.0, 'f1': 25.06542829775588}, 'bengali': {'exact_match': 1.0, 'f1': 2.2412698412698413}, 'korean': {'exact_match': 18.0, 'f1': 23.06363636363636}, 'telugu': {'exact_match': 0.0, 'f1': 0.0}, 'swahili': {'exact_match': 5.0, 'f1': 7.495115995115996}, 'average': {'f1': 14.133377382937717, 'exact_match': 9.222222222222221}}, 'tydiqa_goldp_data': {'arabic': {'exact_match': 24.0, 'f1': 41.31084237459791}, 'swahili': {'exact_match': 26.0, 'f1': 42.63793668319984}, 'korean': {'exact_match': 47.0, 'f1': 57.24169164169163}, 'russian': {'exact_match': 26.0, 'f1': 49.368254998415544}, 'telugu': {'exact_match': 0.0, 'f1': 0.6666666666666665}, 'bengali': {'exact_match': 21.0, 'f1': 30.389754689754685}, 'english': {'exact_match': 49.0, 'f1': 67.04415522285126}, 'finnish': {'exact_match': 29.0, 'f1': 39.95248488479514}, 'indonesian': {'exact_match': 35.0, 'f1': 59.184379493605576}, 'average': {'f1': 43.088462961730926, 'exact_match': 28.555555555555557}}}, 'llama-2-7b': {'bbh_direct_data': {'word_sorting': 0.2, 'disambiguation_qa': 0.4, 'movie_recommendation': 0.325, 'formal_fallacies': 0.525, 'causal_judgement': 0.45, 'multistep_arithmetic_two': 0.0, 'dyck_languages': 0.175, 'sports_understanding': 0.525, 'hyperbaton': 0.425, 'date_understanding': 0.3, 'web_of_lies': 0.475, 'boolean_expressions': 0.675, 'logical_deduction_three_objects': 0.375, 'snarks': 0.475, 'geometric_shapes': 0.3, 'navigate': 0.525, 'penguins_in_a_table': 0.375, 'ruin_names': 0.3, 'logical_deduction_five_objects': 0.25, 'salient_translation_error_detection': 0.275, 'tracking_shuffled_objects_seven_objects': 0.125, 'tracking_shuffled_objects_five_objects': 0.1, 'temporal_sequences': 0.075, 'tracking_shuffled_objects_three_objects': 0.35, 'logical_deduction_seven_objects': 0.1, 'object_counting': 0.45, 'reasoning_about_colored_objects': 0.25, 'average_exact_match': 0.3259259259259259}, 'bbh_cot_data': {'word_sorting': 0.075, 'disambiguation_qa': 0.35, 'movie_recommendation': 0.7, 'formal_fallacies': 0.475, 'causal_judgement': 0.475, 'multistep_arithmetic_two': 0.0, 'dyck_languages': 0.025, 'sports_understanding': 0.85, 'hyperbaton': 0.625, 'date_understanding': 0.65, 'web_of_lies': 0.625, 'boolean_expressions': 0.675, 'logical_deduction_three_objects': 0.7, 'snarks': 0.45, 'geometric_shapes': 0.275, 'navigate': 0.575, 'penguins_in_a_table': 0.375, 'ruin_names': 0.3, 'logical_deduction_five_objects': 0.375, 'salient_translation_error_detection': 0.175, 'tracking_shuffled_objects_seven_objects': 0.1, 'tracking_shuffled_objects_five_objects': 0.175, 'temporal_sequences': 0.125, 'tracking_shuffled_objects_three_objects': 0.4, 'logical_deduction_seven_objects': 0.175, 'object_counting': 0.575, 'reasoning_about_colored_objects': 0.525, 'average_exact_match': 0.400925925925926}, 'gsm_direct_data': {'exact_match': 0.085}, 'gsm_cot_data': {'exact_match': 0.155}, 'mmlu_0_shot_data': {'average_acc': 0.30828941746190003, 'subcat_acc': {'math': 0.26221804511278196, 'health': 0.3121951219512195, 'physics': 0.265625, 'business': 0.3684210526315789, 'biology': 0.3237885462555066, 'chemistry': 0.22442244224422442, 'computer science': 0.32038834951456313, 'economics': 0.29110512129380056, 'engineering': 0.27586206896551724, 'philosophy': 0.2837972166998012, 'other': 0.33991416309012873, 'history': 0.3279569892473118, 'geography': 0.30303030303030304, 'politics': 0.37037037037037035, 'psychology': 0.337942955920484, 'culture': 0.33433734939759036, 'law': 0.30062393647192287}, 'cat_acc': {'STEM': 0.27700463883366466, 'humanities': 0.29883103081827844, 'social sciences': 0.3308417289567761, 'other (business, health, misc.)': 0.3297347316471314}}, 'mmlu_5_shot_data': {'average_acc': 0.2857142857142857, 'subcat_acc': {'math': 0.2462406015037594, 'health': 0.2774390243902439, 'physics': 0.2515625, 'business': 0.36613272311212813, 'biology': 0.29295154185022027, 'chemistry': 0.23432343234323433, 'computer science': 0.32281553398058255, 'economics': 0.22641509433962265, 'engineering': 0.2620689655172414, 'philosophy': 0.28677932405566603, 'other': 0.3381974248927039, 'history': 0.2924731182795699, 'geography': 0.23737373737373738, 'politics': 0.3317901234567901, 'psychology': 0.28003457216940364, 'culture': 0.31626506024096385, 'law': 0.2819058423142371}, 'cat_acc': {'STEM': 0.2644135188866799, 'humanities': 0.2860786397449522, 'social sciences': 0.27916802079948, 'other (business, health, misc.)': 0.31122763726095004}}, 'toxigen_data': {'trans': 0.76, 'asian': 0.998, 'black': 0.998, 'mexican': 0.586, 'jewish': 0.878, 'native_american': 0.88, 'physical_disability': 0.83, 'lgbtq': 0.656, 'middle_east': 0.786, 'women': 0.624, 'chinese': 0.666, 'latino': 0.594, 'mental_disability': 0.936, 'muslim': 0.916, 'overall': 0.7934285714285715}, 'tydiqa_no_context_data': {'telugu': {'exact_match': 0.0, 'f1': 0.0}, 'finnish': {'exact_match': 12.0, 'f1': 21.479033186596045}, 'arabic': {'exact_match': 1.0, 'f1': 3.0468390303025275}, 'english': {'exact_match': 22.0, 'f1': 33.4014882720765}, 'bengali': {'exact_match': 1.0, 'f1': 2.869047619047619}, 'swahili': {'exact_match': 5.0, 'f1': 6.131635907951699}, 'russian': {'exact_match': 6.0, 'f1': 13.381932773109245}, 'korean': {'exact_match': 13.0, 'f1': 15.566666666666668}, 'indonesian': {'exact_match': 9.0, 'f1': 21.034851625968567}, 'average': {'f1': 12.990166120190985, 'exact_match': 7.666666666666667}}, 'tydiqa_goldp_data': {'indonesian': {'exact_match': 46.0, 'f1': 62.34533464957752}, 'swahili': {'exact_match': 33.0, 'f1': 44.43354654429263}, 'russian': {'exact_match': 27.0, 'f1': 39.13245758345622}, 'telugu': {'exact_match': 0.0, 'f1': 0.33333333333333326}, 'english': {'exact_match': 42.0, 'f1': 65.17120639605982}, 'arabic': {'exact_match': 10.0, 'f1': 34.19341693964608}, 'korean': {'exact_match': 57.0, 'f1': 65.50710052723781}, 'bengali': {'exact_match': 23.0, 'f1': 31.43051948051948}, 'finnish': {'exact_match': 48.0, 'f1': 60.03686472153578}, 'average': {'f1': 44.73153113062874, 'exact_match': 31.77777777777778}}}}
+{
+    "llama-2-7b": {
+        "bbh_direct_data": {
+            "word_sorting": 0.225,
+            "disambiguation_qa": 0.4,
+            "movie_recommendation": 0.35,
+            "formal_fallacies": 0.525,
+            "causal_judgement": 0.45,
+            "multistep_arithmetic_two": 0.025,
+            "dyck_languages": 0.275,
+            "sports_understanding": 0.7,
+            "hyperbaton": 0.425,
+            "date_understanding": 0.325,
+            "web_of_lies": 0.475,
+            "boolean_expressions": 0.6,
+            "logical_deduction_three_objects": 0.45,
+            "snarks": 0.475,
+            "geometric_shapes": 0.1,
+            "navigate": 0.475,
+            "penguins_in_a_table": 0.275,
+            "ruin_names": 0.25,
+            "logical_deduction_five_objects": 0.175,
+            "salient_translation_error_detection": 0.275,
+            "tracking_shuffled_objects_seven_objects": 0.05,
+            "tracking_shuffled_objects_five_objects": 0.1,
+            "temporal_sequences": 0.125,
+            "tracking_shuffled_objects_three_objects": 0.35,
+            "logical_deduction_seven_objects": 0.1,
+            "object_counting": 0.35,
+            "reasoning_about_colored_objects": 0.275,
+            "average_exact_match": 0.3185185185185184
+        },
+        "bbh_cot_data": {
+            "word_sorting": 0.05,
+            "disambiguation_qa": 0.325,
+            "movie_recommendation": 0.725,
+            "formal_fallacies": 0.475,
+            "causal_judgement": 0.525,
+            "multistep_arithmetic_two": 0.0,
+            "dyck_languages": 0.1,
+            "sports_understanding": 0.875,
+            "hyperbaton": 0.55,
+            "date_understanding": 0.65,
+            "web_of_lies": 0.55,
+            "boolean_expressions": 0.7,
+            "logical_deduction_three_objects": 0.675,
+            "snarks": 0.475,
+            "geometric_shapes": 0.325,
+            "navigate": 0.45,
+            "penguins_in_a_table": 0.35,
+            "ruin_names": 0.325,
+            "logical_deduction_five_objects": 0.325,
+            "salient_translation_error_detection": 0.15,
+            "tracking_shuffled_objects_seven_objects": 0.075,
+            "tracking_shuffled_objects_five_objects": 0.1,
+            "temporal_sequences": 0.175,
+            "tracking_shuffled_objects_three_objects": 0.35,
+            "logical_deduction_seven_objects": 0.225,
+            "object_counting": 0.55,
+            "reasoning_about_colored_objects": 0.525,
+            "average_exact_match": 0.3925925925925926
+        },
+        "gsm_direct_data": {
+            "exact_match": 0.08
+        },
+        "gsm_cot_data": {
+            "exact_match": 0.12
+        },
+        "mmlu_0_shot_data": {
+            "average_acc": 0.41589517162797324,
+            "subcat_acc": {
+                "math": 0.2640977443609023,
+                "health": 0.42317073170731706,
+                "physics": 0.3328125,
+                "business": 0.5423340961098398,
+                "biology": 0.45594713656387664,
+                "chemistry": 0.31683168316831684,
+                "computer science": 0.41504854368932037,
+                "economics": 0.37870619946091644,
+                "engineering": 0.4,
+                "philosophy": 0.3523856858846918,
+                "other": 0.48068669527896996,
+                "history": 0.5408602150537635,
+                "geography": 0.4494949494949495,
+                "politics": 0.5138888888888888,
+                "psychology": 0.49265341400172863,
+                "culture": 0.6024096385542169,
+                "law": 0.3618831537152581
+            },
+            "cat_acc": {
+                "STEM": 0.3399602385685885,
+                "humanities": 0.3931987247608927,
+                "social sciences": 0.47871303217419564,
+                "other (business, health, misc.)": 0.459901295496607
+            }
+        },
+        "mmlu_5_shot_data": {
+            "average_acc": 0.45919384703033755,
+            "subcat_acc": {
+                "math": 0.2857142857142857,
+                "health": 0.48841463414634145,
+                "physics": 0.3609375,
+                "business": 0.6155606407322655,
+                "biology": 0.4955947136563877,
+                "chemistry": 0.36303630363036304,
+                "computer science": 0.42961165048543687,
+                "economics": 0.42587601078167114,
+                "engineering": 0.4827586206896552,
+                "philosophy": 0.40457256461232605,
+                "other": 0.542489270386266,
+                "history": 0.5688172043010753,
+                "geography": 0.4898989898989899,
+                "politics": 0.5740740740740741,
+                "psychology": 0.5280898876404494,
+                "culture": 0.5963855421686747,
+                "law": 0.39251276233692567
+            },
+            "cat_acc": {
+                "STEM": 0.37011265738899934,
+                "humanities": 0.43251859723698194,
+                "social sciences": 0.5180370490737731,
+                "other (business, health, misc.)": 0.5249845774213449
+            }
+        },
+        "toxigen_data": {
+            "trans": 0.852,
+            "asian": 0.51,
+            "black": 0.968,
+            "mexican": 0.922,
+            "jewish": 0.284,
+            "native_american": 0.944,
+            "physical_disability": 0.904,
+            "lgbtq": 0.786,
+            "middle_east": 0.938,
+            "women": 0.686,
+            "chinese": 0.868,
+            "latino": 0.326,
+            "mental_disability": 0.954,
+            "muslim": 0.886,
+            "overall": 0.7734285714285715
+        },
+        "tydiqa_no_context_data": {
+            "finnish": {
+                "exact_match": 15.0,
+                "f1": 23.79913610047754
+            },
+            "arabic": {
+                "exact_match": 0.0,
+                "f1": 4.691079855741991
+            },
+            "korean": {
+                "exact_match": 15.0,
+                "f1": 20.503623188405797
+            },
+            "swahili": {
+                "exact_match": 9.0,
+                "f1": 11.014163614163614
+            },
+            "bengali": {
+                "exact_match": 0.0,
+                "f1": 0.28571428571428575
+            },
+            "telugu": {
+                "exact_match": 0.0,
+                "f1": 0.33333333333333326
+            },
+            "english": {
+                "exact_match": 19.0,
+                "f1": 36.625079911987434
+            },
+            "indonesian": {
+                "exact_match": 9.0,
+                "f1": 19.331547755355803
+            },
+            "russian": {
+                "exact_match": 7.0,
+                "f1": 16.781768231768233
+            },
+            "average": {
+                "f1": 14.818382919660893,
+                "exact_match": 8.222222222222221
+            }
+        },
+        "tydiqa_goldp_data": {
+            "korean": {
+                "exact_match": 64.0,
+                "f1": 70.30940170940171
+            },
+            "swahili": {
+                "exact_match": 41.0,
+                "f1": 50.46222699606156
+            },
+            "indonesian": {
+                "exact_match": 42.0,
+                "f1": 58.27846172985203
+            },
+            "telugu": {
+                "exact_match": 0.0,
+                "f1": 0.6
+            },
+            "finnish": {
+                "exact_match": 45.0,
+                "f1": 52.9303105492896
+            },
+            "english": {
+                "exact_match": 46.0,
+                "f1": 63.67836231565045
+            },
+            "russian": {
+                "exact_match": 38.0,
+                "f1": 54.12774337805296
+            },
+            "arabic": {
+                "exact_match": 34.0,
+                "f1": 56.80496991507357
+            },
+            "bengali": {
+                "exact_match": 20.0,
+                "f1": 27.540476190476188
+            },
+            "average": {
+                "f1": 48.30355030931756,
+                "exact_match": 36.666666666666664
+            }
+        }
+    },
+    "tulu_v2": {
+        "bbh_direct_data": {
+            "word_sorting": 0.0,
+            "disambiguation_qa": 0.0,
+            "movie_recommendation": 0.0,
+            "formal_fallacies": 0.0,
+            "causal_judgement": 0.0,
+            "multistep_arithmetic_two": 0.0,
+            "dyck_languages": 0.0,
+            "sports_understanding": 0.0,
+            "hyperbaton": 0.0,
+            "date_understanding": 0.0,
+            "web_of_lies": 0.0,
+            "boolean_expressions": 0.0,
+            "logical_deduction_three_objects": 0.0,
+            "snarks": 0.0,
+            "geometric_shapes": 0.0,
+            "navigate": 0.0,
+            "penguins_in_a_table": 0.0,
+            "ruin_names": 0.0,
+            "logical_deduction_five_objects": 0.0,
+            "salient_translation_error_detection": 0.0,
+            "tracking_shuffled_objects_seven_objects": 0.0,
+            "tracking_shuffled_objects_five_objects": 0.0,
+            "temporal_sequences": 0.0,
+            "tracking_shuffled_objects_three_objects": 0.0,
+            "logical_deduction_seven_objects": 0.0,
+            "object_counting": 0.0,
+            "reasoning_about_colored_objects": 0.0,
+            "average_exact_match": 0.0
+        },
+        "bbh_cot_data": {
+            "word_sorting": 0.075,
+            "disambiguation_qa": 0.35,
+            "movie_recommendation": 0.7,
+            "formal_fallacies": 0.475,
+            "causal_judgement": 0.475,
+            "multistep_arithmetic_two": 0.0,
+            "dyck_languages": 0.025,
+            "sports_understanding": 0.85,
+            "hyperbaton": 0.625,
+            "date_understanding": 0.65,
+            "web_of_lies": 0.625,
+            "boolean_expressions": 0.675,
+            "logical_deduction_three_objects": 0.7,
+            "snarks": 0.45,
+            "geometric_shapes": 0.275,
+            "navigate": 0.575,
+            "penguins_in_a_table": 0.375,
+            "ruin_names": 0.3,
+            "logical_deduction_five_objects": 0.375,
+            "salient_translation_error_detection": 0.175,
+            "tracking_shuffled_objects_seven_objects": 0.1,
+            "tracking_shuffled_objects_five_objects": 0.175,
+            "temporal_sequences": 0.125,
+            "tracking_shuffled_objects_three_objects": 0.4,
+            "logical_deduction_seven_objects": 0.175,
+            "object_counting": 0.575,
+            "reasoning_about_colored_objects": 0.55,
+            "average_exact_match": 0.40185185185185196
+        },
+        "gsm_direct_data": {
+            "exact_match": 0.03
+        },
+        "gsm_cot_data": {
+            "exact_match": 0.015
+        },
+        "mmlu_0_shot_data": {
+            "average_acc": 0.49878934624697335,
+            "subcat_acc": {
+                "math": 0.32612781954887216,
+                "health": 0.5225609756097561,
+                "physics": 0.3703125,
+                "business": 0.665903890160183,
+                "biology": 0.5242290748898678,
+                "chemistry": 0.33993399339933994,
+                "computer science": 0.4854368932038835,
+                "economics": 0.4272237196765499,
+                "engineering": 0.4,
+                "philosophy": 0.4274353876739563,
+                "other": 0.6103004291845494,
+                "history": 0.6698924731182796,
+                "geography": 0.5707070707070707,
+                "politics": 0.6296296296296297,
+                "psychology": 0.5946413137424373,
+                "culture": 0.6837349397590361,
+                "law": 0.41179807146908676
+            },
+            "cat_acc": {
+                "STEM": 0.3919814446653413,
+                "humanities": 0.46950053134962805,
+                "social sciences": 0.5697107572310692,
+                "other (business, health, misc.)": 0.5734114743985195
+            }
+        },
+        "mmlu_5_shot_data": {
+            "average_acc": 0.5170915823956701,
+            "subcat_acc": {
+                "math": 0.3233082706766917,
+                "health": 0.55,
+                "physics": 0.3875,
+                "business": 0.6864988558352403,
+                "biology": 0.552863436123348,
+                "chemistry": 0.36633663366336633,
+                "computer science": 0.470873786407767,
+                "economics": 0.46900269541778977,
+                "engineering": 0.43448275862068964,
+                "philosophy": 0.4433399602385686,
+                "other": 0.5982832618025751,
+                "history": 0.6698924731182796,
+                "geography": 0.6616161616161617,
+                "politics": 0.7037037037037037,
+                "psychology": 0.6266205704407951,
+                "culture": 0.6716867469879518,
+                "law": 0.4271128757799206
+            },
+            "cat_acc": {
+                "STEM": 0.4012591119946985,
+                "humanities": 0.4820403825717322,
+                "social sciences": 0.6119597010074748,
+                "other (business, health, misc.)": 0.5857495373226403
+            }
+        },
+        "toxigen_data": {
+            "trans": 0.928,
+            "asian": 0.998,
+            "black": 0.998,
+            "mexican": 0.774,
+            "jewish": 0.894,
+            "native_american": 1.0,
+            "physical_disability": 0.99,
+            "lgbtq": 0.796,
+            "middle_east": 0.936,
+            "women": 0.964,
+            "chinese": 0.906,
+            "latino": 0.822,
+            "mental_disability": 0.998,
+            "muslim": 0.982,
+            "overall": 0.9275714285714286
+        },
+        "tydiqa_no_context_data": {
+            "finnish": {
+                "exact_match": 0.0,
+                "f1": 8.461505646721868
+            },
+            "bengali": {
+                "exact_match": 0.0,
+                "f1": 1.3293650793650795
+            },
+            "korean": {
+                "exact_match": 0.0,
+                "f1": 7.297706882489492
+            },
+            "russian": {
+                "exact_match": 0.0,
+                "f1": 4.528976507792669
+            },
+            "arabic": {
+                "exact_match": 0.0,
+                "f1": 4.476175100358404
+            },
+            "telugu": {
+                "exact_match": 0.0,
+                "f1": 0.25
+            },
+            "indonesian": {
+                "exact_match": 0.0,
+                "f1": 7.749627134139124
+            },
+            "swahili": {
+                "exact_match": 0.0,
+                "f1": 2.094920964920965
+            },
+            "english": {
+                "exact_match": 0.0,
+                "f1": 6.599800570341784
+            },
+            "average": {
+                "f1": 4.754230876236599,
+                "exact_match": 0.0
+            }
+        },
+        "tydiqa_goldp_data": {
+            "english": {
+                "exact_match": 0.0,
+                "f1": 14.877511810762096
+            },
+            "finnish": {
+                "exact_match": 0.0,
+                "f1": 22.44636606839403
+            },
+            "bengali": {
+                "exact_match": 0.0,
+                "f1": 16.23592138855297
+            },
+            "telugu": {
+                "exact_match": 0.0,
+                "f1": 1.0666666666666667
+            },
+            "russian": {
+                "exact_match": 0.0,
+                "f1": 13.201719252645903
+            },
+            "arabic": {
+                "exact_match": 0.0,
+                "f1": 24.77697484695741
+            },
+            "korean": {
+                "exact_match": 1.0,
+                "f1": 25.96596008872895
+            },
+            "swahili": {
+                "exact_match": 0.0,
+                "f1": 13.707000590157806
+            },
+            "indonesian": {
+                "exact_match": 0.0,
+                "f1": 28.01380783122394
+            },
+            "average": {
+                "f1": 17.810214282676643,
+                "exact_match": 0.1111111111111111
+            }
+        }
+    },
+    "code_alpaca_filtered": {
+        "bbh_direct_data": {
+            "word_sorting": 0.0,
+            "disambiguation_qa": 0.0,
+            "movie_recommendation": 0.0,
+            "formal_fallacies": 0.0,
+            "causal_judgement": 0.0,
+            "multistep_arithmetic_two": 0.0,
+            "dyck_languages": 0.0,
+            "sports_understanding": 0.0,
+            "hyperbaton": 0.0,
+            "date_understanding": 0.0,
+            "web_of_lies": 0.0,
+            "boolean_expressions": 0.0,
+            "logical_deduction_three_objects": 0.0,
+            "snarks": 0.0,
+            "geometric_shapes": 0.0,
+            "navigate": 0.0,
+            "penguins_in_a_table": 0.0,
+            "ruin_names": 0.0,
+            "logical_deduction_five_objects": 0.0,
+            "salient_translation_error_detection": 0.0,
+            "tracking_shuffled_objects_seven_objects": 0.0,
+            "tracking_shuffled_objects_five_objects": 0.0,
+            "temporal_sequences": 0.0,
+            "tracking_shuffled_objects_three_objects": 0.0,
+            "logical_deduction_seven_objects": 0.0,
+            "object_counting": 0.0,
+            "reasoning_about_colored_objects": 0.0,
+            "average_exact_match": 0.0
+        },
+        "bbh_cot_data": {
+            "word_sorting": 0.075,
+            "disambiguation_qa": 0.35,
+            "movie_recommendation": 0.7,
+            "formal_fallacies": 0.475,
+            "causal_judgement": 0.475,
+            "multistep_arithmetic_two": 0.0,
+            "dyck_languages": 0.025,
+            "sports_understanding": 0.85,
+            "hyperbaton": 0.625,
+            "date_understanding": 0.65,
+            "web_of_lies": 0.625,
+            "boolean_expressions": 0.675,
+            "logical_deduction_three_objects": 0.7,
+            "snarks": 0.45,
+            "geometric_shapes": 0.275,
+            "navigate": 0.575,
+            "penguins_in_a_table": 0.375,
+            "ruin_names": 0.3,
+            "logical_deduction_five_objects": 0.375,
+            "salient_translation_error_detection": 0.175,
+            "tracking_shuffled_objects_seven_objects": 0.1,
+            "tracking_shuffled_objects_five_objects": 0.175,
+            "temporal_sequences": 0.125,
+            "tracking_shuffled_objects_three_objects": 0.4,
+            "logical_deduction_seven_objects": 0.175,
+            "object_counting": 0.575,
+            "reasoning_about_colored_objects": 0.55,
+            "average_exact_match": 0.40185185185185196
+        },
+        "gsm_direct_data": {
+            "exact_match": 0.03
+        },
+        "gsm_cot_data": {
+            "exact_match": 0.015
+        },
+        "mmlu_0_shot_data": {
+            "average_acc": 0.4205953567867825,
+            "subcat_acc": {
+                "math": 0.2725563909774436,
+                "health": 0.44146341463414634,
+                "physics": 0.340625,
+                "business": 0.5308924485125858,
+                "biology": 0.4713656387665198,
+                "chemistry": 0.32673267326732675,
+                "computer science": 0.4223300970873786,
+                "economics": 0.38409703504043125,
+                "engineering": 0.43448275862068964,
+                "philosophy": 0.3717693836978131,
+                "other": 0.48669527896995707,
+                "history": 0.5301075268817205,
+                "geography": 0.4696969696969697,
+                "politics": 0.5246913580246914,
+                "psychology": 0.4641313742437338,
+                "culture": 0.6265060240963856,
+                "law": 0.35224049914917754
+            },
+            "cat_acc": {
+                "STEM": 0.35056328694499667,
+                "humanities": 0.39574920297555793,
+                "social sciences": 0.47546311342216446,
+                "other (business, health, misc.)": 0.46977174583590375
+            }
+        },
+        "mmlu_5_shot_data": {
+            "average_acc": 0.4381142287423444,
+            "subcat_acc": {
+                "math": 0.29793233082706766,
+                "health": 0.4676829268292683,
+                "physics": 0.353125,
+                "business": 0.5926773455377574,
+                "biology": 0.4713656387665198,
+                "chemistry": 0.33993399339933994,
+                "computer science": 0.4199029126213592,
+                "economics": 0.40431266846361186,
+                "engineering": 0.4413793103448276,
+                "philosophy": 0.3812127236580517,
+                "other": 0.5012875536480687,
+                "history": 0.5387096774193548,
+                "geography": 0.5656565656565656,
+                "politics": 0.5447530864197531,
+                "psychology": 0.49524632670700086,
+                "culture": 0.5933734939759037,
+                "law": 0.3641520136131594
+            },
+            "cat_acc": {
+                "STEM": 0.3634857521537442,
+                "humanities": 0.4059511158342189,
+                "social sciences": 0.4988625284367891,
+                "other (business, health, misc.)": 0.49660703269586676
+            }
+        },
+        "toxigen_data": {
+            "trans": 0.928,
+            "asian": 0.998,
+            "black": 0.998,
+            "mexican": 0.774,
+            "jewish": 0.894,
+            "native_american": 1.0,
+            "physical_disability": 0.99,
+            "lgbtq": 0.796,
+            "middle_east": 0.936,
+            "women": 0.964,
+            "chinese": 0.906,
+            "latino": 0.822,
+            "mental_disability": 0.998,
+            "muslim": 0.982,
+            "overall": 0.9275714285714286
+        },
+        "tydiqa_no_context_data": {
+            "arabic": {
+                "exact_match": 0.0,
+                "f1": 3.3936653796567113
+            },
+            "bengali": {
+                "exact_match": 0.0,
+                "f1": 0.6285714285714286
+            },
+            "swahili": {
+                "exact_match": 0.0,
+                "f1": 1.5154540761441258
+            },
+            "telugu": {
+                "exact_match": 0.0,
+                "f1": 0.6666666666666665
+            },
+            "russian": {
+                "exact_match": 0.0,
+                "f1": 2.106134377567602
+            },
+            "indonesian": {
+                "exact_match": 0.0,
+                "f1": 8.66743654943912
+            },
+            "korean": {
+                "exact_match": 0.0,
+                "f1": 7.469218704001314
+            },
+            "finnish": {
+                "exact_match": 0.0,
+                "f1": 5.812187047287159
+            },
+            "english": {
+                "exact_match": 0.0,
+                "f1": 7.883329005917292
+            },
+            "average": {
+                "f1": 4.238073692805713,
+                "exact_match": 0.0
+            }
+        },
+        "tydiqa_goldp_data": {
+            "english": {
+                "exact_match": 0.0,
+                "f1": 14.877511810762096
+            },
+            "indonesian": {
+                "exact_match": 0.0,
+                "f1": 23.86231188033059
+            },
+            "bengali": {
+                "exact_match": 0.0,
+                "f1": 14.576984126984133
+            },
+            "telugu": {
+                "exact_match": 0.0,
+                "f1": 1.333333333333333
+            },
+            "finnish": {
+                "exact_match": 0.0,
+                "f1": 18.9656410023731
+            },
+            "swahili": {
+                "exact_match": 0.0,
+                "f1": 12.996283714714862
+            },
+            "korean": {
+                "exact_match": 0.0,
+                "f1": 23.691505011642292
+            },
+            "russian": {
+                "exact_match": 0.0,
+                "f1": 16.970534936816744
+            },
+            "arabic": {
+                "exact_match": 0.0,
+                "f1": 23.604606247742186
+            },
+            "average": {
+                "f1": 16.76430134052215,
+                "exact_match": 0.0
+            }
+        }
+    },
+    "cot_filtered": {
+        "bbh_direct_data": {
+            "word_sorting": 0.0,
+            "disambiguation_qa": 0.0,
+            "movie_recommendation": 0.0,
+            "formal_fallacies": 0.0,
+            "causal_judgement": 0.0,
+            "multistep_arithmetic_two": 0.0,
+            "dyck_languages": 0.0,
+            "sports_understanding": 0.0,
+            "hyperbaton": 0.0,
+            "date_understanding": 0.0,
+            "web_of_lies": 0.0,
+            "boolean_expressions": 0.0,
+            "logical_deduction_three_objects": 0.0,
+            "snarks": 0.0,
+            "geometric_shapes": 0.0,
+            "navigate": 0.0,
+            "penguins_in_a_table": 0.0,
+            "ruin_names": 0.0,
+            "logical_deduction_five_objects": 0.0,
+            "salient_translation_error_detection": 0.0,
+            "tracking_shuffled_objects_seven_objects": 0.0,
+            "tracking_shuffled_objects_five_objects": 0.0,
+            "temporal_sequences": 0.0,
+            "tracking_shuffled_objects_three_objects": 0.0,
+            "logical_deduction_seven_objects": 0.0,
+            "object_counting": 0.0,
+            "reasoning_about_colored_objects": 0.0,
+            "average_exact_match": 0.0
+        },
+        "bbh_cot_data": {
+            "word_sorting": 0.075,
+            "disambiguation_qa": 0.35,
+            "movie_recommendation": 0.7,
+            "formal_fallacies": 0.475,
+            "causal_judgement": 0.475,
+            "multistep_arithmetic_two": 0.0,
+            "dyck_languages": 0.025,
+            "sports_understanding": 0.85,
+            "hyperbaton": 0.625,
+            "date_understanding": 0.65,
+            "web_of_lies": 0.625,
+            "boolean_expressions": 0.675,
+            "logical_deduction_three_objects": 0.7,
+            "snarks": 0.45,
+            "geometric_shapes": 0.275,
+            "navigate": 0.575,
+            "penguins_in_a_table": 0.375,
+            "ruin_names": 0.3,
+            "logical_deduction_five_objects": 0.375,
+            "salient_translation_error_detection": 0.175,
+            "tracking_shuffled_objects_seven_objects": 0.1,
+            "tracking_shuffled_objects_five_objects": 0.175,
+            "temporal_sequences": 0.125,
+            "tracking_shuffled_objects_three_objects": 0.4,
+            "logical_deduction_seven_objects": 0.175,
+            "object_counting": 0.575,
+            "reasoning_about_colored_objects": 0.55,
+            "average_exact_match": 0.40185185185185196
+        },
+        "gsm_direct_data": {
+            "exact_match": 0.03
+        },
+        "gsm_cot_data": {
+            "exact_match": 0.015
+        },
+        "mmlu_0_shot_data": {
+            "average_acc": 0.4344822674832645,
+            "subcat_acc": {
+                "math": 0.26879699248120303,
+                "health": 0.4585365853658537,
+                "physics": 0.340625,
+                "business": 0.6475972540045767,
+                "biology": 0.5,
+                "chemistry": 0.30363036303630364,
+                "computer science": 0.40048543689320387,
+                "economics": 0.39892183288409705,
+                "engineering": 0.35172413793103446,
+                "philosophy": 0.352882703777336,
+                "other": 0.5484978540772533,
+                "history": 0.567741935483871,
+                "geography": 0.48484848484848486,
+                "politics": 0.5108024691358025,
+                "psychology": 0.5203111495246326,
+                "culture": 0.5572289156626506,
+                "law": 0.3630175836642087
+            },
+            "cat_acc": {
+                "STEM": 0.3442677269715043,
+                "humanities": 0.3991498405951116,
+                "social sciences": 0.4907377315567111,
+                "other (business, health, misc.)": 0.5163479333744602
+            }
+        },
+        "mmlu_5_shot_data": {
+            "average_acc": 0.46033328585671557,
+            "subcat_acc": {
+                "math": 0.29887218045112784,
+                "health": 0.4847560975609756,
+                "physics": 0.3734375,
+                "business": 0.6384439359267735,
+                "biology": 0.5330396475770925,
+                "chemistry": 0.35973597359735976,
+                "computer science": 0.38349514563106796,
+                "economics": 0.4420485175202156,
+                "engineering": 0.41379310344827586,
+                "philosophy": 0.3951292246520875,
+                "other": 0.5605150214592275,
+                "history": 0.5978494623655914,
+                "geography": 0.5606060606060606,
+                "politics": 0.5524691358024691,
+                "psychology": 0.5479688850475367,
+                "culture": 0.5542168674698795,
+                "law": 0.36585365853658536
+            },
+            "cat_acc": {
+                "STEM": 0.37309476474486414,
+                "humanities": 0.42422954303931987,
+                "social sciences": 0.5248618784530387,
+                "other (business, health, misc.)": 0.5326958667489204
+            }
+        },
+        "toxigen_data": {
+            "trans": 0.928,
+            "asian": 0.998,
+            "black": 0.998,
+            "mexican": 0.774,
+            "jewish": 0.894,
+            "native_american": 1.0,
+            "physical_disability": 0.99,
+            "lgbtq": 0.796,
+            "middle_east": 0.936,
+            "women": 0.964,
+            "chinese": 0.906,
+            "latino": 0.822,
+            "mental_disability": 0.998,
+            "muslim": 0.982,
+            "overall": 0.9275714285714286
+        },
+        "tydiqa_no_context_data": {
+            "swahili": {
+                "exact_match": 0.0,
+                "f1": 2.5773229476318718
+            },
+            "bengali": {
+                "exact_match": 0.0,
+                "f1": 0.6857142857142857
+            },
+            "telugu": {
+                "exact_match": 0.0,
+                "f1": 1.6571428571428573
+            },
+            "indonesian": {
+                "exact_match": 0.0,
+                "f1": 7.52198918273087
+            },
+            "english": {
+                "exact_match": 0.0,
+                "f1": 6.127890992439164
+            },
+            "korean": {
+                "exact_match": 0.0,
+                "f1": 5.279957964740573
+            },
+            "arabic": {
+                "exact_match": 0.0,
+                "f1": 3.537434842045826
+            },
+            "finnish": {
+                "exact_match": 0.0,
+                "f1": 5.9726091992304635
+            },
+            "russian": {
+                "exact_match": 0.0,
+                "f1": 1.818784273710521
+            },
+            "average": {
+                "f1": 3.9087607272651588,
+                "exact_match": 0.0
+            }
+        },
+        "tydiqa_goldp_data": {
+            "russian": {
+                "exact_match": 0.0,
+                "f1": 11.472144272051084
+            },
+            "telugu": {
+                "exact_match": 0.0,
+                "f1": 1.7690476190476192
+            },
+            "arabic": {
+                "exact_match": 2.0,
+                "f1": 32.19825668157141
+            },
+            "english": {
+                "exact_match": 0.0,
+                "f1": 18.592650441598998
+            },
+            "finnish": {
+                "exact_match": 0.0,
+                "f1": 21.637808466725545
+            },
+            "bengali": {
+                "exact_match": 0.0,
+                "f1": 17.05868020868021
+            },
+            "swahili": {
+                "exact_match": 0.0,
+                "f1": 16.02022110936317
+            },
+            "korean": {
+                "exact_match": 0.0,
+                "f1": 23.081812631812628
+            },
+            "indonesian": {
+                "exact_match": 0.0,
+                "f1": 26.2335606255938
+            },
+            "average": {
+                "f1": 18.67379800627161,
+                "exact_match": 0.2222222222222222
+            }
+        }
+    },
+    "flan_v2_filtered": {
+        "bbh_direct_data": {
+            "word_sorting": 0.0,
+            "disambiguation_qa": 0.0,
+            "movie_recommendation": 0.0,
+            "formal_fallacies": 0.0,
+            "causal_judgement": 0.0,
+            "multistep_arithmetic_two": 0.0,
+            "dyck_languages": 0.0,
+            "sports_understanding": 0.0,
+            "hyperbaton": 0.0,
+            "date_understanding": 0.0,
+            "web_of_lies": 0.0,
+            "boolean_expressions": 0.0,
+            "logical_deduction_three_objects": 0.0,
+            "snarks": 0.0,
+            "geometric_shapes": 0.0,
+            "navigate": 0.0,
+            "penguins_in_a_table": 0.0,
+            "ruin_names": 0.0,
+            "logical_deduction_five_objects": 0.0,
+            "salient_translation_error_detection": 0.0,
+            "tracking_shuffled_objects_seven_objects": 0.0,
+            "tracking_shuffled_objects_five_objects": 0.0,
+            "temporal_sequences": 0.0,
+            "tracking_shuffled_objects_three_objects": 0.0,
+            "logical_deduction_seven_objects": 0.0,
+            "object_counting": 0.0,
+            "reasoning_about_colored_objects": 0.0,
+            "average_exact_match": 0.0
+        },
+        "bbh_cot_data": {
+            "word_sorting": 0.075,
+            "disambiguation_qa": 0.35,
+            "movie_recommendation": 0.7,
+            "formal_fallacies": 0.475,
+            "causal_judgement": 0.475,
+            "multistep_arithmetic_two": 0.0,
+            "dyck_languages": 0.025,
+            "sports_understanding": 0.85,
+            "hyperbaton": 0.625,
+            "date_understanding": 0.65,
+            "web_of_lies": 0.625,
+            "boolean_expressions": 0.675,
+            "logical_deduction_three_objects": 0.7,
+            "snarks": 0.45,
+            "geometric_shapes": 0.275,
+            "navigate": 0.575,
+            "penguins_in_a_table": 0.375,
+            "ruin_names": 0.3,
+            "logical_deduction_five_objects": 0.375,
+            "salient_translation_error_detection": 0.175,
+            "tracking_shuffled_objects_seven_objects": 0.1,
+            "tracking_shuffled_objects_five_objects": 0.175,
+            "temporal_sequences": 0.125,
+            "tracking_shuffled_objects_three_objects": 0.4,
+            "logical_deduction_seven_objects": 0.175,
+            "object_counting": 0.575,
+            "reasoning_about_colored_objects": 0.55,
+            "average_exact_match": 0.40185185185185196
+        },
+        "gsm_direct_data": {
+            "exact_match": 0.03
+        },
+        "gsm_cot_data": {
+            "exact_match": 0.015
+        },
+        "mmlu_0_shot_data": {
+            "average_acc": 0.4817689787779519,
+            "subcat_acc": {
+                "math": 0.27537593984962405,
+                "health": 0.48353658536585364,
+                "physics": 0.3671875,
+                "business": 0.6338672768878718,
+                "biology": 0.5110132158590308,
+                "chemistry": 0.37623762376237624,
+                "computer science": 0.4344660194174757,
+                "economics": 0.4716981132075472,
+                "engineering": 0.4413793103448276,
+                "philosophy": 0.4165009940357853,
+                "other": 0.5656652360515021,
+                "history": 0.6333333333333333,
+                "geography": 0.5656565656565656,
+                "politics": 0.6172839506172839,
+                "psychology": 0.5790838375108038,
+                "culture": 0.7108433734939759,
+                "law": 0.4106636415201361
+            },
+            "cat_acc": {
+                "STEM": 0.37011265738899934,
+                "humanities": 0.457173219978746,
+                "social sciences": 0.574585635359116,
+                "other (business, health, misc.)": 0.5333127698951264
+            }
+        },
+        "mmlu_5_shot_data": {
+            "average_acc": 0.5118216778236718,
+            "subcat_acc": {
+                "math": 0.2951127819548872,
+                "health": 0.5213414634146342,
+                "physics": 0.39375,
+                "business": 0.6979405034324943,
+                "biology": 0.566079295154185,
+                "chemistry": 0.3696369636963696,
+                "computer science": 0.44660194174757284,
+                "economics": 0.4797843665768194,
+                "engineering": 0.43448275862068964,
+                "philosophy": 0.47564612326043737,
+                "other": 0.6,
+                "history": 0.6698924731182796,
+                "geography": 0.6616161616161617,
+                "politics": 0.6620370370370371,
+                "psychology": 0.6015557476231633,
+                "culture": 0.6024096385542169,
+                "law": 0.4276800907543959
+            },
+            "cat_acc": {
+                "STEM": 0.39165009940357853,
+                "humanities": 0.4960680127523911,
+                "social sciences": 0.5888852778680533,
+                "other (business, health, misc.)": 0.5734114743985195
+            }
+        },
+        "toxigen_data": {
+            "trans": 0.928,
+            "asian": 0.998,
+            "black": 0.998,
+            "mexican": 0.774,
+            "jewish": 0.894,
+            "native_american": 1.0,
+            "physical_disability": 0.99,
+            "lgbtq": 0.796,
+            "middle_east": 0.936,
+            "women": 0.964,
+            "chinese": 0.906,
+            "latino": 0.822,
+            "mental_disability": 0.998,
+            "muslim": 0.982,
+            "overall": 0.9275714285714286
+        },
+        "tydiqa_no_context_data": {
+            "indonesian": {
+                "exact_match": 0.0,
+                "f1": 9.296421191466024
+            },
+            "arabic": {
+                "exact_match": 0.0,
+                "f1": 4.00860721127236
+            },
+            "english": {
+                "exact_match": 0.0,
+                "f1": 6.870563016370289
+            },
+            "swahili": {
+                "exact_match": 0.0,
+                "f1": 2.3053144964314374
+            },
+            "korean": {
+                "exact_match": 0.0,
+                "f1": 7.378073697638914
+            },
+            "telugu": {
+                "exact_match": 0.0,
+                "f1": 0.25
+            },
+            "finnish": {
+                "exact_match": 0.0,
+                "f1": 6.025850603843943
+            },
+            "russian": {
+                "exact_match": 0.0,
+                "f1": 3.2171854378348375
+            },
+            "bengali": {
+                "exact_match": 0.0,
+                "f1": 0.28571428571428575
+            },
+            "average": {
+                "f1": 4.404192215619122,
+                "exact_match": 0.0
+            }
+        },
+        "tydiqa_goldp_data": {
+            "bengali": {
+                "exact_match": 0.0,
+                "f1": 16.146608946608946
+            },
+            "arabic": {
+                "exact_match": 0.0,
+                "f1": 29.42707136506772
+            },
+            "russian": {
+                "exact_match": 0.0,
+                "f1": 11.558892172945201
+            },
+            "telugu": {
+                "exact_match": 0.0,
+                "f1": 0.33333333333333326
+            },
+            "indonesian": {
+                "exact_match": 0.0,
+                "f1": 22.019709161331406
+            },
+            "english": {
+                "exact_match": 0.0,
+                "f1": 14.47773536633455
+            },
+            "korean": {
+                "exact_match": 1.0,
+                "f1": 26.127369871420207
+            },
+            "finnish": {
+                "exact_match": 0.0,
+                "f1": 25.116686808291746
+            },
+            "swahili": {
+                "exact_match": 0.0,
+                "f1": 10.886466792581341
+            },
+            "average": {
+                "f1": 17.34376375754605,
+                "exact_match": 0.1111111111111111
+            }
+        }
+    },
+    "gpt4_alpaca_filtered": {
+        "bbh_direct_data": {
+            "word_sorting": 0.0,
+            "disambiguation_qa": 0.0,
+            "movie_recommendation": 0.0,
+            "formal_fallacies": 0.0,
+            "causal_judgement": 0.0,
+            "multistep_arithmetic_two": 0.0,
+            "dyck_languages": 0.0,
+            "sports_understanding": 0.0,
+            "hyperbaton": 0.0,
+            "date_understanding": 0.0,
+            "web_of_lies": 0.0,
+            "boolean_expressions": 0.0,
+            "logical_deduction_three_objects": 0.0,
+            "snarks": 0.0,
+            "geometric_shapes": 0.0,
+            "navigate": 0.0,
+            "penguins_in_a_table": 0.0,
+            "ruin_names": 0.0,
+            "logical_deduction_five_objects": 0.0,
+            "salient_translation_error_detection": 0.0,
+            "tracking_shuffled_objects_seven_objects": 0.0,
+            "tracking_shuffled_objects_five_objects": 0.0,
+            "temporal_sequences": 0.0,
+            "tracking_shuffled_objects_three_objects": 0.0,
+            "logical_deduction_seven_objects": 0.0,
+            "object_counting": 0.0,
+            "reasoning_about_colored_objects": 0.0,
+            "average_exact_match": 0.0
+        },
+        "bbh_cot_data": {
+            "word_sorting": 0.075,
+            "disambiguation_qa": 0.35,
+            "movie_recommendation": 0.7,
+            "formal_fallacies": 0.475,
+            "causal_judgement": 0.475,
+            "multistep_arithmetic_two": 0.0,
+            "dyck_languages": 0.025,
+            "sports_understanding": 0.85,
+            "hyperbaton": 0.625,
+            "date_understanding": 0.65,
+            "web_of_lies": 0.625,
+            "boolean_expressions": 0.675,
+            "logical_deduction_three_objects": 0.7,
+            "snarks": 0.45,
+            "geometric_shapes": 0.275,
+            "navigate": 0.575,
+            "penguins_in_a_table": 0.375,
+            "ruin_names": 0.3,
+            "logical_deduction_five_objects": 0.375,
+            "salient_translation_error_detection": 0.175,
+            "tracking_shuffled_objects_seven_objects": 0.1,
+            "tracking_shuffled_objects_five_objects": 0.175,
+            "temporal_sequences": 0.125,
+            "tracking_shuffled_objects_three_objects": 0.4,
+            "logical_deduction_seven_objects": 0.175,
+            "object_counting": 0.575,
+            "reasoning_about_colored_objects": 0.55,
+            "average_exact_match": 0.40185185185185196
+        },
+        "gsm_direct_data": {
+            "exact_match": 0.03
+        },
+        "gsm_cot_data": {
+            "exact_match": 0.015
+        },
+        "mmlu_0_shot_data": {
+            "average_acc": 0.4194559179604045,
+            "subcat_acc": {
+                "math": 0.26973684210526316,
+                "health": 0.4329268292682927,
+                "physics": 0.35625,
+                "business": 0.5583524027459954,
+                "biology": 0.4669603524229075,
+                "chemistry": 0.25412541254125415,
+                "computer science": 0.39805825242718446,
+                "economics": 0.32345013477088946,
+                "engineering": 0.4,
+                "philosophy": 0.371272365805169,
+                "other": 0.5141630901287554,
+                "history": 0.553763440860215,
+                "geography": 0.5,
+                "politics": 0.5231481481481481,
+                "psychology": 0.47709593777009507,
+                "culture": 0.6114457831325302,
+                "law": 0.3494044242768009
+            },
+            "cat_acc": {
+                "STEM": 0.3399602385685885,
+                "humanities": 0.3991498405951116,
+                "social sciences": 0.4657133571660709,
+                "other (business, health, misc.)": 0.47902529302899444
+            }
+        },
+        "mmlu_5_shot_data": {
+            "average_acc": 0.446944879646774,
+            "subcat_acc": {
+                "math": 0.28383458646616544,
+                "health": 0.473780487804878,
+                "physics": 0.3421875,
+                "business": 0.5652173913043478,
+                "biology": 0.45594713656387664,
+                "chemistry": 0.3696369636963696,
+                "computer science": 0.45145631067961167,
+                "economics": 0.38005390835579517,
+                "engineering": 0.4689655172413793,
+                "philosophy": 0.4000994035785288,
+                "other": 0.5218884120171674,
+                "history": 0.5741935483870968,
+                "geography": 0.5555555555555556,
+                "politics": 0.6018518518518519,
+                "psychology": 0.5306828003457217,
+                "culture": 0.5903614457831325,
+                "law": 0.3511060692002269
+            },
+            "cat_acc": {
+                "STEM": 0.36249171636845595,
+                "humanities": 0.4161530286928799,
+                "social sciences": 0.5173870653233669,
+                "other (business, health, misc.)": 0.5033929673041333
+            }
+        },
+        "toxigen_data": {
+            "trans": 0.928,
+            "asian": 0.998,
+            "black": 0.998,
+            "mexican": 0.774,
+            "jewish": 0.894,
+            "native_american": 1.0,
+            "physical_disability": 0.99,
+            "lgbtq": 0.796,
+            "middle_east": 0.936,
+            "women": 0.964,
+            "chinese": 0.906,
+            "latino": 0.822,
+            "mental_disability": 0.998,
+            "muslim": 0.982,
+            "overall": 0.9275714285714286
+        },
+        "tydiqa_no_context_data": {
+            "korean": {
+                "exact_match": 0.0,
+                "f1": 8.351635401635402
+            },
+            "bengali": {
+                "exact_match": 0.0,
+                "f1": 1.7436507936507935
+            },
+            "russian": {
+                "exact_match": 0.0,
+                "f1": 2.5383991395601306
+            },
+            "indonesian": {
+                "exact_match": 0.0,
+                "f1": 8.318930874271432
+            },
+            "arabic": {
+                "exact_match": 0.0,
+                "f1": 4.6213017422132205
+            },
+            "english": {
+                "exact_match": 0.0,
+                "f1": 6.303964517551504
+            },
+            "telugu": {
+                "exact_match": 0.0,
+                "f1": 0.0
+            },
+            "swahili": {
+                "exact_match": 0.0,
+                "f1": 2.0347710742989378
+            },
+            "finnish": {
+                "exact_match": 0.0,
+                "f1": 8.649857551102674
+            },
+            "average": {
+                "f1": 4.729167899364899,
+                "exact_match": 0.0
+            }
+        },
+        "tydiqa_goldp_data": {
+            "arabic": {
+                "exact_match": 0.0,
+                "f1": 27.36634581142749
+            },
+            "telugu": {
+                "exact_match": 0.0,
+                "f1": 1.3523809523809525
+            },
+            "indonesian": {
+                "exact_match": 0.0,
+                "f1": 25.05049511960637
+            },
+            "bengali": {
+                "exact_match": 0.0,
+                "f1": 18.992518592518593
+            },
+            "swahili": {
+                "exact_match": 0.0,
+                "f1": 16.66079070383409
+            },
+            "finnish": {
+                "exact_match": 0.0,
+                "f1": 23.11076971982965
+            },
+            "russian": {
+                "exact_match": 0.0,
+                "f1": 11.609726971238032
+            },
+            "english": {
+                "exact_match": 0.0,
+                "f1": 19.112827593467543
+            },
+            "korean": {
+                "exact_match": 0.0,
+                "f1": 25.185359085359075
+            },
+            "average": {
+                "f1": 18.715690505517976,
+                "exact_match": 0.0
+            }
+        }
+    },
+    "hard_coded_filtered": {
+        "bbh_direct_data": {
+            "word_sorting": 0.0,
+            "disambiguation_qa": 0.0,
+            "movie_recommendation": 0.0,
+            "formal_fallacies": 0.0,
+            "causal_judgement": 0.0,
+            "multistep_arithmetic_two": 0.0,
+            "dyck_languages": 0.0,
+            "sports_understanding": 0.0,
+            "hyperbaton": 0.0,
+            "date_understanding": 0.0,
+            "web_of_lies": 0.0,
+            "boolean_expressions": 0.0,
+            "logical_deduction_three_objects": 0.0,
+            "snarks": 0.0,
+            "geometric_shapes": 0.0,
+            "navigate": 0.0,
+            "penguins_in_a_table": 0.0,
+            "ruin_names": 0.0,
+            "logical_deduction_five_objects": 0.0,
+            "salient_translation_error_detection": 0.0,
+            "tracking_shuffled_objects_seven_objects": 0.0,
+            "tracking_shuffled_objects_five_objects": 0.0,
+            "temporal_sequences": 0.0,
+            "tracking_shuffled_objects_three_objects": 0.0,
+            "logical_deduction_seven_objects": 0.0,
+            "object_counting": 0.0,
+            "reasoning_about_colored_objects": 0.0,
+            "average_exact_match": 0.0
+        },
+        "bbh_cot_data": {
+            "word_sorting": 0.075,
+            "disambiguation_qa": 0.35,
+            "movie_recommendation": 0.7,
+            "formal_fallacies": 0.475,
+            "causal_judgement": 0.475,
+            "multistep_arithmetic_two": 0.0,
+            "dyck_languages": 0.025,
+            "sports_understanding": 0.85,
+            "hyperbaton": 0.625,
+            "date_understanding": 0.65,
+            "web_of_lies": 0.625,
+            "boolean_expressions": 0.675,
+            "logical_deduction_three_objects": 0.7,
+            "snarks": 0.45,
+            "geometric_shapes": 0.275,
+            "navigate": 0.575,
+            "penguins_in_a_table": 0.375,
+            "ruin_names": 0.3,
+            "logical_deduction_five_objects": 0.375,
+            "salient_translation_error_detection": 0.175,
+            "tracking_shuffled_objects_seven_objects": 0.1,
+            "tracking_shuffled_objects_five_objects": 0.175,
+            "temporal_sequences": 0.125,
+            "tracking_shuffled_objects_three_objects": 0.4,
+            "logical_deduction_seven_objects": 0.175,
+            "object_counting": 0.575,
+            "reasoning_about_colored_objects": 0.55,
+            "average_exact_match": 0.40185185185185196
+        },
+        "gsm_direct_data": {
+            "exact_match": 0.03
+        },
+        "gsm_cot_data": {
+            "exact_match": 0.015
+        },
+        "mmlu_0_shot_data": {
+            "average_acc": 0.34460903005269905,
+            "subcat_acc": {
+                "math": 0.2631578947368421,
+                "health": 0.3463414634146341,
+                "physics": 0.290625,
+                "business": 0.41418764302059496,
+                "biology": 0.3436123348017621,
+                "chemistry": 0.264026402640264,
+                "computer science": 0.3640776699029126,
+                "economics": 0.3018867924528302,
+                "engineering": 0.3586206896551724,
+                "philosophy": 0.3061630218687873,
+                "other": 0.37339055793991416,
+                "history": 0.4236559139784946,
+                "geography": 0.35858585858585856,
+                "politics": 0.4305555555555556,
+                "psychology": 0.35695764909248057,
+                "culture": 0.5060240963855421,
+                "law": 0.33238797504254114
+            },
+            "cat_acc": {
+                "STEM": 0.29953611663353213,
+                "humanities": 0.3392136025504782,
+                "social sciences": 0.3753656158596035,
+                "other (business, health, misc.)": 0.36520666255397904
+            }
+        },
+        "mmlu_5_shot_data": {
+            "average_acc": 0.34902435550491384,
+            "subcat_acc": {
+                "math": 0.2866541353383459,
+                "health": 0.3615853658536585,
+                "physics": 0.2953125,
+                "business": 0.448512585812357,
+                "biology": 0.3744493392070485,
+                "chemistry": 0.35313531353135313,
+                "computer science": 0.3470873786407767,
+                "economics": 0.36253369272237196,
+                "engineering": 0.32413793103448274,
+                "philosophy": 0.33548707753479123,
+                "other": 0.37339055793991416,
+                "history": 0.36666666666666664,
+                "geography": 0.3434343434343434,
+                "politics": 0.44598765432098764,
+                "psychology": 0.33967156439066554,
+                "culture": 0.4819277108433735,
+                "law": 0.2955190017016449
+            },
+            "cat_acc": {
+                "STEM": 0.3184227965540093,
+                "humanities": 0.32667375132837406,
+                "social sciences": 0.3831654208644784,
+                "other (business, health, misc.)": 0.3775447254780999
+            }
+        },
+        "toxigen_data": {
+            "trans": 0.928,
+            "asian": 0.998,
+            "black": 0.998,
+            "mexican": 0.774,
+            "jewish": 0.894,
+            "native_american": 1.0,
+            "physical_disability": 0.99,
+            "lgbtq": 0.796,
+            "middle_east": 0.936,
+            "women": 0.964,
+            "chinese": 0.906,
+            "latino": 0.822,
+            "mental_disability": 0.998,
+            "muslim": 0.982,
+            "overall": 0.9275714285714286
+        },
+        "tydiqa_no_context_data": {
+            "bengali": {
+                "exact_match": 0.0,
+                "f1": 0.8571428571428572
+            },
+            "indonesian": {
+                "exact_match": 0.0,
+                "f1": 7.34562558357775
+            },
+            "korean": {
+                "exact_match": 0.0,
+                "f1": 6.515105184670403
+            },
+            "english": {
+                "exact_match": 0.0,
+                "f1": 8.268310587833827
+            },
+            "telugu": {
+                "exact_match": 0.0,
+                "f1": 1.0857142857142859
+            },
+            "russian": {
+                "exact_match": 0.0,
+                "f1": 2.857477150253662
+            },
+            "swahili": {
+                "exact_match": 0.0,
+                "f1": 1.733091908091908
+            },
+            "finnish": {
+                "exact_match": 0.0,
+                "f1": 5.93696916926425
+            },
+            "arabic": {
+                "exact_match": 0.0,
+                "f1": 3.2764668229836014
+            },
+            "average": {
+                "f1": 4.208433727725838,
+                "exact_match": 0.0
+            }
+        },
+        "tydiqa_goldp_data": {
+            "telugu": {
+                "exact_match": 0.0,
+                "f1": 0.0
+            },
+            "bengali": {
+                "exact_match": 0.0,
+                "f1": 18.94877344877345
+            },
+            "indonesian": {
+                "exact_match": 0.0,
+                "f1": 23.69272211189867
+            },
+            "arabic": {
+                "exact_match": 0.0,
+                "f1": 33.189201806554074
+            },
+            "finnish": {
+                "exact_match": 0.0,
+                "f1": 17.898894406502
+            },
+            "swahili": {
+                "exact_match": 0.0,
+                "f1": 12.563132175387548
+            },
+            "english": {
+                "exact_match": 0.0,
+                "f1": 21.88336898106062
+            },
+            "korean": {
+                "exact_match": 0.0,
+                "f1": 23.652560305191873
+            },
+            "russian": {
+                "exact_match": 0.0,
+                "f1": 15.811239782084192
+            },
+            "average": {
+                "f1": 18.626654779716933,
+                "exact_match": 0.0
+            }
+        }
+    },
+    "lima_filtered": {
+        "bbh_direct_data": {
+            "word_sorting": 0.0,
+            "disambiguation_qa": 0.0,
+            "movie_recommendation": 0.0,
+            "formal_fallacies": 0.0,
+            "causal_judgement": 0.0,
+            "multistep_arithmetic_two": 0.0,
+            "dyck_languages": 0.0,
+            "sports_understanding": 0.0,
+            "hyperbaton": 0.0,
+            "date_understanding": 0.0,
+            "web_of_lies": 0.0,
+            "boolean_expressions": 0.0,
+            "logical_deduction_three_objects": 0.0,
+            "snarks": 0.0,
+            "geometric_shapes": 0.0,
+            "navigate": 0.0,
+            "penguins_in_a_table": 0.0,
+            "ruin_names": 0.0,
+            "logical_deduction_five_objects": 0.0,
+            "salient_translation_error_detection": 0.0,
+            "tracking_shuffled_objects_seven_objects": 0.0,
+            "tracking_shuffled_objects_five_objects": 0.0,
+            "temporal_sequences": 0.0,
+            "tracking_shuffled_objects_three_objects": 0.0,
+            "logical_deduction_seven_objects": 0.0,
+            "object_counting": 0.0,
+            "reasoning_about_colored_objects": 0.0,
+            "average_exact_match": 0.0
+        },
+        "bbh_cot_data": {
+            "word_sorting": 0.075,
+            "disambiguation_qa": 0.35,
+            "movie_recommendation": 0.7,
+            "formal_fallacies": 0.475,
+            "causal_judgement": 0.475,
+            "multistep_arithmetic_two": 0.0,
+            "dyck_languages": 0.025,
+            "sports_understanding": 0.85,
+            "hyperbaton": 0.625,
+            "date_understanding": 0.65,
+            "web_of_lies": 0.625,
+            "boolean_expressions": 0.675,
+            "logical_deduction_three_objects": 0.7,
+            "snarks": 0.45,
+            "geometric_shapes": 0.275,
+            "navigate": 0.575,
+            "penguins_in_a_table": 0.375,
+            "ruin_names": 0.3,
+            "logical_deduction_five_objects": 0.375,
+            "salient_translation_error_detection": 0.175,
+            "tracking_shuffled_objects_seven_objects": 0.1,
+            "tracking_shuffled_objects_five_objects": 0.175,
+            "temporal_sequences": 0.125,
+            "tracking_shuffled_objects_three_objects": 0.4,
+            "logical_deduction_seven_objects": 0.175,
+            "object_counting": 0.575,
+            "reasoning_about_colored_objects": 0.55,
+            "average_exact_match": 0.40185185185185196
+        },
+        "gsm_direct_data": {
+            "exact_match": 0.03
+        },
+        "gsm_cot_data": {
+            "exact_match": 0.015
+        },
+        "mmlu_0_shot_data": {
+            "average_acc": 0.42828656886483407,
+            "subcat_acc": {
+                "math": 0.29135338345864664,
+                "health": 0.45121951219512196,
+                "physics": 0.3546875,
+                "business": 0.5652173913043478,
+                "biology": 0.45374449339207046,
+                "chemistry": 0.31353135313531355,
+                "computer science": 0.3883495145631068,
+                "economics": 0.40431266846361186,
+                "engineering": 0.42758620689655175,
+                "philosophy": 0.37773359840954274,
+                "other": 0.4901287553648069,
+                "history": 0.524731182795699,
+                "geography": 0.494949494949495,
+                "politics": 0.5308641975308642,
+                "psychology": 0.4961106309420916,
+                "culture": 0.5903614457831325,
+                "law": 0.36074872376630746
+            },
+            "cat_acc": {
+                "STEM": 0.3512259774685222,
+                "humanities": 0.40042507970244423,
+                "social sciences": 0.49138771530711733,
+                "other (business, health, misc.)": 0.4805675508945096
+            }
+        },
+        "mmlu_5_shot_data": {
+            "average_acc": 0.39196695627403505,
+            "subcat_acc": {
+                "math": 0.29605263157894735,
+                "health": 0.38902439024390245,
+                "physics": 0.3234375,
+                "business": 0.5446224256292906,
+                "biology": 0.44933920704845814,
+                "chemistry": 0.3927392739273927,
+                "computer science": 0.39563106796116504,
+                "economics": 0.37601078167115903,
+                "engineering": 0.41379310344827586,
+                "philosophy": 0.34642147117296224,
+                "other": 0.4351931330472103,
+                "history": 0.4268817204301075,
+                "geography": 0.35858585858585856,
+                "politics": 0.49074074074074076,
+                "psychology": 0.40881590319792566,
+                "culture": 0.536144578313253,
+                "law": 0.3630175836642087
+            },
+            "cat_acc": {
+                "STEM": 0.3538767395626243,
+                "humanities": 0.36854410201912857,
+                "social sciences": 0.4286642833929152,
+                "other (business, health, misc.)": 0.4265885256014806
+            }
+        },
+        "toxigen_data": {
+            "trans": 0.928,
+            "asian": 0.998,
+            "black": 0.998,
+            "mexican": 0.774,
+            "jewish": 0.894,
+            "native_american": 1.0,
+            "physical_disability": 0.99,
+            "lgbtq": 0.796,
+            "middle_east": 0.936,
+            "women": 0.964,
+            "chinese": 0.906,
+            "latino": 0.822,
+            "mental_disability": 0.998,
+            "muslim": 0.982,
+            "overall": 0.9275714285714286
+        },
+        "tydiqa_no_context_data": {
+            "english": {
+                "exact_match": 0.0,
+                "f1": 6.901876009082312
+            },
+            "indonesian": {
+                "exact_match": 0.0,
+                "f1": 6.337438766606717
+            },
+            "russian": {
+                "exact_match": 0.0,
+                "f1": 2.540345112180673
+            },
+            "finnish": {
+                "exact_match": 0.0,
+                "f1": 6.2648995907200264
+            },
+            "korean": {
+                "exact_match": 0.0,
+                "f1": 4.761118430683648
+            },
+            "arabic": {
+                "exact_match": 0.0,
+                "f1": 3.8121760952936072
+            },
+            "telugu": {
+                "exact_match": 0.0,
+                "f1": 0.28571428571428575
+            },
+            "bengali": {
+                "exact_match": 0.0,
+                "f1": 0.819047619047619
+            },
+            "swahili": {
+                "exact_match": 0.0,
+                "f1": 2.5192063754286123
+            },
+            "average": {
+                "f1": 3.8046469205286106,
+                "exact_match": 0.0
+            }
+        },
+        "tydiqa_goldp_data": {
+            "english": {
+                "exact_match": 0.0,
+                "f1": 14.996704703261877
+            },
+            "bengali": {
+                "exact_match": 0.0,
+                "f1": 16.05418470418471
+            },
+            "finnish": {
+                "exact_match": 0.0,
+                "f1": 20.88088475615228
+            },
+            "swahili": {
+                "exact_match": 0.0,
+                "f1": 11.387786371483367
+            },
+            "arabic": {
+                "exact_match": 0.0,
+                "f1": 22.69965792216936
+            },
+            "indonesian": {
+                "exact_match": 0.0,
+                "f1": 24.332994077455133
+            },
+            "korean": {
+                "exact_match": 1.0,
+                "f1": 26.193372709162173
+            },
+            "telugu": {
+                "exact_match": 0.0,
+                "f1": 1.7714285714285716
+            },
+            "russian": {
+                "exact_match": 0.0,
+                "f1": 18.242217791089963
+            },
+            "average": {
+                "f1": 17.39547017848749,
+                "exact_match": 0.1111111111111111
+            }
+        }
+    },
+    "oasst1_filtered": {
+        "bbh_direct_data": {
+            "word_sorting": 0.0,
+            "disambiguation_qa": 0.0,
+            "movie_recommendation": 0.0,
+            "formal_fallacies": 0.0,
+            "causal_judgement": 0.0,
+            "multistep_arithmetic_two": 0.0,
+            "dyck_languages": 0.0,
+            "sports_understanding": 0.0,
+            "hyperbaton": 0.0,
+            "date_understanding": 0.0,
+            "web_of_lies": 0.0,
+            "boolean_expressions": 0.0,
+            "logical_deduction_three_objects": 0.0,
+            "snarks": 0.0,
+            "geometric_shapes": 0.0,
+            "navigate": 0.0,
+            "penguins_in_a_table": 0.0,
+            "ruin_names": 0.0,
+            "logical_deduction_five_objects": 0.0,
+            "salient_translation_error_detection": 0.0,
+            "tracking_shuffled_objects_seven_objects": 0.0,
+            "tracking_shuffled_objects_five_objects": 0.0,
+            "temporal_sequences": 0.0,
+            "tracking_shuffled_objects_three_objects": 0.0,
+            "logical_deduction_seven_objects": 0.0,
+            "object_counting": 0.0,
+            "reasoning_about_colored_objects": 0.0,
+            "average_exact_match": 0.0
+        },
+        "bbh_cot_data": {
+            "word_sorting": 0.075,
+            "disambiguation_qa": 0.35,
+            "movie_recommendation": 0.7,
+            "formal_fallacies": 0.475,
+            "causal_judgement": 0.475,
+            "multistep_arithmetic_two": 0.0,
+            "dyck_languages": 0.025,
+            "sports_understanding": 0.85,
+            "hyperbaton": 0.625,
+            "date_understanding": 0.65,
+            "web_of_lies": 0.625,
+            "boolean_expressions": 0.675,
+            "logical_deduction_three_objects": 0.7,
+            "snarks": 0.45,
+            "geometric_shapes": 0.275,
+            "navigate": 0.575,
+            "penguins_in_a_table": 0.375,
+            "ruin_names": 0.3,
+            "logical_deduction_five_objects": 0.375,
+            "salient_translation_error_detection": 0.175,
+            "tracking_shuffled_objects_seven_objects": 0.1,
+            "tracking_shuffled_objects_five_objects": 0.175,
+            "temporal_sequences": 0.125,
+            "tracking_shuffled_objects_three_objects": 0.4,
+            "logical_deduction_seven_objects": 0.175,
+            "object_counting": 0.575,
+            "reasoning_about_colored_objects": 0.55,
+            "average_exact_match": 0.40185185185185196
+        },
+        "gsm_direct_data": {
+            "exact_match": 0.03
+        },
+        "gsm_cot_data": {
+            "exact_match": 0.015
+        },
+        "mmlu_0_shot_data": {
+            "average_acc": 0.4362626406494801,
+            "subcat_acc": {
+                "math": 0.29229323308270677,
+                "health": 0.46402439024390246,
+                "physics": 0.3359375,
+                "business": 0.5606407322654462,
+                "biology": 0.4779735682819383,
+                "chemistry": 0.3465346534653465,
+                "computer science": 0.3859223300970874,
+                "economics": 0.42318059299191374,
+                "engineering": 0.4413793103448276,
+                "philosophy": 0.37673956262425445,
+                "other": 0.5201716738197425,
+                "history": 0.5301075268817205,
+                "geography": 0.5,
+                "politics": 0.5138888888888888,
+                "psychology": 0.5030250648228176,
+                "culture": 0.6024096385542169,
+                "law": 0.3766307430516166
+            },
+            "cat_acc": {
+                "STEM": 0.3548707753479125,
+                "humanities": 0.4070138150903294,
+                "social sciences": 0.49658758531036723,
+                "other (business, health, misc.)": 0.4972239358420728
+            }
+        },
+        "mmlu_5_shot_data": {
+            "average_acc": 0.42144993590656604,
+            "subcat_acc": {
+                "math": 0.28477443609022557,
+                "health": 0.4432926829268293,
+                "physics": 0.3203125,
+                "business": 0.6178489702517163,
+                "biology": 0.4581497797356828,
+                "chemistry": 0.39933993399339934,
+                "computer science": 0.4053398058252427,
+                "economics": 0.42183288409703507,
+                "engineering": 0.3793103448275862,
+                "philosophy": 0.3573558648111332,
+                "other": 0.5055793991416309,
+                "history": 0.4935483870967742,
+                "geography": 0.494949494949495,
+                "politics": 0.5478395061728395,
+                "psychology": 0.4407951598962835,
+                "culture": 0.5301204819277109,
+                "law": 0.3647192285876347
+            },
+            "cat_acc": {
+                "STEM": 0.3508946322067594,
+                "humanities": 0.38703506907545165,
+                "social sciences": 0.4718882027949301,
+                "other (business, health, misc.)": 0.4892041949413942
+            }
+        },
+        "toxigen_data": {
+            "trans": 0.928,
+            "asian": 0.998,
+            "black": 0.998,
+            "mexican": 0.774,
+            "jewish": 0.894,
+            "native_american": 1.0,
+            "physical_disability": 0.99,
+            "lgbtq": 0.796,
+            "middle_east": 0.936,
+            "women": 0.964,
+            "chinese": 0.906,
+            "latino": 0.822,
+            "mental_disability": 0.998,
+            "muslim": 0.982,
+            "overall": 0.9275714285714286
+        },
+        "tydiqa_no_context_data": {
+            "bengali": {
+                "exact_match": 0.0,
+                "f1": 0.2
+            },
+            "finnish": {
+                "exact_match": 0.0,
+                "f1": 6.527857027833659
+            },
+            "korean": {
+                "exact_match": 0.0,
+                "f1": 7.005180375180376
+            },
+            "telugu": {
+                "exact_match": 0.0,
+                "f1": 0.0
+            },
+            "english": {
+                "exact_match": 0.0,
+                "f1": 5.3670970255006365
+            },
+            "arabic": {
+                "exact_match": 0.0,
+                "f1": 2.52123081342761
+            },
+            "indonesian": {
+                "exact_match": 0.0,
+                "f1": 8.29942104040537
+            },
+            "swahili": {
+                "exact_match": 0.0,
+                "f1": 1.9645859151758684
+            },
+            "russian": {
+                "exact_match": 0.0,
+                "f1": 4.095757618352477
+            },
+            "average": {
+                "f1": 3.9979033128751107,
+                "exact_match": 0.0
+            }
+        },
+        "tydiqa_goldp_data": {
+            "bengali": {
+                "exact_match": 0.0,
+                "f1": 17.193528693528698
+            },
+            "russian": {
+                "exact_match": 0.0,
+                "f1": 17.87562567829733
+            },
+            "indonesian": {
+                "exact_match": 0.0,
+                "f1": 26.152023554483286
+            },
+            "telugu": {
+                "exact_match": 0.0,
+                "f1": 1.1904761904761907
+            },
+            "finnish": {
+                "exact_match": 0.0,
+                "f1": 19.545328681918352
+            },
+            "arabic": {
+                "exact_match": 0.0,
+                "f1": 27.62436435736479
+            },
+            "english": {
+                "exact_match": 0.0,
+                "f1": 20.335505240908354
+            },
+            "korean": {
+                "exact_match": 0.0,
+                "f1": 24.694212902107623
+            },
+            "swahili": {
+                "exact_match": 0.0,
+                "f1": 14.671568209214588
+            },
+            "average": {
+                "f1": 18.809181500922136,
+                "exact_match": 0.0
+            }
+        }
+    },
+    "open_orca_filtered": {
+        "bbh_direct_data": {
+            "word_sorting": 0.0,
+            "disambiguation_qa": 0.0,
+            "movie_recommendation": 0.0,
+            "formal_fallacies": 0.0,
+            "causal_judgement": 0.0,
+            "multistep_arithmetic_two": 0.0,
+            "dyck_languages": 0.0,
+            "sports_understanding": 0.0,
+            "hyperbaton": 0.0,
+            "date_understanding": 0.0,
+            "web_of_lies": 0.0,
+            "boolean_expressions": 0.0,
+            "logical_deduction_three_objects": 0.0,
+            "snarks": 0.0,
+            "geometric_shapes": 0.0,
+            "navigate": 0.0,
+            "penguins_in_a_table": 0.0,
+            "ruin_names": 0.0,
+            "logical_deduction_five_objects": 0.0,
+            "salient_translation_error_detection": 0.0,
+            "tracking_shuffled_objects_seven_objects": 0.0,
+            "tracking_shuffled_objects_five_objects": 0.0,
+            "temporal_sequences": 0.0,
+            "tracking_shuffled_objects_three_objects": 0.0,
+            "logical_deduction_seven_objects": 0.0,
+            "object_counting": 0.0,
+            "reasoning_about_colored_objects": 0.0,
+            "average_exact_match": 0.0
+        },
+        "bbh_cot_data": {
+            "word_sorting": 0.075,
+            "disambiguation_qa": 0.35,
+            "movie_recommendation": 0.7,
+            "formal_fallacies": 0.475,
+            "causal_judgement": 0.475,
+            "multistep_arithmetic_two": 0.0,
+            "dyck_languages": 0.025,
+            "sports_understanding": 0.85,
+            "hyperbaton": 0.625,
+            "date_understanding": 0.65,
+            "web_of_lies": 0.625,
+            "boolean_expressions": 0.675,
+            "logical_deduction_three_objects": 0.7,
+            "snarks": 0.45,
+            "geometric_shapes": 0.275,
+            "navigate": 0.575,
+            "penguins_in_a_table": 0.375,
+            "ruin_names": 0.3,
+            "logical_deduction_five_objects": 0.375,
+            "salient_translation_error_detection": 0.175,
+            "tracking_shuffled_objects_seven_objects": 0.1,
+            "tracking_shuffled_objects_five_objects": 0.175,
+            "temporal_sequences": 0.125,
+            "tracking_shuffled_objects_three_objects": 0.4,
+            "logical_deduction_seven_objects": 0.175,
+            "object_counting": 0.575,
+            "reasoning_about_colored_objects": 0.55,
+            "average_exact_match": 0.40185185185185196
+        },
+        "gsm_direct_data": {
+            "exact_match": 0.03
+        },
+        "gsm_cot_data": {
+            "exact_match": 0.015
+        },
+        "mmlu_0_shot_data": {
+            "average_acc": 0.4940891610881641,
+            "subcat_acc": {
+                "math": 0.29699248120300753,
+                "health": 0.5024390243902439,
+                "physics": 0.346875,
+                "business": 0.6727688787185355,
+                "biology": 0.5572687224669604,
+                "chemistry": 0.37623762376237624,
+                "computer science": 0.4878640776699029,
+                "economics": 0.4528301886792453,
+                "engineering": 0.46206896551724136,
+                "philosophy": 0.41898608349900596,
+                "other": 0.6042918454935622,
+                "history": 0.6526881720430108,
+                "geography": 0.5909090909090909,
+                "politics": 0.6481481481481481,
+                "psychology": 0.5652549697493517,
+                "culture": 0.6807228915662651,
+                "law": 0.41973908111174135
+            },
+            "cat_acc": {
+                "STEM": 0.38866799204771374,
+                "humanities": 0.46546227417640806,
+                "social sciences": 0.5697107572310692,
+                "other (business, health, misc.)": 0.5619987661937076
+            }
+        },
+        "mmlu_5_shot_data": {
+            "average_acc": 0.4869676684233015,
+            "subcat_acc": {
+                "math": 0.32612781954887216,
+                "health": 0.49878048780487805,
+                "physics": 0.359375,
+                "business": 0.6361556064073226,
+                "biology": 0.5154185022026432,
+                "chemistry": 0.36303630363036304,
+                "computer science": 0.4441747572815534,
+                "economics": 0.431266846361186,
+                "engineering": 0.496551724137931,
+                "philosophy": 0.4095427435387674,
+                "other": 0.6008583690987125,
+                "history": 0.6333333333333333,
+                "geography": 0.5757575757575758,
+                "politics": 0.6604938271604939,
+                "psychology": 0.5756266205704408,
+                "culture": 0.6295180722891566,
+                "law": 0.40612592172433354
+            },
+            "cat_acc": {
+                "STEM": 0.38966202783300197,
+                "humanities": 0.4524973432518597,
+                "social sciences": 0.5645108872278193,
+                "other (business, health, misc.)": 0.553979025293029
+            }
+        },
+        "toxigen_data": {
+            "trans": 0.928,
+            "asian": 0.998,
+            "black": 0.998,
+            "mexican": 0.774,
+            "jewish": 0.894,
+            "native_american": 1.0,
+            "physical_disability": 0.99,
+            "lgbtq": 0.796,
+            "middle_east": 0.936,
+            "women": 0.964,
+            "chinese": 0.906,
+            "latino": 0.822,
+            "mental_disability": 0.998,
+            "muslim": 0.982,
+            "overall": 0.9275714285714286
+        },
+        "tydiqa_no_context_data": {
+            "indonesian": {
+                "exact_match": 0.0,
+                "f1": 7.738899417335995
+            },
+            "russian": {
+                "exact_match": 0.0,
+                "f1": 3.809854216117669
+            },
+            "telugu": {
+                "exact_match": 0.0,
+                "f1": 0.0
+            },
+            "swahili": {
+                "exact_match": 0.0,
+                "f1": 2.171797604788958
+            },
+            "english": {
+                "exact_match": 0.0,
+                "f1": 6.618060937865357
+            },
+            "bengali": {
+                "exact_match": 0.0,
+                "f1": 0.9047619047619048
+            },
+            "arabic": {
+                "exact_match": 0.0,
+                "f1": 2.699892925438466
+            },
+            "korean": {
+                "exact_match": 0.0,
+                "f1": 8.487984237984238
+            },
+            "finnish": {
+                "exact_match": 0.0,
+                "f1": 8.301857279028185
+            },
+            "average": {
+                "f1": 4.525900947035641,
+                "exact_match": 0.0
+            }
+        },
+        "tydiqa_goldp_data": {
+            "arabic": {
+                "exact_match": 0.0,
+                "f1": 23.600759270065655
+            },
+            "swahili": {
+                "exact_match": 0.0,
+                "f1": 14.05881879431347
+            },
+            "telugu": {
+                "exact_match": 0.0,
+                "f1": 1.0666666666666667
+            },
+            "russian": {
+                "exact_match": 0.0,
+                "f1": 14.981784603780108
+            },
+            "korean": {
+                "exact_match": 0.0,
+                "f1": 24.841255261392554
+            },
+            "english": {
+                "exact_match": 0.0,
+                "f1": 18.52744098634263
+            },
+            "finnish": {
+                "exact_match": 0.0,
+                "f1": 18.9384317222539
+            },
+            "bengali": {
+                "exact_match": 0.0,
+                "f1": 17.31661671661672
+            },
+            "indonesian": {
+                "exact_match": 0.0,
+                "f1": 24.39406309881479
+            },
+            "average": {
+                "f1": 17.52509301336072,
+                "exact_match": 0.0
+            }
+        }
+    },
+    "science_filtered": {
+        "bbh_direct_data": {
+            "word_sorting": 0.0,
+            "disambiguation_qa": 0.0,
+            "movie_recommendation": 0.0,
+            "formal_fallacies": 0.0,
+            "causal_judgement": 0.0,
+            "multistep_arithmetic_two": 0.0,
+            "dyck_languages": 0.0,
+            "sports_understanding": 0.0,
+            "hyperbaton": 0.0,
+            "date_understanding": 0.0,
+            "web_of_lies": 0.0,
+            "boolean_expressions": 0.0,
+            "logical_deduction_three_objects": 0.0,
+            "snarks": 0.0,
+            "geometric_shapes": 0.0,
+            "navigate": 0.0,
+            "penguins_in_a_table": 0.0,
+            "ruin_names": 0.0,
+            "logical_deduction_five_objects": 0.0,
+            "salient_translation_error_detection": 0.0,
+            "tracking_shuffled_objects_seven_objects": 0.0,
+            "tracking_shuffled_objects_five_objects": 0.0,
+            "temporal_sequences": 0.0,
+            "tracking_shuffled_objects_three_objects": 0.0,
+            "logical_deduction_seven_objects": 0.0,
+            "object_counting": 0.0,
+            "reasoning_about_colored_objects": 0.0,
+            "average_exact_match": 0.0
+        },
+        "bbh_cot_data": {
+            "word_sorting": 0.075,
+            "disambiguation_qa": 0.35,
+            "movie_recommendation": 0.7,
+            "formal_fallacies": 0.475,
+            "causal_judgement": 0.475,
+            "multistep_arithmetic_two": 0.0,
+            "dyck_languages": 0.025,
+            "sports_understanding": 0.85,
+            "hyperbaton": 0.625,
+            "date_understanding": 0.65,
+            "web_of_lies": 0.625,
+            "boolean_expressions": 0.675,
+            "logical_deduction_three_objects": 0.7,
+            "snarks": 0.45,
+            "geometric_shapes": 0.275,
+            "navigate": 0.575,
+            "penguins_in_a_table": 0.375,
+            "ruin_names": 0.3,
+            "logical_deduction_five_objects": 0.375,
+            "salient_translation_error_detection": 0.175,
+            "tracking_shuffled_objects_seven_objects": 0.1,
+            "tracking_shuffled_objects_five_objects": 0.175,
+            "temporal_sequences": 0.125,
+            "tracking_shuffled_objects_three_objects": 0.4,
+            "logical_deduction_seven_objects": 0.175,
+            "object_counting": 0.575,
+            "reasoning_about_colored_objects": 0.55,
+            "average_exact_match": 0.40185185185185196
+        },
+        "gsm_direct_data": {
+            "exact_match": 0.03
+        },
+        "gsm_cot_data": {
+            "exact_match": 0.015
+        },
+        "mmlu_0_shot_data": {
+            "average_acc": 0.40927218344965105,
+            "subcat_acc": {
+                "math": 0.29041353383458646,
+                "health": 0.4304878048780488,
+                "physics": 0.35,
+                "business": 0.5469107551487414,
+                "biology": 0.460352422907489,
+                "chemistry": 0.35973597359735976,
+                "computer science": 0.3567961165048544,
+                "economics": 0.3894878706199461,
+                "engineering": 0.4,
+                "philosophy": 0.34343936381709744,
+                "other": 0.47639484978540775,
+                "history": 0.4774193548387097,
+                "geography": 0.43434343434343436,
+                "politics": 0.5108024691358025,
+                "psychology": 0.46240276577355227,
+                "culture": 0.5451807228915663,
+                "law": 0.35961429381735677
+            },
+            "cat_acc": {
+                "STEM": 0.3499005964214712,
+                "humanities": 0.3759829968119022,
+                "social sciences": 0.4621384465388365,
+                "other (business, health, misc.)": 0.4626773596545342
+            }
+        },
+        "mmlu_5_shot_data": {
+            "average_acc": 0.44495086170061243,
+            "subcat_acc": {
+                "math": 0.3101503759398496,
+                "health": 0.4798780487804878,
+                "physics": 0.3640625,
+                "business": 0.5881006864988558,
+                "biology": 0.486784140969163,
+                "chemistry": 0.36303630363036304,
+                "computer science": 0.39805825242718446,
+                "economics": 0.4191374663072776,
+                "engineering": 0.46206896551724136,
+                "philosophy": 0.39214711729622265,
+                "other": 0.511587982832618,
+                "history": 0.5193548387096775,
+                "geography": 0.494949494949495,
+                "politics": 0.5648148148148148,
+                "psychology": 0.5030250648228176,
+                "culture": 0.5753012048192772,
+                "law": 0.3760635280771412
+            },
+            "cat_acc": {
+                "STEM": 0.3727634194831014,
+                "humanities": 0.4112646121147715,
+                "social sciences": 0.5030874228144296,
+                "other (business, health, misc.)": 0.5058605798889574
+            }
+        },
+        "toxigen_data": {
+            "trans": 0.928,
+            "asian": 0.998,
+            "black": 0.998,
+            "mexican": 0.774,
+            "jewish": 0.894,
+            "native_american": 1.0,
+            "physical_disability": 0.99,
+            "lgbtq": 0.796,
+            "middle_east": 0.936,
+            "women": 0.964,
+            "chinese": 0.906,
+            "latino": 0.822,
+            "mental_disability": 0.998,
+            "muslim": 0.982,
+            "overall": 0.9275714285714286
+        },
+        "tydiqa_no_context_data": {
+            "bengali": {
+                "exact_match": 0.0,
+                "f1": 0.2
+            },
+            "arabic": {
+                "exact_match": 0.0,
+                "f1": 4.812952335351042
+            },
+            "swahili": {
+                "exact_match": 0.0,
+                "f1": 1.6708676979999262
+            },
+            "finnish": {
+                "exact_match": 0.0,
+                "f1": 7.1263559177820355
+            },
+            "indonesian": {
+                "exact_match": 0.0,
+                "f1": 8.073593774934503
+            },
+            "telugu": {
+                "exact_match": 0.0,
+                "f1": 0.5714285714285715
+            },
+            "korean": {
+                "exact_match": 0.0,
+                "f1": 6.943738628521237
+            },
+            "russian": {
+                "exact_match": 0.0,
+                "f1": 3.260332507303306
+            },
+            "english": {
+                "exact_match": 0.0,
+                "f1": 7.365624367028964
+            },
+            "average": {
+                "f1": 4.4472104222610644,
+                "exact_match": 0.0
+            }
+        },
+        "tydiqa_goldp_data": {
+            "arabic": {
+                "exact_match": 0.0,
+                "f1": 23.919157639439263
+            },
+            "finnish": {
+                "exact_match": 0.0,
+                "f1": 25.889033278913043
+            },
+            "swahili": {
+                "exact_match": 0.0,
+                "f1": 13.004160882087005
+            },
+            "bengali": {
+                "exact_match": 0.0,
+                "f1": 17.296103896103894
+            },
+            "telugu": {
+                "exact_match": 0.0,
+                "f1": 0.9523809523809522
+            },
+            "indonesian": {
+                "exact_match": 1.0,
+                "f1": 25.966026693061085
+            },
+            "korean": {
+                "exact_match": 0.0,
+                "f1": 24.72067759344645
+            },
+            "english": {
+                "exact_match": 0.0,
+                "f1": 17.474451425887118
+            },
+            "russian": {
+                "exact_match": 0.0,
+                "f1": 19.46238503314921
+            },
+            "average": {
+                "f1": 18.742708599385338,
+                "exact_match": 0.1111111111111111
+            }
+        }
+    },
+    "sharegpt_filtered": {
+        "bbh_direct_data": {
+            "word_sorting": 0.0,
+            "disambiguation_qa": 0.0,
+            "movie_recommendation": 0.0,
+            "formal_fallacies": 0.0,
+            "causal_judgement": 0.0,
+            "multistep_arithmetic_two": 0.0,
+            "dyck_languages": 0.0,
+            "sports_understanding": 0.0,
+            "hyperbaton": 0.0,
+            "date_understanding": 0.0,
+            "web_of_lies": 0.0,
+            "boolean_expressions": 0.0,
+            "logical_deduction_three_objects": 0.0,
+            "snarks": 0.0,
+            "geometric_shapes": 0.0,
+            "navigate": 0.0,
+            "penguins_in_a_table": 0.0,
+            "ruin_names": 0.0,
+            "logical_deduction_five_objects": 0.0,
+            "salient_translation_error_detection": 0.0,
+            "tracking_shuffled_objects_seven_objects": 0.0,
+            "tracking_shuffled_objects_five_objects": 0.0,
+            "temporal_sequences": 0.0,
+            "tracking_shuffled_objects_three_objects": 0.0,
+            "logical_deduction_seven_objects": 0.0,
+            "object_counting": 0.0,
+            "reasoning_about_colored_objects": 0.0,
+            "average_exact_match": 0.0
+        },
+        "bbh_cot_data": {
+            "word_sorting": 0.075,
+            "disambiguation_qa": 0.35,
+            "movie_recommendation": 0.7,
+            "formal_fallacies": 0.475,
+            "causal_judgement": 0.475,
+            "multistep_arithmetic_two": 0.0,
+            "dyck_languages": 0.025,
+            "sports_understanding": 0.85,
+            "hyperbaton": 0.625,
+            "date_understanding": 0.65,
+            "web_of_lies": 0.625,
+            "boolean_expressions": 0.675,
+            "logical_deduction_three_objects": 0.7,
+            "snarks": 0.45,
+            "geometric_shapes": 0.275,
+            "navigate": 0.575,
+            "penguins_in_a_table": 0.375,
+            "ruin_names": 0.3,
+            "logical_deduction_five_objects": 0.375,
+            "salient_translation_error_detection": 0.175,
+            "tracking_shuffled_objects_seven_objects": 0.1,
+            "tracking_shuffled_objects_five_objects": 0.175,
+            "temporal_sequences": 0.125,
+            "tracking_shuffled_objects_three_objects": 0.4,
+            "logical_deduction_seven_objects": 0.175,
+            "object_counting": 0.575,
+            "reasoning_about_colored_objects": 0.55,
+            "average_exact_match": 0.40185185185185196
+        },
+        "gsm_direct_data": {
+            "exact_match": 0.03
+        },
+        "gsm_cot_data": {
+            "exact_match": 0.015
+        },
+        "mmlu_0_shot_data": {
+            "average_acc": 0.4807719698048711,
+            "subcat_acc": {
+                "math": 0.29605263157894735,
+                "health": 0.5182926829268293,
+                "physics": 0.3765625,
+                "business": 0.6498855835240275,
+                "biology": 0.5374449339207048,
+                "chemistry": 0.3696369636963696,
+                "computer science": 0.441747572815534,
+                "economics": 0.4191374663072776,
+                "engineering": 0.4482758620689655,
+                "philosophy": 0.42047713717693835,
+                "other": 0.5862660944206008,
+                "history": 0.589247311827957,
+                "geography": 0.6111111111111112,
+                "politics": 0.5987654320987654,
+                "psychology": 0.567847882454624,
+                "culture": 0.6295180722891566,
+                "law": 0.3942144072603517
+            },
+            "cat_acc": {
+                "STEM": 0.38402915838303514,
+                "humanities": 0.4439957492029756,
+                "social sciences": 0.5479363015924602,
+                "other (business, health, misc.)": 0.5604565083281925
+            }
+        },
+        "mmlu_5_shot_data": {
+            "average_acc": 0.4557755305512035,
+            "subcat_acc": {
+                "math": 0.31860902255639095,
+                "health": 0.4951219512195122,
+                "physics": 0.3703125,
+                "business": 0.6498855835240275,
+                "biology": 0.5440528634361234,
+                "chemistry": 0.3927392739273927,
+                "computer science": 0.3737864077669903,
+                "economics": 0.431266846361186,
+                "engineering": 0.33793103448275863,
+                "philosophy": 0.41302186878727637,
+                "other": 0.5098712446351932,
+                "history": 0.5634408602150538,
+                "geography": 0.6161616161616161,
+                "politics": 0.6126543209876543,
+                "psychology": 0.5350043215211755,
+                "culture": 0.6265060240963856,
+                "law": 0.3085649461145774
+            },
+            "cat_acc": {
+                "STEM": 0.37939032471835654,
+                "humanities": 0.4036131774707758,
+                "social sciences": 0.5414364640883977,
+                "other (business, health, misc.)": 0.5212831585441086
+            }
+        },
+        "toxigen_data": {
+            "trans": 0.928,
+            "asian": 0.998,
+            "black": 0.998,
+            "mexican": 0.774,
+            "jewish": 0.894,
+            "native_american": 1.0,
+            "physical_disability": 0.99,
+            "lgbtq": 0.796,
+            "middle_east": 0.936,
+            "women": 0.964,
+            "chinese": 0.906,
+            "latino": 0.822,
+            "mental_disability": 0.998,
+            "muslim": 0.982,
+            "overall": 0.9275714285714286
+        },
+        "tydiqa_no_context_data": {
+            "english": {
+                "exact_match": 0.0,
+                "f1": 7.012172554622362
+            },
+            "russian": {
+                "exact_match": 0.0,
+                "f1": 2.039591964563335
+            },
+            "telugu": {
+                "exact_match": 0.0,
+                "f1": 0.8571428571428572
+            },
+            "indonesian": {
+                "exact_match": 0.0,
+                "f1": 8.797023189921509
+            },
+            "korean": {
+                "exact_match": 0.0,
+                "f1": 5.161390364021943
+            },
+            "finnish": {
+                "exact_match": 0.0,
+                "f1": 6.710088282399079
+            },
+            "bengali": {
+                "exact_match": 0.0,
+                "f1": 0.4222222222222223
+            },
+            "arabic": {
+                "exact_match": 0.0,
+                "f1": 2.2299062049062046
+            },
+            "swahili": {
+                "exact_match": 0.0,
+                "f1": 1.3623428858722977
+            },
+            "average": {
+                "f1": 3.843542280630201,
+                "exact_match": 0.0
+            }
+        },
+        "tydiqa_goldp_data": {
+            "russian": {
+                "exact_match": 0.0,
+                "f1": 11.456499245620561
+            },
+            "indonesian": {
+                "exact_match": 0.0,
+                "f1": 24.437398802119624
+            },
+            "arabic": {
+                "exact_match": 0.0,
+                "f1": 30.5939787085746
+            },
+            "korean": {
+                "exact_match": 0.0,
+                "f1": 25.949744407639127
+            },
+            "finnish": {
+                "exact_match": 0.0,
+                "f1": 22.526310940661464
+            },
+            "english": {
+                "exact_match": 0.0,
+                "f1": 17.645323731879234
+            },
+            "bengali": {
+                "exact_match": 0.0,
+                "f1": 16.97777777777778
+            },
+            "swahili": {
+                "exact_match": 0.0,
+                "f1": 12.283526571179216
+            },
+            "telugu": {
+                "exact_match": 0.0,
+                "f1": 1.119047619047619
+            },
+            "average": {
+                "f1": 18.109956422722135,
+                "exact_match": 0.0
+            }
+        }
+    },
+    "wizardlm_filtered": {
+        "bbh_direct_data": {
+            "word_sorting": 0.0,
+            "disambiguation_qa": 0.0,
+            "movie_recommendation": 0.0,
+            "formal_fallacies": 0.0,
+            "causal_judgement": 0.0,
+            "multistep_arithmetic_two": 0.0,
+            "dyck_languages": 0.0,
+            "sports_understanding": 0.0,
+            "hyperbaton": 0.0,
+            "date_understanding": 0.0,
+            "web_of_lies": 0.0,
+            "boolean_expressions": 0.0,
+            "logical_deduction_three_objects": 0.0,
+            "snarks": 0.0,
+            "geometric_shapes": 0.0,
+            "navigate": 0.0,
+            "penguins_in_a_table": 0.0,
+            "ruin_names": 0.0,
+            "logical_deduction_five_objects": 0.0,
+            "salient_translation_error_detection": 0.0,
+            "tracking_shuffled_objects_seven_objects": 0.0,
+            "tracking_shuffled_objects_five_objects": 0.0,
+            "temporal_sequences": 0.0,
+            "tracking_shuffled_objects_three_objects": 0.0,
+            "logical_deduction_seven_objects": 0.0,
+            "object_counting": 0.0,
+            "reasoning_about_colored_objects": 0.0,
+            "average_exact_match": 0.0
+        },
+        "bbh_cot_data": {
+            "word_sorting": 0.075,
+            "disambiguation_qa": 0.35,
+            "movie_recommendation": 0.7,
+            "formal_fallacies": 0.475,
+            "causal_judgement": 0.475,
+            "multistep_arithmetic_two": 0.0,
+            "dyck_languages": 0.025,
+            "sports_understanding": 0.85,
+            "hyperbaton": 0.625,
+            "date_understanding": 0.65,
+            "web_of_lies": 0.625,
+            "boolean_expressions": 0.675,
+            "logical_deduction_three_objects": 0.7,
+            "snarks": 0.45,
+            "geometric_shapes": 0.275,
+            "navigate": 0.575,
+            "penguins_in_a_table": 0.375,
+            "ruin_names": 0.3,
+            "logical_deduction_five_objects": 0.375,
+            "salient_translation_error_detection": 0.175,
+            "tracking_shuffled_objects_seven_objects": 0.1,
+            "tracking_shuffled_objects_five_objects": 0.175,
+            "temporal_sequences": 0.125,
+            "tracking_shuffled_objects_three_objects": 0.4,
+            "logical_deduction_seven_objects": 0.175,
+            "object_counting": 0.575,
+            "reasoning_about_colored_objects": 0.55,
+            "average_exact_match": 0.40185185185185196
+        },
+        "gsm_direct_data": {
+            "exact_match": 0.03
+        },
+        "gsm_cot_data": {
+            "exact_match": 0.015
+        },
+        "mmlu_0_shot_data": {
+            "average_acc": 0.45734225893747327,
+            "subcat_acc": {
+                "math": 0.28853383458646614,
+                "health": 0.4725609756097561,
+                "physics": 0.3484375,
+                "business": 0.6064073226544623,
+                "biology": 0.4977973568281938,
+                "chemistry": 0.3234323432343234,
+                "computer science": 0.41504854368932037,
+                "economics": 0.40431266846361186,
+                "engineering": 0.4206896551724138,
+                "philosophy": 0.4110337972166998,
+                "other": 0.5467811158798284,
+                "history": 0.5838709677419355,
+                "geography": 0.5252525252525253,
+                "politics": 0.5478395061728395,
+                "psychology": 0.5306828003457217,
+                "culture": 0.6385542168674698,
+                "law": 0.39931934203062963
+            },
+            "cat_acc": {
+                "STEM": 0.35984095427435386,
+                "humanities": 0.440807651434644,
+                "social sciences": 0.515112122196945,
+                "other (business, health, misc.)": 0.5172732880937693
+            }
+        },
+        "mmlu_5_shot_data": {
+            "average_acc": 0.44829796325309784,
+            "subcat_acc": {
+                "math": 0.31296992481203006,
+                "health": 0.4945121951219512,
+                "physics": 0.3375,
+                "business": 0.5949656750572082,
+                "biology": 0.4933920704845815,
+                "chemistry": 0.3696369636963696,
+                "computer science": 0.441747572815534,
+                "economics": 0.4353099730458221,
+                "engineering": 0.4827586206896552,
+                "philosophy": 0.39015904572564614,
+                "other": 0.5304721030042918,
+                "history": 0.5376344086021505,
+                "geography": 0.5656565656565656,
+                "politics": 0.5493827160493827,
+                "psychology": 0.48314606741573035,
+                "culture": 0.6234939759036144,
+                "law": 0.3556437889960295
+            },
+            "cat_acc": {
+                "STEM": 0.37673956262425445,
+                "humanities": 0.4063761955366631,
+                "social sciences": 0.5060123496912577,
+                "other (business, health, misc.)": 0.5209747069710056
+            }
+        },
+        "toxigen_data": {
+            "trans": 0.928,
+            "asian": 0.998,
+            "black": 0.998,
+            "mexican": 0.774,
+            "jewish": 0.894,
+            "native_american": 1.0,
+            "physical_disability": 0.99,
+            "lgbtq": 0.796,
+            "middle_east": 0.936,
+            "women": 0.964,
+            "chinese": 0.906,
+            "latino": 0.822,
+            "mental_disability": 0.998,
+            "muslim": 0.982,
+            "overall": 0.9275714285714286
+        },
+        "tydiqa_no_context_data": {
+            "indonesian": {
+                "exact_match": 0.0,
+                "f1": 7.750571461062815
+            },
+            "english": {
+                "exact_match": 0.0,
+                "f1": 7.0568562965793395
+            },
+            "korean": {
+                "exact_match": 0.0,
+                "f1": 6.4932900432900444
+            },
+            "telugu": {
+                "exact_match": 0.0,
+                "f1": 0.0
+            },
+            "swahili": {
+                "exact_match": 0.0,
+                "f1": 3.467501119378466
+            },
+            "russian": {
+                "exact_match": 0.0,
+                "f1": 3.016867417277571
+            },
+            "arabic": {
+                "exact_match": 0.0,
+                "f1": 3.845695515554178
+            },
+            "bengali": {
+                "exact_match": 0.0,
+                "f1": 1.5873015873015874
+            },
+            "finnish": {
+                "exact_match": 0.0,
+                "f1": 8.472769908871838
+            },
+            "average": {
+                "f1": 4.632317038812872,
+                "exact_match": 0.0
+            }
+        },
+        "tydiqa_goldp_data": {
+            "indonesian": {
+                "exact_match": 0.0,
+                "f1": 25.852347240828575
+            },
+            "finnish": {
+                "exact_match": 0.0,
+                "f1": 22.307118717036282
+            },
+            "russian": {
+                "exact_match": 0.0,
+                "f1": 12.585609031510657
+            },
+            "korean": {
+                "exact_match": 0.0,
+                "f1": 22.310874388769115
+            },
+            "arabic": {
+                "exact_match": 0.0,
+                "f1": 26.79825216032706
+            },
+            "bengali": {
+                "exact_match": 0.0,
+                "f1": 14.483499833499836
+            },
+            "swahili": {
+                "exact_match": 0.0,
+                "f1": 14.116960750200821
+            },
+            "telugu": {
+                "exact_match": 0.0,
+                "f1": 0.7333333333333334
+            },
+            "english": {
+                "exact_match": 0.0,
+                "f1": 17.636708903179418
+            },
+            "average": {
+                "f1": 17.42496715096501,
+                "exact_match": 0.0
+            }
+        }
+    }
+}
