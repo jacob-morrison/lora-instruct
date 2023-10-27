@@ -65,6 +65,8 @@ peft_config = LoraConfig(
 base_lora_model = AutoModelForCausalLM.from_pretrained(args.base_model)
 base_lora_model.resize_token_embeddings(len(tokenizer))
 model = get_peft_model(base_lora_model, peft_config)
+print(new_state_dict.keys())
+print(model.state_dict().keys())
 merged_model = set_peft_model_state_dict(model, new_state_dict)
 
 path_to_write = args.base_model.replace('/', '-')
