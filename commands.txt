@@ -4,7 +4,7 @@ tulu_v2 code_alpaca_filtered  cot_filtered  flan_v2_filtered  gpt4_alpaca_filter
 gantry run --beaker-image 'jacobm/lora-instruct' \
 --workspace ai2/lora-instruct --cluster ai2/allennlp-cirrascale \
 --pip requirements.txt --gpus 1 --priority high \
--- python -m \
+-- python -m merge_models/merge_models.py \
     --base_model /net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/7B \
     --base_lora_path /net/nfs.cirrascale/allennlp/jacobm/tulu_7B_lora_exp/ \
     --target_lora_modules code_alpaca_filtered  cot_filtered 
