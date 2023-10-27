@@ -65,7 +65,7 @@ peft_config = LoraConfig(
 base_lora_model = AutoModelForCausalLM.from_pretrained(args.base_model)
 base_lora_model.resize_token_embeddings(len(tokenizer))
 model = get_peft_model(base_lora_model, peft_config)
-merged_model = set_peft_model_state_dict(base_model, new_state_dict)
+merged_model = set_peft_model_state_dict(model, new_state_dict)
 
 path_to_write = args.base_model.replace('/', '-')
 out_dir = os.path.join(args.results_dir, '/merged-lora-weights/')
