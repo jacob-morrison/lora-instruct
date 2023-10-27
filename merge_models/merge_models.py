@@ -60,7 +60,7 @@ peft_config = LoraConfig(
     r=256, 
     lora_alpha=256, 
     lora_dropout=0.05,
-    # target_modules=["q_proj", "o_proj", "v_proj", "k_proj", "gate_proj", "up_proj", "down_proj"]
+    target_modules=["q_proj", "o_proj", "v_proj", "k_proj", "gate_proj", "up_proj", "down_proj"]
 )
 base_lora_model = AutoModelForCausalLM.from_pretrained(args.base_model)
 base_lora_model.resize_token_embeddings(len(tokenizer))
