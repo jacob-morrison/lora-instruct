@@ -56,7 +56,7 @@ for i in range(len(lora_base_models)):
 # load a single model to test
 peft_config = LoraConfig(
     task_type=TaskType.CAUSAL_LM, 
-    inference_mode=True, 
+    inference_mode=False, 
     r=256, 
     lora_alpha=256, 
     lora_dropout=0.05,
