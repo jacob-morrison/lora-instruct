@@ -75,6 +75,7 @@ args = parser.parse_args()
 print("This worked!")
 
 path_to_write = args.base_model.replace('/', '-')
+print(args)
 out_dir = os.path.join(args.results_dir, '/merged-lora-weights/')
 print(out_dir)
 # final_model.save_pretrained(out_dir)
