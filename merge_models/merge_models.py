@@ -45,7 +45,7 @@ for lora_module in args.target_lora_modules:
 for i in range(len(lora_base_models)):
     lora_model = lora_models[i]
     for key in lora_model.state_dict():
-        if key not in base_state_dict:
+        if key in base_state_dict:
             new_state_dict[key] = lora_model.state_dict()[key]
         else:
             if key not in new_state_dict:
