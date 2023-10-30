@@ -68,6 +68,7 @@ model = get_peft_model(base_lora_model, peft_config)
 print(new_state_dict.keys())
 print(model.state_dict().keys())
 merged_model = set_peft_model_state_dict(model, new_state_dict)
+print(merged_model)
 
 path_to_write = args.base_model.replace('/', '-')
 out_dir = os.path.join(args.results_dir, '/merged-lora-weights/')
