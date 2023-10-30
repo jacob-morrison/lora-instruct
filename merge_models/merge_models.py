@@ -64,15 +64,18 @@ peft_config = LoraConfig(
 )
 base_lora_model = AutoModelForCausalLM.from_pretrained(args.base_model)
 base_lora_model.resize_token_embeddings(len(tokenizer))
-model = get_peft_model(base_lora_model, peft_config)
-print(new_state_dict.keys())
-print(model.state_dict().keys())
+final_model = get_peft_model(base_lora_model, peft_config)
+# print(new_state_dict.keys())
+# print(final_model.state_dict().keys())
 # merged_model = set_peft_model_state_dict(model, new_state_dict)
-merged_model = model.load_state_dict(new_state_dict)
-print(merged_model)
+merge_result = final_model.load_state_dict(new_state_dict)
+print(merge_result)
 
-path_to_write = args.base_model.replace('/', '-')
-out_dir = os.path.join(args.results_dir, '/merged-lora-weights/')
-merged_model.save_pretrained(out_dir)
-tokenizer.save_pretrained(out_dir)
+if len(merge_result.missing_keys) == 0 and len(merge_result.unexpected_keys) == 0:
+    print("This worked!")
+
+    path_to_write = args.base_model.replace('/', '-')
+    out_dir = os.path.join(args.results_dir, '/merged-lora-weights/')
+    final_model.save_pretrained(out_dir)
+    tokenizer.save_pretrained(out_dir)
 
