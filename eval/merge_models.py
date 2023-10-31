@@ -90,6 +90,88 @@ from eval.mmlu.run_eval import main
 # delete this later
 out_dir = os.path.join(args.results_dir, 'merged-lora-weights/')
 
+mmlu_parser = argparse.ArgumentParser()
+mmlu_parser.add_argument(
+    "--ntrain",
+    type=int,
+    default=5
+)
+mmlu_parser.add_argument(
+    "--data_dir",
+    type=str,
+    default="data/mmlu"
+)
+mmlu_parser.add_argument(
+    "--save_dir",
+    type=str,
+    default="results/mmlu/llama-7B/"
+)
+mmlu_parser.add_argument(
+    "--model_name_or_path",
+    type=str,
+    default=None,
+    help="if specified, we will load the model to generate the predictions."
+)
+mmlu_parser.add_argument(
+    "--tokenizer_name_or_path",
+    type=str,
+    default=None,
+    help="if specified, we will load the tokenizer from here."
+)
+mmlu_parser.add_argument(
+    "--eval_batch_size",
+    type=int,
+    default=1,
+    help="batch size for evaluation."
+)
+mmlu_parser.add_argument(
+    "--use_chat_format", 
+    action="store_true", 
+    help="If given, we will use the chat format for the prompts."
+)
+mmlu_parser.add_argument(
+    "--chat_formatting_function", 
+    type=str, 
+    default="eval.templates.create_prompt_with_tulu_chat_format", 
+    help="The function to use to create the chat format. This function will be dynamically imported. Please see examples in `eval/templates.py`."
+)
+mmlu_parser.add_argument(
+    "--lora_weight_path",
+    help="If given, we load lora weights."
+)
+
+mmlu_parser.add_argument(
+    "--use_slow_tokenizer",
+    action="store_true",
+    help="If given, we will use the slow tokenizer."
+)
+mmlu_parser.add_argument(
+    "--openai_engine",
+    type=str,
+    default=None,
+    help="if specified, we will use the OpenAI API to generate the predictions."
+)
+mmlu_parser.add_argument(
+    "--subjects",
+    nargs="*",
+    help="which subjects to evaluate. If not specified, all the 57 subjects will be evaluated."
+)
+mmlu_parser.add_argument(
+    "--n_instances",
+    type=int,
+    help="if specified, a maximum of n_instances per subject will be used for the evaluation."
+)
+mmlu_parser.add_argument(
+    "--load_in_8bit",
+    action="store_true",
+    help="load model in 8bit mode, which will reduce memory and speed up inference."
+)
+mmlu_parser.add_argument(
+    "--gptq",
+    action="store_true",
+    help="If given, we're evaluating a 4-bit quantized GPTQ model."
+)
+
 MMLU_0_shot_args = [
     "--ntrain", '0',
     "--data_dir", "/tulu-eval-data/mmlu/",
@@ -97,94 +179,27 @@ MMLU_0_shot_args = [
     "--model_name_or_path", "/net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/7B/",
     "--tokenizer_name_or_path", "/net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/7B/",
     "--eval_batch_size", '2',
+    "--load_in_8bit",
     "--use_chat_format",
     "--chat_formatting_function", "eval.templates.create_prompt_with_tulu_chat_format",
     "--lora_weight_path", out_dir,
 ]
 
-mmlu_0_shot_parser = argparse.ArgumentParser()
-
-mmlu_0_shot_parser.add_argument(
-    "--ntrain",
-    type=int,
-    default=5
-)
-mmlu_0_shot_parser.add_argument(
-    "--data_dir",
-    type=str,
-    default="data/mmlu"
-)
-mmlu_0_shot_parser.add_argument(
-    "--save_dir",
-    type=str,
-    default="results/mmlu/llama-7B/"
-)
-mmlu_0_shot_parser.add_argument(
-    "--model_name_or_path",
-    type=str,
-    default=None,
-    help="if specified, we will load the model to generate the predictions."
-)
-mmlu_0_shot_parser.add_argument(
-    "--tokenizer_name_or_path",
-    type=str,
-    default=None,
-    help="if specified, we will load the tokenizer from here."
-)
-mmlu_0_shot_parser.add_argument(
-    "--eval_batch_size",
-    type=int,
-    default=1,
-    help="batch size for evaluation."
-)
-mmlu_0_shot_parser.add_argument(
-    "--use_chat_format", 
-    action="store_true", 
-    help="If given, we will use the chat format for the prompts."
-)
-mmlu_0_shot_parser.add_argument(
-    "--chat_formatting_function", 
-    type=str, 
-    default="eval.templates.create_prompt_with_tulu_chat_format", 
-    help="The function to use to create the chat format. This function will be dynamically imported. Please see examples in `eval/templates.py`."
-)
-mmlu_0_shot_parser.add_argument(
-    "--lora_weight_path",
-    help="If given, we load lora weights."
-)
-
-mmlu_0_shot_parser.add_argument(
-    "--use_slow_tokenizer",
-    action="store_true",
-    help="If given, we will use the slow tokenizer."
-)
-mmlu_0_shot_parser.add_argument(
-    "--openai_engine",
-    type=str,
-    default=None,
-    help="if specified, we will use the OpenAI API to generate the predictions."
-)
-mmlu_0_shot_parser.add_argument(
-    "--subjects",
-    nargs="*",
-    help="which subjects to evaluate. If not specified, all the 57 subjects will be evaluated."
-)
-mmlu_0_shot_parser.add_argument(
-    "--n_instances",
-    type=int,
-    help="if specified, a maximum of n_instances per subject will be used for the evaluation."
-)
-mmlu_0_shot_parser.add_argument(
+MMLU_5_shot_args = [
+    "--ntrain", '5',
+    "--data_dir", "/tulu-eval-data/mmlu/",
+    "--save_dir", os.path.join(args.results_dir, "5-shot-results"),
+    "--model_name_or_path", "/net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/7B/",
+    "--tokenizer_name_or_path", "/net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/7B/",
+    "--eval_batch_size", '2',
     "--load_in_8bit",
-    action="store_true",
-    help="load model in 8bit mode, which will reduce memory and speed up inference."
-)
-mmlu_0_shot_parser.add_argument(
-    "--gptq",
-    action="store_true",
-    help="If given, we're evaluating a 4-bit quantized GPTQ model."
-)
+    "--use_chat_format",
+    "--chat_formatting_function", "eval.templates.create_prompt_with_tulu_chat_format",
+    "--lora_weight_path", out_dir,
+]
 
+main(mmlu_parser.parse_args(MMLU_0_shot_args))
 
-parsed_mmlu_0_shot_args = mmlu_0_shot_parser.parse_args(MMLU_0_shot_args)
-main(parsed_mmlu_0_shot_args)
+main(mmlu_parser.parse_args(MMLU_5_shot_args))
+
+print('done!')
