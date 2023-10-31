@@ -1,5 +1,5 @@
 # This dockerfile is forked from ai2/cuda11.8-cudnn8-dev-ubuntu20.04
-FROM gcr.io/ai2-beaker-core/public/ckio6ct4g24tgnrtk3og:latest
+FROM gcr.io/ai2-beaker-core/public/cku25v1f3pflnppr95b0:latest
 
 RUN apt update && apt install -y openjdk-8-jre-headless
 

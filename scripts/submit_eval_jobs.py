@@ -13,12 +13,15 @@ with open("beaker_configs/default_eval.yaml", 'r') as f:
 d1 = yaml.load(default_yaml, Loader=yaml.FullLoader)
 
 # cluster = "ai2/general-cirrascale"
-cluster = "ai2/allennlp-cirrascale"
+cluster = [
+    "ai2/allennlp-cirrascale",
+    # "ai2/mosaic-cirrascale-a100",
+]
 # cluster = "ai2/general-cirrascale-a100-80g-ib"
 # cluster = "ai2/prior-elanding"
 num_gpus = 1
 d1['tasks'][0]['context']['cluster'] = cluster
-d1['tasks'][0]['context']['priority'] = "high"
+d1['tasks'][0]['context']['priority'] = "urgent"
 # d1['tasks'][0]['context']['priority'] = "preemptible"
 d1['tasks'][0]['resources']['gpuCount'] = num_gpus
 
@@ -32,11 +35,28 @@ experiment_groups = [
     "bbh_cot",
     "tydiqa_goldp_1shot",
     "tydiqa_no_context_1shot",
-    "codex_eval_temp_0.1",
-    "codex_eval_temp_0.8",
-    "trutufulqa",
-    "toxigen",
-    "alpaca_farm",
+    # "codex_eval_temp_0.1",
+    # "codex_eval_temp_0.8",
+    # "trutufulqa",
+    # "toxigen",
+    # "alpaca_farm",
+]
+
+lora = False
+
+datasets = [
+    'tulu_v2',
+    # 'code_alpaca_filtered',
+    # 'cot_filtered',
+    # 'flan_v2_filtered',
+    # 'gpt4_alpaca_filtered',
+    # 'hard_coded_filtered',
+    # 'lima_filtered',
+    # 'oasst1_filtered',
+    # 'open_orca_filtered',
+    # 'science_filtered',
+    # 'sharegpt_filtered',
+    # 'wizardlm_filtered',
 ]
 
 # model to evaluate, each in the followng format: model name, their beaker id, checkpoint subfolder
@@ -48,7 +68,7 @@ models = [
     # ("llama1-65B", "01HCCCWQTPKS23W7MRFH5PXNHA", None, "vanilla_lm"),
     
     # llama2 models
-    # ("llama2-7B", "01HCJYBBWA629B8GJTHPT496TT", None, "vanilla_lm"),
+    ("llama2-7B", "01HCJYBBWA629B8GJTHPT496TT", None, "vanilla_lm"),
     # ("llama2-13B", "01HCJZQBM2KGQZSZRPF4HKVBZX", None, "vanilla_lm"),
     # ("llama2-70B", "01HCK281AFAXV2Y7T54NMNSC55", None, "vanilla_lm"),
     # ("llama2-chat-7B", "01HCT5D48MSRF0PCNAWNSJDN54", None, "tuned_lm"),
@@ -139,12 +159,15 @@ models = [
 #--------------- experiments about number of supervision tasks -------------------------
 
 # for experiment_group, model_info in itertools.product(experiment_groups, models):
-for model_info, experiment_group in itertools.product(models, experiment_groups):
+for model_info, experiment_group, dataset in itertools.product(models, experiment_groups, datasets):
     print(f"Submitting {experiment_group} for model: {model_info[0]}")
     d = copy.deepcopy(d1)
 
     model_name = model_info[0] + f"_{model_info[2]}" if model_info[2] is not None else model_info[0]
-    name = f"open_instruct_eval_{experiment_group}_{model_name}_{today}"
+    if lora:
+        name = f"open_instruct_eval{experiment_group}_{model_name}_{dataset}_{today}"
+    else:
+        name = f"open_instruct_eval_{experiment_group}_{model_name}_{today}"
     d['description'] = name
     d['tasks'][0]['name'] = name
 
@@ -319,6 +342,9 @@ for model_info, experiment_group in itertools.product(models, experiment_groups)
         '''
     else:
         raise ValueError("experiment_group not supported")
+    
+    if lora:
+        d['tasks'][0]['arguments'][0] += f'\ --lora_weight_path /net/nfs.cirrascale/allennlp/jacobm/tulu_7B_lora_exp/{dataset}/'
 
     # if a specific checkpoint is specified, load model from that checkpoint
     if model_info[2] is not None:
@@ -394,5 +420,5 @@ for model_info, experiment_group in itertools.product(models, experiment_groups)
     yaml.dump(d, file, default_flow_style=True)
     file.close()
 
-    cmd = "beaker experiment create {} --workspace ai2/yizhong_default".format(fn)
+    cmd = "beaker experiment create {} --workspace ai2/lora-instruct".format(fn)
     subprocess.Popen(cmd, shell=True)
