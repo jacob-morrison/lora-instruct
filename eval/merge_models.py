@@ -85,7 +85,7 @@ import sys
 print(sys.path)
 
 # now call eval on out_dir
-from eval.mmlu.run_eval import main
+from .eval.mmlu.run_eval import main
 
 # delete this later
 out_dir = os.path.join(args.results_dir, 'merged-lora-weights/')
