@@ -1,0 +1,91 @@
+tulu_v2 code_alpaca_filtered  cot_filtered  flan_v2_filtered  gpt4_alpaca_filtered  hard_coded_filtered  lima_filtered  oasst1_filtered  open_orca_filtered science_filtered  sharegpt_filtered wizardlm_filtered
+
+# merge lora weights:
+gantry run --beaker-image 'jacobm/lora-instruct' \
+--workspace ai2/lora-instruct --cluster ai2/allennlp-cirrascale \
+--pip requirements.txt --gpus 1 --priority high \
+-- python -u merge_models/merge_models.py \
+    --base_model /net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/7B \
+    --base_lora_path /net/nfs.cirrascale/allennlp/jacobm/tulu_7B_lora_exp/ \
+    --target_lora_modules code_alpaca_filtered  cot_filtered 
+
+accelerate launch --mixed_precision bf16 --num_machines 1 --num_processes 4 \
+    open_instruct/finetune.py --model_name_or_path /net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/7B \
+    --use_flash_attn --use_lora --lora_rank 256 --lora_alpha 256 --lora_dropout 0.05 \
+    --tokenizer_name /net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/7B --use_slow_tokenizer \
+    --train_file /net/nfs.cirrascale/allennlp/hamishi/open-instruct/tulu_data/tulu_v1_mix.jsonl \
+    --max_seq_length 2048 --preprocessing_num_workers 16 --checkpointing_steps epoch \
+    --per_device_train_batch_size 1 --gradient_accumulation_steps 16 --learning_rate 1e-4 \
+    --lr_scheduler_type linear --warmup_ratio 0.03 --weight_decay 0. --num_train_epochs 3 \
+    --output_dir /output/lora_models --with_tracking --report_to tensorboard --logging_steps 1 \
+    && python3 open_instruct/merge_lora.py \
+    --base_model_name_or_path /net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/7B \
+    --lora_model_name_or_path /output/lora_models --output_dir /output/lora_models_merged \
+    && python3 -m eval.mmlu.run_eval --ntrain 5 \
+    --data_dir /net/nfs.cirrascale/allennlp/yizhongw/open-instruct/data/eval/mmlu \
+    --save_dir /output/mmlu_results --model_name_or_path /output/lora_models_merged \
+    --tokenizer_name_or_path /net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/7B \
+    --eval_batch_size 8 --use_chat_format
+
+
+# no flash-attn:
+
+accelerate launch --mixed_precision bf16 --num_machines 1 --num_processes 4 \
+    open_instruct/finetune.py --model_name_or_path /net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/7B \
+    --use_lora --lora_rank 256 --lora_alpha 256 --lora_dropout 0.05 \
+    --tokenizer_name /net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/7B --use_slow_tokenizer \
+    --train_file /net/nfs.cirrascale/allennlp/hamishi/open-instruct/tulu_data/tulu_v1_mix.jsonl \
+    --max_seq_length 2048 --preprocessing_num_workers 16 --checkpointing_steps epoch \
+    --per_device_train_batch_size 1 --gradient_accumulation_steps 16 --learning_rate 1e-4 \
+    --lr_scheduler_type linear --warmup_ratio 0.03 --weight_decay 0. --num_train_epochs 3 \
+    --output_dir output/lora_models --with_tracking --report_to tensorboard --logging_steps 1 \
+    && python3 open_instruct/merge_lora.py \
+    --base_model_name_or_path /net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/7B \
+    --lora_model_name_or_path output/lora_models --output_dir output/lora_models_merged \
+    && python3 -m eval.mmlu.run_eval --ntrain 5 \
+    --data_dir /net/nfs.cirrascale/allennlp/yizhongw/open-instruct/data/eval/mmlu \
+    --save_dir output/mmlu_results --model_name_or_path output/lora_models_merged \
+    --tokenizer_name_or_path /net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/7B \
+    --eval_batch_size 8 --use_chat_format
+
+---
+
+gantry run --beaker-image 'jacobm/lora-instruct' \
+--workspace ai2/lora-instruct --cluster ai2/allennlp-cirrascale \
+--pip requirements.txt --gpus 4 --priority high \
+-- accelerate launch \
+    --mixed_precision bf16 \
+    --num_machines 1 \
+    --num_processes 4 \
+    open_instruct/finetune.py \
+    --model_name_or_path /net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/7B \
+    --use_lora \
+    --use_flash_attn \
+    --lora_rank 256 \
+    --lora_alpha 256 \
+    --lora_dropout 0.05 \
+    --tokenizer_name /net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/7B \
+    --use_slow_tokenizer \
+    --train_file /net/nfs.cirrascale/allennlp/hamishi/open-instruct/tulu_data/tulu_v1_mix.jsonl \
+    --max_seq_length 2048 \
+    --preprocessing_num_workers 16 \
+    --per_device_train_batch_size 1 \
+    --gradient_accumulation_steps 32 \
+    --learning_rate 2e-4 \
+    --lr_scheduler_type linear \
+    --warmup_ratio 0.03 \
+    --weight_decay 0. \
+    --num_train_epochs 3 \
+    --output_dir /results/tulu_7B_lora_exp/ \
+    --save_merged_lora_model \
+    --with_tracking \
+    --report_to tensorboard \
+    --logging_steps 1
+
+# python open_instruct/merge_lora.py \
+#    --base_model_name_or_path /net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/${MODEL_SIZE} \
+#    --lora_model_name_or_path output/tulu_${MODEL_SIZE}_lora_exp/ \
+#    --output_dir output/tulu_${MODEL_SIZE}_lora_merged_exp/
+
+#    --use_deepspeed \
+#    --deepspeed_config_file ds_configs/stage3_no_offloading_accelerate.conf \

@@ -212,6 +212,7 @@ def score_completions(model, tokenizer, scoring_examples, batch_size=1, aggregat
 def load_hf_lm_and_tokenizer(
         model_name_or_path, 
         tokenizer_name_or_path=None, 
+        lora_weight_path=None,
         device_map="auto", 
         torch_dtype="auto",
         load_in_8bit=False, 
@@ -244,6 +245,10 @@ def load_hf_lm_and_tokenizer(
                 model = model.cuda()
         if convert_to_half:
             model = model.half()
+
+    if lora_weight_path:
+        from peft import PeftModel
+        model = PeftModel.from_pretrained(model, lora_weight_path)
     model.eval()
 
     if not tokenizer_name_or_path:
