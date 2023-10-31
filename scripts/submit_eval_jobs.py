@@ -13,10 +13,8 @@ with open("beaker_configs/default_eval.yaml", 'r') as f:
 d1 = yaml.load(default_yaml, Loader=yaml.FullLoader)
 
 # cluster = "ai2/general-cirrascale"
-cluster = [
-    "ai2/allennlp-cirrascale",
-    # "ai2/mosaic-cirrascale-a100",
-]
+cluster ="ai2/allennlp-cirrascale"
+# cluster = "ai2/mosaic-cirrascale-a100",
 # cluster = "ai2/general-cirrascale-a100-80g-ib"
 # cluster = "ai2/prior-elanding"
 num_gpus = 1
