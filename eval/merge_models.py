@@ -153,5 +153,38 @@ mmlu_0_shot_parser.add_argument(
     help="If given, we load lora weights."
 )
 
+mmlu_0_shot_parser.add_argument(
+    "--use_slow_tokenizer",
+    action="store_true",
+    help="If given, we will use the slow tokenizer."
+)
+mmlu_0_shot_parser.add_argument(
+    "--openai_engine",
+    type=str,
+    default=None,
+    help="if specified, we will use the OpenAI API to generate the predictions."
+)
+mmlu_0_shot_parser.add_argument(
+    "--subjects",
+    nargs="*",
+    help="which subjects to evaluate. If not specified, all the 57 subjects will be evaluated."
+)
+mmlu_0_shot_parser.add_argument(
+    "--n_instances",
+    type=int,
+    help="if specified, a maximum of n_instances per subject will be used for the evaluation."
+)
+mmlu_0_shot_parser.add_argument(
+    "--load_in_8bit",
+    action="store_true",
+    help="load model in 8bit mode, which will reduce memory and speed up inference."
+)
+mmlu_0_shot_parser.add_argument(
+    "--gptq",
+    action="store_true",
+    help="If given, we're evaluating a 4-bit quantized GPTQ model."
+)
+
+
 parsed_mmlu_0_shot_args = mmlu_0_shot_parser.parse_args(MMLU_0_shot_args)
 main(parsed_mmlu_0_shot_args)
