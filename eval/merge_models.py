@@ -104,5 +104,54 @@ MMLU_0_shot_args = [
 
 mmlu_0_shot_parser = argparse.ArgumentParser()
 
+mmlu_0_shot_parser.add_argument(
+    "--ntrain",
+    type=int,
+    default=5
+)
+mmlu_0_shot_parser.add_argument(
+    "--data_dir",
+    type=str,
+    default="data/mmlu"
+)
+mmlu_0_shot_parser.add_argument(
+    "--save_dir",
+    type=str,
+    default="results/mmlu/llama-7B/"
+)
+mmlu_0_shot_parser.add_argument(
+    "--model_name_or_path",
+    type=str,
+    default=None,
+    help="if specified, we will load the model to generate the predictions."
+)
+mmlu_0_shot_parser.add_argument(
+    "--tokenizer_name_or_path",
+    type=str,
+    default=None,
+    help="if specified, we will load the tokenizer from here."
+)
+mmlu_0_shot_parser.add_argument(
+    "--eval_batch_size",
+    type=int,
+    default=1,
+    help="batch size for evaluation."
+)
+mmlu_0_shot_parser.add_argument(
+    "--use_chat_format", 
+    action="store_true", 
+    help="If given, we will use the chat format for the prompts."
+)
+mmlu_0_shot_parser.add_argument(
+    "--chat_formatting_function", 
+    type=str, 
+    default="eval.templates.create_prompt_with_tulu_chat_format", 
+    help="The function to use to create the chat format. This function will be dynamically imported. Please see examples in `eval/templates.py`."
+)
+mmlu_0_shot_parser.add_argument(
+    "--lora_weight_path",
+    help="If given, we load lora weights."
+)
+
 parsed_mmlu_0_shot_args = mmlu_0_shot_parser.parse_args(MMLU_0_shot_args)
 main(parsed_mmlu_0_shot_args)
