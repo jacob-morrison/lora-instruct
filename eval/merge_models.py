@@ -91,12 +91,12 @@ from eval.mmlu.run_eval import main
 out_dir = os.path.join(args.results_dir, 'merged-lora-weights/')
 
 MMLU_0_shot_args = [
-    "--ntrain", '0',
+    "--ntrain", 0,
     "--data_dir", "/tulu-eval-data/mmlu/",
     "--save_dir", os.path.join(args.results_dir, "0-shot-results"),
     "--model_name_or_path", "/net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/7B/",
     "--tokenizer_name_or_path", "/net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/7B/"
-    "--eval_batch_size", '2',
+    "--eval_batch_size", 2,
     "--use_chat_format",
     "--chat_formatting_function", "eval.templates.create_prompt_with_tulu_chat_format",
     "--lora_weight_path", out_dir,
