@@ -80,6 +80,10 @@ print(args.target_lora_modules)
 #     final_model.save_pretrained(out_dir)
 #     tokenizer.save_pretrained(out_dir)
 
+import sys
+
+print(sys.path)
+
 # now call eval on out_dir
 from eval.mmlu.run_eval import main
 
