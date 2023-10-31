@@ -81,7 +81,7 @@ print(args.target_lora_modules)
 #     tokenizer.save_pretrained(out_dir)
 
 # now call eval on out_dir
-from ..eval.mmlu.run_eval import main
+from eval.mmlu.run_eval import main
 
 # delete this later
 out_dir = os.path.join(args.results_dir, 'merged-lora-weights/')
@@ -100,3 +100,4 @@ MMLU_0_shot_args = [
 
 mmlu_0_shot_parser = argparse.ArgumentParser()
 parsed_mmlu_0_shot_args = mmlu_0_shot_parser.parse_args(MMLU_0_shot_args)
+main(parsed_mmlu_0_shot_args)
