@@ -1,0 +1,10 @@
+task,above,in between, below
+MMLU 0 Shot Pairwise Merge,50,60,0
+TydiQA GoldP Pairwise Merge,56,50,4
+GSM Direct Pairwise Merge,24,74,12
+BBH Direct Pairwise Merge,40,70,0
+GSM CoT Pairwise Merge,14,78,18
+MMLU 5 Shot Pairwise Merge,54,48,8
+BBH CoT Pairwise Merge,52,54,4
+Toxigen Pairwise Merge,38,60,12
+TydiQA No Context Pairwise Merge,66,42,2

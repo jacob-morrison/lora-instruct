@@ -27,17 +27,15 @@ merge_models = True
 
 # modify here for different set of experiments
 experiment_groups = [
-    "mmlu_0shot",
+    # "mmlu_0shot",
     # "mmlu_5shot",
-
-    ### Not using for merges yet
     # "gsm_direct",
     # "gsm_cot",
     # "bbh_direct",
     # "bbh_cot",
     # "tydiqa_goldp_1shot",
-    # "tydiqa_no_context_1shot",
-    # "toxigen",
+    "tydiqa_no_context_1shot",
+    "toxigen",
 
     ### Need an OpenAI API Key
     # "codex_eval_temp_0.1",
@@ -52,15 +50,17 @@ datasets = [
     'tulu_v2',
     'code_alpaca_filtered',
     'cot_filtered',
-    # 'flan_v2_filtered',
-    # 'gpt4_alpaca_filtered',
-    # 'hard_coded_filtered',
-    # 'lima_filtered',
-    # 'oasst1_filtered',
-    # 'open_orca_filtered',
-    # 'science_filtered',
-    # 'sharegpt_filtered',
-    # 'wizardlm_filtered',
+    'flan_v2_filtered',
+    'gpt4_alpaca_filtered',
+    'hard_coded_filtered',
+    'lima_filtered',
+    'oasst1_filtered',
+    'open_orca_filtered',
+    'science_filtered',
+    'sharegpt_filtered',
+    'wizardlm_filtered',
+
+    # 'merge-all/merged-lora-weights', # Disable for pairwise merges
 ]
 
 # model to evaluate, each in the followng format: model name, their beaker id, checkpoint subfolder
@@ -170,9 +170,9 @@ if not merge_models:
 
         model_name = model_info[0] + f"_{model_info[2]}" if model_info[2] is not None else model_info[0]
         if lora:
-            name = f"open_instruct_eval_{experiment_group}_{model_name}_{dataset}_{today}"
+            name = f"open_instruct_eval_{experiment_group}_{model_name}_{dataset}_{today}".replace('/', '-')
         else:
-            name = f"open_instruct_eval_{experiment_group}_{model_name}_{today}"
+            name = f"open_instruct_eval_{experiment_group}_{model_name}_{today}".replace('/', '-')
         d['description'] = name
         d['tasks'][0]['name'] = name
 
@@ -413,7 +413,8 @@ if not merge_models:
                 "--chat_formatting_function eval.templates.create_prompt_with_llama2_chat_format")
             ] 
 
-        if any([x in model_info[0] for x in ["opt", "pythia", "falcon"]]):
+        # TODO: vllm doesn't support lora yet
+        if any([x in model_info[0] for x in ["opt", "pythia", "falcon"]]) or lora:
             if "--use_vllm" in d['tasks'][0]['arguments'][0]:
                 print(f"Removing --use_vllm for {model_info[0]}")
                 d['tasks'][0]['arguments'] = [d['tasks'][0]['arguments'][0].replace("--use_vllm", "")] 
@@ -437,7 +438,7 @@ else:
             target_dataset_2 = datasets[j]
             for model_info, experiment_group in itertools.product(models, experiment_groups):
                 print(f"Submitting {experiment_group} for model: {model_info[0]}")
-                print(f'merging datasets {datasets[i]} and {datasets[j]}')
+                print(f'merging datasets {target_dataset_1} and {target_dataset_2}')
                 d = copy.deepcopy(d1)
 
                 model_name = model_info[0] + f"_{model_info[2]}" if model_info[2] is not None else model_info[0]
@@ -445,13 +446,13 @@ else:
                 d['description'] = name
                 d['tasks'][0]['name'] = name
 
-                if experiment_group == "mmlu_0shot":
-                    d['tasks'][0]['arguments'][0] = f'''
-                    python -u -m eval.merge_models     \
-                        --base_model /model \
-                        --target_lora_modules {target_dataset_1}  {target_dataset_2} \
-                        --results_dir /output/
-                    '''        
+                d['tasks'][0]['arguments'][0] = f'''
+                python -u -m eval.merge_models     \
+                    --base_model /model \
+                    --target_lora_modules {target_dataset_1}  {target_dataset_2} \
+                    --results_dir /output/ \
+                    --task {experiment_group}
+                '''        
                 # if lora:
                     # d['tasks'][0]['arguments'][0] = d['tasks'][0]['arguments'][0].strip() + f' --lora_weight_path /net/nfs.cirrascale/allennlp/jacobm/tulu_7B_lora_exp/{dataset}/'
 

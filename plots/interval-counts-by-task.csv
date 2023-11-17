@@ -1,0 +1,100 @@
+task,expert,above,in between, below
+MMLU 0 Shot Pairwise Merge,Hard Coded,2,8,0
+MMLU 0 Shot Pairwise Merge,Lima,6,4,0
+MMLU 0 Shot Pairwise Merge,Open Assistant 1,5,5,0
+MMLU 0 Shot Pairwise Merge,Science,7,3,0
+MMLU 0 Shot Pairwise Merge,GPT4 Alpaca,6,4,0
+MMLU 0 Shot Pairwise Merge,Code Alpaca,4,6,0
+MMLU 0 Shot Pairwise Merge,Open Orca,1,9,0
+MMLU 0 Shot Pairwise Merge,WizardLM,6,4,0
+MMLU 0 Shot Pairwise Merge,Flan V2,4,6,0
+MMLU 0 Shot Pairwise Merge,CoT,8,2,0
+MMLU 0 Shot Pairwise Merge,ShareGPT,1,9,0
+TydiQA GoldP Pairwise Merge,Hard Coded,4,5,1
+TydiQA GoldP Pairwise Merge,Lima,4,5,1
+TydiQA GoldP Pairwise Merge,Open Assistant 1,4,5,1
+TydiQA GoldP Pairwise Merge,Science,6,4,0
+TydiQA GoldP Pairwise Merge,GPT4 Alpaca,2,7,1
+TydiQA GoldP Pairwise Merge,Code Alpaca,5,5,0
+TydiQA GoldP Pairwise Merge,Open Orca,7,3,0
+TydiQA GoldP Pairwise Merge,WizardLM,7,3,0
+TydiQA GoldP Pairwise Merge,Flan V2,10,0,0
+TydiQA GoldP Pairwise Merge,CoT,1,9,0
+TydiQA GoldP Pairwise Merge,ShareGPT,6,4,0
+GSM Direct Pairwise Merge,Hard Coded,3,6,1
+GSM Direct Pairwise Merge,Lima,0,6,4
+GSM Direct Pairwise Merge,Open Assistant 1,4,6,0
+GSM Direct Pairwise Merge,Science,2,7,1
+GSM Direct Pairwise Merge,GPT4 Alpaca,2,6,2
+GSM Direct Pairwise Merge,Code Alpaca,1,9,0
+GSM Direct Pairwise Merge,Open Orca,2,6,2
+GSM Direct Pairwise Merge,WizardLM,2,7,1
+GSM Direct Pairwise Merge,Flan V2,6,4,0
+GSM Direct Pairwise Merge,CoT,0,9,1
+GSM Direct Pairwise Merge,ShareGPT,2,8,0
+BBH Direct Pairwise Merge,Hard Coded,4,6,0
+BBH Direct Pairwise Merge,Lima,6,4,0
+BBH Direct Pairwise Merge,Open Assistant 1,1,9,0
+BBH Direct Pairwise Merge,Science,5,5,0
+BBH Direct Pairwise Merge,GPT4 Alpaca,3,7,0
+BBH Direct Pairwise Merge,Code Alpaca,5,5,0
+BBH Direct Pairwise Merge,Open Orca,3,7,0
+BBH Direct Pairwise Merge,WizardLM,7,3,0
+BBH Direct Pairwise Merge,Flan V2,1,9,0
+BBH Direct Pairwise Merge,CoT,1,9,0
+BBH Direct Pairwise Merge,ShareGPT,4,6,0
+GSM CoT Pairwise Merge,Hard Coded,1,9,0
+GSM CoT Pairwise Merge,Lima,0,6,4
+GSM CoT Pairwise Merge,Open Assistant 1,1,6,3
+GSM CoT Pairwise Merge,Science,1,8,1
+GSM CoT Pairwise Merge,GPT4 Alpaca,2,6,2
+GSM CoT Pairwise Merge,Code Alpaca,0,8,2
+GSM CoT Pairwise Merge,Open Orca,3,6,1
+GSM CoT Pairwise Merge,WizardLM,0,7,3
+GSM CoT Pairwise Merge,Flan V2,4,6,0
+GSM CoT Pairwise Merge,CoT,0,10,0
+GSM CoT Pairwise Merge,ShareGPT,2,6,2
+MMLU 5 Shot Pairwise Merge,Hard Coded,4,5,1
+MMLU 5 Shot Pairwise Merge,Lima,4,5,1
+MMLU 5 Shot Pairwise Merge,Open Assistant 1,4,5,1
+MMLU 5 Shot Pairwise Merge,Science,6,4,0
+MMLU 5 Shot Pairwise Merge,GPT4 Alpaca,8,2,0
+MMLU 5 Shot Pairwise Merge,Code Alpaca,4,6,0
+MMLU 5 Shot Pairwise Merge,Open Orca,3,7,0
+MMLU 5 Shot Pairwise Merge,WizardLM,7,2,1
+MMLU 5 Shot Pairwise Merge,Flan V2,1,9,0
+MMLU 5 Shot Pairwise Merge,CoT,9,1,0
+MMLU 5 Shot Pairwise Merge,ShareGPT,4,2,4
+BBH CoT Pairwise Merge,Hard Coded,3,7,0
+BBH CoT Pairwise Merge,Lima,4,5,1
+BBH CoT Pairwise Merge,Open Assistant 1,5,5,0
+BBH CoT Pairwise Merge,Science,0,10,0
+BBH CoT Pairwise Merge,GPT4 Alpaca,5,4,1
+BBH CoT Pairwise Merge,Code Alpaca,5,4,1
+BBH CoT Pairwise Merge,Open Orca,6,4,0
+BBH CoT Pairwise Merge,WizardLM,7,3,0
+BBH CoT Pairwise Merge,Flan V2,6,3,1
+BBH CoT Pairwise Merge,CoT,9,1,0
+BBH CoT Pairwise Merge,ShareGPT,2,8,0
+Toxigen Pairwise Merge,Hard Coded,6,3,1
+Toxigen Pairwise Merge,Lima,4,5,1
+Toxigen Pairwise Merge,Open Assistant 1,3,7,0
+Toxigen Pairwise Merge,Science,1,7,2
+Toxigen Pairwise Merge,GPT4 Alpaca,2,7,1
+Toxigen Pairwise Merge,Code Alpaca,3,6,1
+Toxigen Pairwise Merge,Open Orca,5,4,1
+Toxigen Pairwise Merge,WizardLM,4,6,0
+Toxigen Pairwise Merge,Flan V2,6,4,0
+Toxigen Pairwise Merge,CoT,3,5,2
+Toxigen Pairwise Merge,ShareGPT,1,6,3
+TydiQA No Context Pairwise Merge,Hard Coded,6,4,0
+TydiQA No Context Pairwise Merge,Lima,5,4,1
+TydiQA No Context Pairwise Merge,Open Assistant 1,6,4,0
+TydiQA No Context Pairwise Merge,Science,9,1,0
+TydiQA No Context Pairwise Merge,GPT4 Alpaca,5,5,0
+TydiQA No Context Pairwise Merge,Code Alpaca,5,5,0
+TydiQA No Context Pairwise Merge,Open Orca,3,6,1
+TydiQA No Context Pairwise Merge,WizardLM,8,2,0
+TydiQA No Context Pairwise Merge,Flan V2,3,7,0
+TydiQA No Context Pairwise Merge,CoT,10,0,0
+TydiQA No Context Pairwise Merge,ShareGPT,6,4,0
