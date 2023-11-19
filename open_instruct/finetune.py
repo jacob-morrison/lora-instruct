@@ -90,6 +90,11 @@ def parse_args():
         help="The dropout rate of lora modules.",
     )
     parser.add_argument(
+        "--save_merged_lora_model",
+        action="store_true",
+        help="If passed, will merge the lora modules and save the entire model.",
+    )
+    parser.add_argument(
         "--use_flash_attn",
         action="store_true",
         help="If passed, will use flash attention to train the model.",
@@ -224,6 +229,11 @@ def parse_args():
         action='store_true',
         help='Use 8bit optimizer from bitsandbytes. Not compatible with deepspeed (use deepspeed config instead).',
     )
+    parser.add_argument(
+        '--llama2',
+        action='store_true',
+        help='Use llama2 model instead of llama. Used to determine what monkey patch fn to use.',
+    )
     args = parser.parse_args()
 
     # Sanity checks
@@ -343,6 +353,14 @@ def save_with_accelerate(accelerator, model, tokenizer, output_dir, args):
 def main():
     args = parse_args()
 
+    # A hacky way to make llama work with flash attention
+    if args.use_flash_attn and args.llama2:
+        from llama2_flash_attn_monkey_patch import replace_llama_attn_with_flash_attn
+        replace_llama_attn_with_flash_attn()
+    elif args.use_flash_attn:
+        from llama_flash_attn_monkey_patch import replace_llama_attn_with_flash_attn
+        replace_llama_attn_with_flash_attn()
+
     # Initialize the accelerator. We will let the accelerator handle device placement for us in this example.
     # If we're using tracking, we also need to initialize it here and it will by default pick up all supported trackers
     # in the environment
@@ -388,6 +406,10 @@ def main():
         dataset_args = {}
         if args.train_file is not None:
             data_files["train"] = args.train_file
+            print('Train file is not none: ' + str(args.train_file))
+        else:
+            print('Train file was none!!')
+            print(args)
         raw_datasets = load_dataset(
             "json",
             data_files=data_files,
@@ -422,7 +444,7 @@ def main():
                 bnb_4bit_quant_type="nf4",
                 bnb_4bit_compute_dtype=torch.bfloat16,
             )
-            device_index = accelerator.local_process_index
+            device_index = accelerator.process_index
             device_map = {"": device_index} # force data-parallel training.
             model = AutoModelForCausalLM.from_pretrained(
                 args.model_name_or_path,
@@ -432,15 +454,15 @@ def main():
                 quantization_config=bnb_config,
                 device_map=device_map,
                 torch_dtype=torch.bfloat16,
-                use_flash_attention_2=True if args.use_flash_attn else False,
             )
         else:
+            device_index = accelerator.process_index
+            device_map = {"": device_index} # force data-parallel training.
             model = AutoModelForCausalLM.from_pretrained(
                 args.model_name_or_path,
                 from_tf=bool(".ckpt" in args.model_name_or_path),
                 config=config,
-                low_cpu_mem_usage=args.low_cpu_mem_usage,
-                use_flash_attention_2=True if args.use_flash_attn else False,
+                device_map=device_map,
             )
     else:
         logger.info("Training new model from scratch")
@@ -487,6 +509,10 @@ def main():
             target_modules=["q_proj", "o_proj", "v_proj", "k_proj", "gate_proj", "up_proj", "down_proj"]
         )
         model = get_peft_model(model, peft_config)
+        # peft breaks flash attention due to casting norms to fp32. This fixes it back up.
+        # See https://github.com/huggingface/peft/issues/790
+        from llama_flash_attn_monkey_patch import upcast_layer_for_flash_attention
+        model = upcast_layer_for_flash_attention(model, torch.bfloat16)
         model.print_trainable_parameters()
 
     # Preprocessing the datasets.
@@ -504,7 +530,7 @@ def main():
         )
     else:
         raise ValueError("You need to have either 'prompt'&'completion' or 'messages' in your column names.")
-    
+
     with accelerator.main_process_first():
         lm_datasets = raw_datasets.map(
             encode_function,
@@ -620,70 +646,57 @@ def main():
     # Potentially load in the weights and states from a previous save
     if args.resume_from_checkpoint:
         if args.resume_from_checkpoint is not None or args.resume_from_checkpoint != "":
-            checkpoint_path = args.resume_from_checkpoint
+            accelerator.print(f"Resumed from checkpoint: {args.resume_from_checkpoint}")
+            accelerator.load_state(args.resume_from_checkpoint)
             path = os.path.basename(args.resume_from_checkpoint)
         else:
             # Get the most recent checkpoint
             dirs = [f.name for f in os.scandir(os.getcwd()) if f.is_dir()]
             dirs.sort(key=os.path.getctime)
-            path = dirs[
-                -1
-            ]  # Sorts folders by date modified, most recent checkpoint is the last
-            checkpoint_path = path
-            path = os.path.basename(checkpoint_path)
-
-        accelerator.print(f"Resumed from checkpoint: {checkpoint_path}")
-        accelerator.load_state(path)
+            path = dirs[-1]  # Sorts folders by date modified, most recent checkpoint is the last
         # Extract `epoch_{i}` or `step_{i}`
         training_difference = os.path.splitext(path)[0]
 
         if "epoch" in training_difference:
             starting_epoch = int(training_difference.replace("epoch_", "")) + 1
             resume_step = None
-            completed_steps = starting_epoch * num_update_steps_per_epoch
         else:
             # need to multiply `gradient_accumulation_steps` to reflect real steps
-            resume_step = (
-                int(training_difference.replace("step_", ""))
-                * args.gradient_accumulation_steps
-            )
+            resume_step = int(training_difference.replace("step_", "")) * args.gradient_accumulation_steps
             starting_epoch = resume_step // len(train_dataloader)
-            completed_steps = resume_step // args.gradient_accumulation_steps
             resume_step -= starting_epoch * len(train_dataloader)
 
     # update the progress_bar if load from checkpoint
-    progress_bar.update(completed_steps)
+    progress_bar.update(starting_epoch * num_update_steps_per_epoch)
+    completed_steps = starting_epoch * num_update_steps_per_epoch
 
     for epoch in range(starting_epoch, args.num_train_epochs):
         model.train()
         total_loss = 0
-        if (
-            args.resume_from_checkpoint
-            and epoch == starting_epoch
-            and resume_step is not None
-        ):
-            # We skip the first `n` batches in the dataloader when resuming from a checkpoint
-            active_dataloader = accelerator.skip_first_batches(
-                train_dataloader, resume_step
-            )
-        else:
-            active_dataloader = train_dataloader
-        for step, batch in enumerate(active_dataloader):
+        for step, batch in enumerate(train_dataloader):
+            # We need to skip steps until we reach the resumed step
+            if args.resume_from_checkpoint and epoch == starting_epoch:
+                if resume_step is not None and completed_steps < resume_step:
+                    if step % args.gradient_accumulation_steps == 0:
+                        progress_bar.update(1)
+                        completed_steps += 1
+                    continue
+
             with accelerator.accumulate(model):
                 outputs = model(**batch, use_cache=False)                
                 loss = outputs.loss
                 # We keep track of the loss at each logged step
                 total_loss += loss.detach().float()
                 accelerator.backward(loss)
-                # clip gradient norm. don't do this with deepspeed
-                if accelerator.sync_gradients and args.clip_grad_norm > 0:
-                    accelerator.clip_grad_norm_(model.parameters(), args.clip_grad_norm)
                 optimizer.step()
                 optimizer.zero_grad()
                 lr_scheduler.step()       
 
             # Checks if the accelerator has performed an optimization step behind the scenes
             if accelerator.sync_gradients:
+                # if set, clip the gradient norm. Don't do this with deepspeed.
+                if args.clip_grad_norm > 0:
+                    accelerator.clip_grad_norm_(model.parameters(), args.clip_grad_norm)
                 progress_bar.update(1)
                 completed_steps += 1
                 if args.logging_steps and completed_steps % args.logging_steps == 0:
