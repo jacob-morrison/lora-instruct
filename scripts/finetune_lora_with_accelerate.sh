@@ -141,7 +141,7 @@ do
         --lora_dropout 0.05 \
         --tokenizer_name /net/nfs.cirrascale/allennlp/yizhongw/hf_llama2_models/${MODEL_SIZE} \
         --use_slow_tokenizer \
-        --train_file /net/nfs.cirrascale/allennlp/jacobm/tulu_data/tulu-v2/merged_datasets/${DATASET}_data.jsonl \
+        --train_file /net/nfs.cirrascale/allennlp/jacobm/tulu_data/tulu-v2/merged_datasets/${DATASET}.jsonl \
         --max_seq_length 2048 \
         --preprocessing_num_workers 16 \
         --checkpointing_steps epoch \
