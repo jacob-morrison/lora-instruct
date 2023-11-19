@@ -20,7 +20,7 @@ for i in range(len(datasets) - 1):
     for j in range(i, len(datasets)):
         file_path1 = f'/net/nfs.cirrascale/allennlp/jacobm/tulu_data/tulu-v2/{datasets[i]}_data.jsonl'
         file_path2 = f'/net/nfs.cirrascale/allennlp/jacobm/tulu_data/tulu-v2/{datasets[j]}_data.jsonl'
-        with open(file_path1) as f_in1, open(file_path2) as f_in2, open(out_dir + '{datasets[i]}-{datasets[j]}.jsonl', 'w') as f_out:
+        with open(file_path1) as f_in1, open(file_path2) as f_in2, open(out_dir + f'{datasets[i]}-{datasets[j]}.jsonl', 'w') as f_out:
             for line in file_path1:
                 f_out.write(line)
             for line in file_path2:
